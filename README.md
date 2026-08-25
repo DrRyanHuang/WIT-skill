@@ -1,36 +1,36 @@
 # WIT
 
-**WIT（Writing Is Thinking）** 是一套用于**科学思考与论文写作**的工作流。
+**WIT (Writing Is Thinking)** is a workflow for **scientific thinking and paper writing**.
 
-它帮助研究者：
+It helps researchers:
 
-- 把问题“打开”；
-- 从 Fact 形成 1-hop Opinion；
-- 区分 Results 与 Discussion；
-- 从 findings 提炼 general principle；
-- 判断哪些新问题应继续做成 Results，哪些进入 Limitations / Future Studies；
-- 用 reviewer perspective 和 deadline mode 收束研究。
+- open up a research question;
+- move from Fact to 1-hop Opinion;
+- distinguish Results from Discussion;
+- derive General Principles from findings;
+- decide which new questions should become new Results and which belong in Limitations / Future Studies;
+- use reviewer perspective and Deadline Mode to close a study.
 
-## 使用方法
+## How to Use
 
-先让 AI 读取：
+First ask the AI to read:
 
-`WIT-科学思考与写作工作流.md`
+`WIT-Scientific-Thinking-and-Writing-Workflow.md`
 
-然后直接调用，例如：
+Then invoke WIT directly, for example:
 
-> 按 WIT 把这个问题打开：XXX。
+> Use WIT to open up this question: XXX.
 
-> 这是一个 finding：XXX。按 WIT 展开。
+> This is a finding: XXX. Use WIT to expand it.
 
-> 按 WIT 检查 Results / Discussion。
+> Use WIT to review the Results / Discussion.
 
-> 按 WIT 判断下一步最值得做什么实验。
+> Use WIT to determine the most valuable next experiment.
 
-## 核心思想
+## Core Idea
 
 > **Writing is thinking.**
 
 > **Finding → Question → Test → Finding**
 
-详细说明见：`WIT-科学思考与写作工作流.md`
+For details, see: `WIT-Scientific-Thinking-and-Writing-Workflow.md`
