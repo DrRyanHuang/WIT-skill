@@ -1071,3 +1071,150 @@ Results 是对 scientific questions 的回答。
 研究不断通过新的 finding 重写问题，论文写作则把这一思考过程显性化。
 
 这就是 **WIT：Writing Is Thinking**。
+
+# 如何检验一篇文章的逻辑链？
+
+WIT 不仅可以用于写作，也可以反过来用于**审计一篇论文的逻辑结构**。可以分四层检查。
+
+
+## 1. Introduction 层面：段首句能否组成完整的“问题链”？
+
+先把 Introduction 每一段的**第一句**单独抽取出来，按顺序排列，然后暂时不看段内细节，只问：
+
+> **这些段首句连在一起，能否清楚讲出“为什么这个研究必须做”？**
+
+理想的逻辑链是：
+
+> **Final Goal → Necessary Components → What Previous Studies Have Established → Missing Component → Why the Missing Component Matters → This Study Provides It**
+
+也就是说，Introduction 应依次回答：
+
+1. **Final Goal**：最终想解决的 scientific goal 是什么？
+2. **Necessary Components**：实现这个目标需要哪些关键组成部分？
+3. **Previous Studies**：前人已经建立了哪些必要组件？
+4. **Missing Component**：还缺哪一块关键拼图？
+5. **Why It Matters**：为什么缺少这一块，最终目标就无法真正闭环？
+6. **This Study**：本研究如何补上这块 missing component？
+
+一个强的 Introduction，不是简单地写：
+
+> X is important.  
+> Many studies have investigated X.  
+> However, some gaps remain.  
+> Here, we propose a new method.
+
+而应该形成更明确的“完成度逻辑”：
+
+> **为了达到最终目标，需要 A、B、C、X。**  
+> **Previous studies 已经建立了 A、B、C。**  
+> **但 X 仍未解决。**  
+> **缺少 X，因此最终目标仍无法完成。**  
+> **This study provides X by ...**
+
+检查时重点问：
+
+- 第一段是否真正提出了 final goal，而不只是介绍研究对象？
+- 中间各段是否在说明“已经完成了哪些必要组件”，而不是简单罗列文献？
+- missing component 是否明确、关键，而且与 final goal 存在必要关系？
+- “missing component” 是否只是“没人做过”，还是“没有它就无法完成最终目标”？
+- Introduction 最后一段是否与 missing component 严丝合缝地对应？
+- 本研究声称补上的东西，是否正是前面铺垫中缺失的那一块？
+
+一个非常实用的检验标准是：
+
+> **只读 Introduction 每一段的段首句，也能理解这个领域已经走到哪里、还缺什么、以及本研究为什么必要。**
+
+如果段首句之间无法形成这条逻辑链，往往说明 Introduction 仍然是“文献堆砌型”，而不是“问题驱动型”。
+
+---
+
+
+## 2. 全文层面：Results subsection titles 能否组成一篇“小 essay”？
+
+先把 Results 中所有 subsection titles 单独抽取出来，按顺序排列，然后暂时不看正文，只问：
+
+> **这些标题连在一起，能否独立讲出一个完整、递进的 scientific story？**
+
+理想情况下，标题之间应形成类似：
+
+> **核心问题 → 主要发现 → 进一步验证 → 机制 / 原因 → 泛化 / 边界 → 综合认识**
+
+一个很强的检验标准是：
+
+> **只读 subsection titles，也能大致理解这篇文章解决了什么问题、得到了哪些主要答案。**
+
+## 3. Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
+
+逐个进入 Results subsection，检查内部是否形成：
+
+> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion**
+
+其中：
+
+- **Motivation**：前一个 finding 引出了什么新问题，因此为什么需要这一 subsection？
+- **Fact**：实验、比较和统计结果直接观察到了什么？
+- **1-hop Opinion**：这些 Fact 意味着什么？只能向前解释一步，仍然紧贴当前结果。
+
+进一步检查：
+
+1. Motivation 是否来自前面的 scientific question？
+2. Fact 是否真正支持 subsection title？
+3. Opinion 是否由 Fact 直接推出？
+4. Opinion 是否只走了 1-hop，而没有提前跳到 general principle？
+5. subsection 最后是否自然产生下一步 question？
+
+## 4. Discussion 层面：是否形成完整的上升—展开—收束链条？
+
+Discussion 应检查是否大致形成：
+
+> **2-hop Interpretation (this study)**  
+> → **General Principle / beyond this study**  
+> → **Raise New Questions**  
+> → **Limitations**  
+> → **Future Studies**  
+> → **Conclusion Sentence**
+
+具体来说：
+
+- **2-hop Interpretation (this study)**：把多个 Results subsection 的 1-hop Opinions 综合起来，回答“Taken together，本研究整体说明了什么？”
+- **General Principle (beyond this study)**：进一步抽象出超越当前方法、数据集或任务的一般规律。
+- **Raise New Questions**：从 Why / How / What / When / Whether / To what extent 等角度重新打开 question space。
+- **Limitations**：哪些重要问题是当前研究无法回答的？为什么？
+- **Future Studies**：下一步什么实验或分析能够回答这些 unresolved questions？
+- **Conclusion Sentence**：用一句话收束全文，留下最终 take-home message，而不是重复性能数字。
+
+## 5. 简化检查图
+
+```text
+Paper-level storyline
+│
+├─ Results subsection titles
+│      └─ 能否连起来形成一篇小 essay？
+│
+├─ Each Results subsection
+│      └─ Motivation
+│          → Fact
+│          → 1-hop Opinion
+│          → Next Question
+│
+└─ Discussion
+       └─ 2-hop Interpretation (this study)
+           → General Principle (beyond this study)
+           → Raise New Questions
+           → Limitations
+           → Future Studies
+           → Conclusion Sentence
+```
+
+整个检查可以压缩成三个问题：
+
+> **1. 只看 Introduction 各段段首句，能否形成 Final Goal → Previous Studies → Missing Component → This Study 的问题链？**
+
+> **2. 只看 Results titles，story 是否成立？**
+
+> **3. 进入每个 Results subsection，是否形成 Motivation → Fact → 1-hop Opinion？**
+
+> **4. 进入 Discussion，是否完成 this study → beyond this study → new questions → limitations → future studies → conclusion？**
+
+如果这四层都成立，一篇论文的主要逻辑链通常就是清楚的。
+
