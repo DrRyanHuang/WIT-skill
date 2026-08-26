@@ -1,0 +1,1 @@
+Tests evaluate WIT itself using studies that were developed independently of WIT.

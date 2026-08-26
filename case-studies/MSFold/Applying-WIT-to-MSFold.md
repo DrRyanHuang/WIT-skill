@@ -1,19 +1,19 @@
-# WIT Case Study: Auditing the Latest MSFold Manuscript with WIT
+# Applying WIT to MSFold: A Retrospective Case Study
 
 **Paper:** *Sampling in structure-token space enables accurate prediction of multiple protein conformations*  
 **Reviewed version:** latest manuscript provided by the user, `MSFold (3)(1).pdf`  
 **Topic:** multi-conformation protein prediction using ESM3 structure-token space and parallel tempering  
-**Role in WIT:** Constructive validation rather than fully independent external validation. Because the development and writing of MSFold have already been influenced by WIT discussions, this case is most useful for testing whether WIT helps produce a clear and defensible scientific story—and whether it can still expose weaknesses in an already well-developed manuscript.
+**Role in WIT:** Application case study. MSFold was developed and written while WIT itself was still taking shape, so this is not an independent test of WIT. Instead, it retrospectively shows how WIT can be used in a real research project to organize scientific questions, interpret findings, choose informative next steps, calibrate claims, and shape the paper's scientific story.
 
 ---
 
-## 1. Overall Assessment
+## 1. How WIT Is Applied in This Case
 
-Applying WIT to the latest MSFold manuscript leads to the following overall judgment:
+Applying WIT to MSFold provides a way to reconstruct and continue the project as a sequence of scientific reasoning moves rather than as a sequence of writing edits:
 
-> **The central scientific story is already quite complete, and both the Results progression and the abstraction level of the Discussion closely match the reasoning structure that WIT aims to encourage.**
+> **WIT helps connect the project's research decisions and writing decisions: the central question, experiments, findings, follow-up questions, claim strength, and paper structure can be treated as one continuous reasoning process.**
 
-However, WIT also exposes several issues that deserve attention:
+Using WIT on the current manuscript highlights several concrete places where the research or writing can still be strengthened:
 
 1. **The Introduction has a strong “missing component = sampling” storyline, but ranking is also presented as a real bottleneck; the hierarchy between the primary and secondary bottlenecks should be made clearer.**
 2. **In Results 2.6, the manuscript moves from a limited representation comparison toward the broader statement that sampling depends on representation; this is already close to a 2-hop / general-principle claim and should be carefully bounded.**
@@ -21,11 +21,11 @@ However, WIT also exposes several issues that deserve attention:
 4. **Because multi-conformation success is based on the best structures in an ensemble, whether baseline comparisons use matched sampling budgets / ensemble sizes is a high-priority reviewer question; this is not made clear in the main text.**
 5. **Boundary-condition analysis could be strengthened: on which proteins and transition types does MSFold succeed or fail? This may be a relatively low-cost, high-information-gain analysis.**
 
-Thus, MSFold should not be treated as a case in which “every WIT box is checked.”
+The purpose of this case is therefore not to show that MSFold “checks every WIT box.” Instead, it illustrates how WIT can be used as a working partner throughout a real project:
 
-Rather, it illustrates:
+> **Finding → Question → Competing Explanations → Discriminating Test → Interpretation → Next Step → Scientific Story**
 
-> **The value of WIT is to continue searching for claim–evidence mismatches, competing explanations, and boundary conditions even after the scientific story is already strong.**
+Even when the story is already strong, WIT keeps asking where claims outrun evidence, which explanations remain viable, and which boundary conditions are still unknown.
 
 ---
 
@@ -95,7 +95,7 @@ This closely matches the WIT Introduction logic:
 
 > **Final Goal → Necessary Components → Established Components → Missing Component → This Study**
 
-### WIT Judgment
+### WIT Application
 
 **Strong.**
 
@@ -316,17 +316,17 @@ Read in sequence, they reconstruct a clear question chain:
 > → **Why does representation matter?**  
 > → **After exploration, how should useful outputs be selected?**
 
-### WIT Judgment
+### WIT Application
 
 **Very strong.**
 
 This is a canonical example of **Finding-driven Results**.
 
-Together with AlphaGo's pipeline-driven Results, the two cases support the revised WIT principle:
+For MSFold, the practical WIT lesson is:
 
 > **Results should expose the logical progression of the scientific story.**
 
-They do not support the stronger and less accurate rule that every Results section must use one particular title style.
+Here that progression is finding-driven. WIT does not require a particular title syntax; it asks whether the sequence of Results makes the reasoning recoverable.
 
 ---
 
@@ -352,7 +352,7 @@ This is a clean:
 
 without prematurely jumping to the broader “representation + search” principle.
 
-### WIT Judgment
+### WIT Application
 
 **Very good.**
 
@@ -423,7 +423,7 @@ This provides meaningful discrimination and supports:
 
 > **sampling strategy is a critical determinant**
 
-### WIT Judgment
+### WIT Application
 
 **Scientifically stronger than an ordinary baseline comparison.**
 
@@ -481,7 +481,7 @@ This supports:
 
 > **high-T exploration + low-T refinement + replica exchange**
 
-### WIT Judgment
+### WIT Application
 
 Sections 2.4 and 2.5 may look similar superficially, but their reasoning functions differ:
 
@@ -583,7 +583,7 @@ But there is not evidence that:
 
 The Discussion appropriately acknowledges that reliable selection of alternative conformations remains unresolved.
 
-### WIT Judgment
+### WIT Application
 
 The overall claim is reasonably restrained.
 
@@ -599,7 +599,7 @@ This would align claim strength more closely with evidence strength.
 
 ---
 
-# 10. Discussion: Does It Complete the WIT Core Functions?
+# 10. Discussion: Applying the WIT Core Functions
 
 The revised WIT does not require a fixed six-part Discussion. It focuses on two core functions:
 
@@ -666,7 +666,7 @@ This is a strong example of:
 
 ## 10.3 Optional Extensions: Limitations / Future Studies
 
-Unlike AlphaGo, MSFold benefits from explicit limitations.
+For MSFold, explicit limitations are scientifically useful because several unresolved bottlenecks are central to the story.
 
 The current Discussion identifies:
 
@@ -690,18 +690,17 @@ Thus the Future Study direction:
 
 is not a wish list.
 
-### WIT Judgment
+### WIT Application
 
 **This is a good use of optional Discussion extensions.**
 
-AlphaGo shows that Limitations / Future Studies are not mandatory.  
-MSFold shows that:
+WIT does not treat Limitations / Future Studies as mandatory surface sections. In MSFold, however:
 
 > **when an unresolved bottleneck is central to the scientific story, it should be stated explicitly.**
 
 ---
 
-# 11. Falsification / Counterexample Check
+# 11. Using WIT for Falsification / Counterexample Checks
 
 ## 11.1 “The MSFold Gain Is Merely Memorization”
 
@@ -885,7 +884,7 @@ This is not a fatal flaw. It is a claim-calibration issue.
 
 ---
 
-# 14. Information Gain: What Should Be Done Next?
+# 14. Information Gain: Choosing the Next Step with WIT
 
 If WIT is used to choose the next experiment—not simply to list everything that could be done—the priorities might be:
 
@@ -942,7 +941,7 @@ These may align more directly with the actual selection problem than average TM-
 
 ---
 
-# 15. Research Storyline Freeze
+# 15. Freezing the Research Storyline with WIT
 
 Under WIT, the latest MSFold storyline can be frozen as:
 
@@ -974,139 +973,109 @@ Once this storyline is frozen, every proposed new experiment should be evaluated
 
 ---
 
-# 16. What Does MSFold Tell Us About WIT Itself?
+---
 
-MSFold cannot serve as a fully independent validation of WIT because:
+# 16. How WIT Was Applied to MSFold
 
-> **its writing has already been influenced by WIT.**
+MSFold is best treated as an **application case**, not as evidence that independently validates WIT. The project and WIT developed partly in parallel: some of the reasoning patterns were already being used before they were given their current WIT names.
 
-However, it can still test whether WIT has practical usefulness.
+A retrospective reconstruction shows five especially important uses.
 
-## 16.1 Parts of WIT Supported by MSFold
+## 16.1 Opening Findings into New Questions
 
-### (1) Finding → New Question
+The Results story grows through a sequence such as:
 
-The Results progression clearly grows as:
-
-> works  
-> → generalizes?  
-> → why?  
-> → how?  
-> → what role does representation play?  
+> works
+> → generalizes?
+> → why?
+> → how?
+> → what role does representation play?
 > → how should outputs be ranked?
 
-This shows that WIT corresponds to genuine research progression rather than merely paper outlining.
+This is the WIT loop in practice:
 
-### (2) Fact → 1-hop → 2-hop → Abstraction
+> **Finding → New Question → Answerability Check → New Analysis / Experiment → New Finding**
 
-- Results 2.1: Fold 2 improvement;
-- Results 2.3: sampling matters;
-- Results 2.5: replica-exchange mechanism;
-- Results 2.6: representation matters;
-- Discussion: representation + search.
+The point is not to force every project through the same list of questions. The point is to prevent a useful finding from being treated as the end of the reasoning process.
 
-The hierarchy is clear.
+## 16.2 Separating Evidence from Inference Depth
 
-### (3) Competing Hypotheses → Discriminating Test
+MSFold repeatedly benefits from distinguishing:
 
-Temporal holdout, same-representation sampling comparisons, and exchange ablation all instantiate this principle.
+> **Fact → restrained 1-hop interpretation → integrated 2-hop interpretation → broader abstraction**
 
-### (4) Question Generator, Not Checklist Completer
+For example:
 
-MSFold does not need to “fill all six dimensions.”
+- benchmark data support improved Fold 2 recovery;
+- same-representation sampling comparisons support the importance of sampling;
+- mechanism experiments support the role of replica exchange;
+- representation analyses support a bounded claim about accessible moves;
+- the Discussion can then integrate these findings into the broader **representation + search** principle.
 
-The value of WIT is that it exposes high-value remaining questions about:
+This helps decide not only **what to say**, but also **where a claim belongs** and **how strongly it should be stated**.
 
-- boundary conditions;
-- budget fairness;
-- representation causality;
-- ranking.
+## 16.3 Turning Alternative Explanations into Experiments
 
----
+Several parts of MSFold can be formulated as competing hypotheses:
 
-## 16.2 What MSFold Teaches WIT in Return
+- memorization vs. generalization;
+- representation vs. sampling;
+- high temperature alone vs. temperature coupling with replica exchange.
 
-### (1) A Project Can Have a Primary Missing Component and Secondary Bottlenecks
+WIT turns these from discussion points into a design question:
 
-MSFold's primary innovation is sampling, while ranking remains a real bottleneck.
+> **What experiment most strongly distinguishes the plausible explanations?**
 
-Thus the WIT “missing component” concept should not imply that:
+Temporal holdout, same-representation sampling comparisons, and exchange ablation are examples of experiments with high discriminating value.
 
-> **a project can have only one gap.**
+## 16.4 Choosing High-Information Next Steps
 
-A better formulation is:
+Once the main benchmark result is established, WIT discourages adding experiments merely because they are easy or conventional. It asks which remaining uncertainty matters most.
 
-> **The central story should identify a primary bottleneck, while secondary bottlenecks may remain.**
+For the current MSFold manuscript, this leads to priorities such as:
 
-### (2) The Boundary Between 1-hop and General Principle Is Not Mechanical
+1. matched sampling-budget / ensemble-size controls;
+2. systematic failure and boundary-condition analysis;
+3. stronger isolation of representation effects;
+4. task-oriented evaluation of ranking.
 
-The statement in Results 2.6 that:
+These steps are valuable because they can change or sharpen the interpretation of the central claim, not merely add more supporting examples.
 
-> “sampling depends on representation”
+## 16.5 Connecting Research and Writing
 
-can be viewed both as a subsection-level synthesis and as the beginning of a broader principle.
-
-Thus 1-hop / 2-hop should be treated as:
-
-> **an inference-distance diagnostic**
-
-rather than a rigid sentence classifier.
-
-### (3) A Good WIT Audit Should Generate New Scientific Questions
-
-The most useful outcome of this audit is not:
-
-> “MSFold conforms to WIT.”
-
-It is that WIT generates actionable questions:
-
-- Is the sampling budget matched fairly?
-- Where are the failure boundaries?
-- Can the representation effect be isolated more cleanly?
-- Which metrics best evaluate ranking in the actual use case?
-
-This directly supports the WIT meta-principle:
-
-> **WIT is a question generator, not a checklist completer.**
-
----
-
-# 17. Final Evaluation
-
-The latest MSFold manuscript is a strong constructive case for WIT.
-
-Its scientific story can be compressed as:
+WIT treats the paper structure as a consequence of the research logic rather than as a separate polishing stage. In MSFold:
 
 > **Performance → Generalization → Cause → Process → Mechanism → Representation → Selection**
 
-The Discussion then rises to:
+provides the Results progression, while the Discussion integrates these local findings into a broader interpretation.
 
-> **Integrated Interpretation → Representation + Search Principle → Limitations / Ranking Bottleneck → General Take-home Message**
+This is the sense in which **Writing Is Thinking**: deciding how to write the Results and Discussion exposes whether the underlying reasoning chain is complete, overextended, or missing an important link.
 
-From a WIT perspective, the manuscript's main strength is therefore not simply:
+---
 
-> **“There are many experiments.”**
+# 17. Take-Home Message from the MSFold Case
 
-It is:
+MSFold illustrates WIT as a tool for **human–LLM collaborative scientific research and writing**. It does not ask the LLM to autonomously produce a paper while the researcher waits. Instead, it uses the LLM to extend, challenge, organize, and audit the researcher's reasoning while keeping the researcher responsible for the scientific judgments that matter most.
 
-> **Each major experiment serves a distinct reasoning function.**
+In this case, WIT helps with four connected tasks:
 
-The most valuable next steps are probably not additional similar benchmarks, but:
+> **open the scientific question space**
+> → **turn findings into discriminating next questions**
+> → **keep claims aligned with evidence**
+> → **convert the reasoning chain into a coherent scientific story**
 
-> **fairness controls, boundary analysis, stronger causal isolation of representation effects, and calibration of the ranking claim.**
+The most valuable next work is therefore not simply “more experiments.” It is the work that most reduces uncertainty about the central scientific interpretation.
 
-In other words:
-
-> **The scientific story is close to complete; further work should increase the discriminating power of the evidence and the precision of the claims rather than simply lengthen the story.**
+> **Advance the research. Grow the researcher.**
 
 ---
 
 ## Source
 
-This case study is based only on the latest manuscript provided by the user:
+This case study is derived from the current WIT repository version of `Assess-WIT-using-MSFold.md`, which in turn is based on the manuscript:
 
 > *Sampling in structure-token space enables accurate prediction of multiple protein conformations*
 
-Reviewed file: `MSFold (3)(1).pdf`.
+Reviewed manuscript file: `MSFold (3)(1).pdf`.
 
 Draft placeholders such as `XXX` and incomplete figure / supplementary references are not treated here as scientific-reasoning flaws.

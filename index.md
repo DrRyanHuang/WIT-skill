@@ -30,10 +30,12 @@ WIT helps researchers:
 
 **Finding → Question → Test → Finding**
 
-## Assess WIT on Classic Papers
+## Assess WIT using Classic Papers
 
 - AlphaGo
-👉 [Assess WIT using AlphaGo](Assess-WIT-on-Classic-Papers/AlphaGo/Assess-WIT-using-AlphaGo.md)
-👉 [中文版本](Assess-WIT-on-Classic-Papers/AlphaGo/检验WIT-using-AlphaGo.md)
+👉 [Assess WIT using AlphaGo](tests/AlphaGo/Assess-WIT-using-AlphaGo.md)
+👉 [中文版本](tests/AlphaGo/检验WIT-using-AlphaGo.md)
 
+## Applying WIT to Research and Writing
 
+- TBA
