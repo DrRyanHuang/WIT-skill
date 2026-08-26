@@ -33,7 +33,7 @@ WIT helps researchers:
 ## Assess WIT on Classic Papers
 
 - AlphaGo
-👉 [Assess WIT using AlphaGo](Assess-WIT-on-Classic-Papers/Assess-WIT-using-AlphaGo.md)
-👉 [中文版本](Assess-WIT-on-Classic-Papers/检验WIT-using-AlphaGo.md)
+👉 [Assess WIT using AlphaGo](Assess-WIT-on-Classic-Papers/AlphaGo/Assess-WIT-using-AlphaGo.md)
+👉 [中文版本](Assess-WIT-on-Classic-Papers/AlphaGo/检验WIT-using-AlphaGo.md)
 
 
