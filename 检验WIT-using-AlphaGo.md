@@ -1,4 +1,4 @@
-# WIT 案例：用 WIT 检验 AlphaGo 论文
+# WIT 案例：用AlphaGo论文检验WIT
 
 **论文：** Silver, D. et al. *Mastering the game of Go with deep neural networks and tree search*. Nature 529, 484–489 (2016).  
 **DOI：** 10.1038/nature16961  

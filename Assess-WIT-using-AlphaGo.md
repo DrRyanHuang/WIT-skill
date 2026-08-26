@@ -1,4 +1,4 @@
-# WIT Case Study: Auditing the AlphaGo Paper with WIT
+# WIT Case Study: Auditing WIT using the AlphaGo Paper
 
 **Paper:** Silver, D. et al. *Mastering the game of Go with deep neural networks and tree search*. Nature 529, 484–489 (2016).  
 **DOI:** 10.1038/nature16961  
