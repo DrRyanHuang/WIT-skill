@@ -31,10 +31,26 @@ Read one complete authoritative workflow before applying WIT:
 - English output: [WIT-Scientific-thinking-and-writing-skill.md](WIT-Scientific-thinking-and-writing-skill.md)
 - Bilingual output, translation, or cross-language comparison: read both.
 
-Load a case study only when it changes the current judgment:
-- Read [Assess-WIT-using-AlphaGo.md](Assess-WIT-using-AlphaGo.md), or its [Chinese version](检验WIT-using-AlphaGo.md), for AlphaGo, external tests or refinements of WIT, or method/system papers where pipeline-driven Results and non-formulaic Discussion matter.
-- Read [Assess-WIT-using-MSFold.md](Assess-WIT-using-MSFold.md), or its [Chinese version](检验WIT-using-MSFold.md), for MSFold, protein-structure or bioinformatics work involving representation, search, sampling, or ranking, or a constructive manuscript audit.
-Treat the workflows as the method and the cases as stress tests, not as evidence for unrelated scientific claims. Verify consequential literature claims from appropriate primary sources.
+Load supporting material only when it is relevant to the current task.
+
+### Tests: assess WIT itself
+
+Use materials in `tests/` when evaluating, stress-testing, or refining WIT itself. Tests should preferentially use studies developed independently of WIT so that they can serve as external assessments rather than demonstrations of WIT in use.
+
+- Read [Assess-WIT-using-AlphaGo.md](tests/Assess-WIT-using-AlphaGo.md), or its [Chinese version](tests/Assess-WIT-using-AlphaGo-cn.md), for an external assessment of WIT using a study developed independently of WIT, especially when testing whether WIT can accommodate pipeline-driven Results and non-formulaic Discussion.
+
+### Case studies: illustrate WIT in practice
+
+Use materials in `case-studies/` when an example of applying WIT to a real scientific project would improve the current reasoning or explanation.
+
+- Read [Applying-WIT-to-MSFold.md](case-studies/MSFold/Applying-WIT-to-MSFold.md), or its [Chinese version](case-studies/MSFold/Applying-WIT-to-MSFold-cn.md), for a real-world example of applying WIT to scientific research and writing, including representation, search, sampling, ranking, manuscript logic, and next-step decisions.
+
+Treat these resource types differently:
+- **Tests assess WIT itself.**
+- **Case studies illustrate how WIT is applied.**
+- **Do not treat a case study as independent validation of WIT.**
+
+Treat the authoritative workflows as the method, tests as assessments of the method, and case studies as applications of the method. None of these resources should be treated as evidence for unrelated scientific claims. Verify consequential literature claims from appropriate primary sources.
 ## Select the requested mode
 
 Use only the mode or combination needed; do not dump the full framework by default.
