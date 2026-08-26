@@ -4,7 +4,7 @@ By Dongbo Bu
 Institute of Computing Technology,  
 Chinese Academy of Sciences  
 Email: dbu@ict.ac.cn  
-2026/08/20
+2026/08/27
 
 
 > **贯穿示例：** 本文主要以 **MSFold** 和 **AlphaGo** 两篇研究作为贯穿示例。MSFold 代表蛋白质结构 / 生物信息学研究，AlphaGo 代表经典 AI / method-system research。两者用于从不同研究范式解释、检验和修正 WIT，而不是要求所有论文都采用相同的表面写法。
@@ -37,6 +37,18 @@ WIT 内部使用 **REWRITE loop** 作为执行循环：
 
 WIT 的作用是帮助研究者暴露可能遗漏的 scientific dimensions、competing explanations 和 unresolved questions；它不要求每个 project 把所有问题逐项回答，也不要求每篇论文把所有模块逐项写完。
 
+> **人机协同原则：推进研究，成长研究者。**  
+> **Advance the research. Grow the researcher.**
+
+WIT 不仅要帮助研究者把研究做得更好，也要让研究者在协同过程中提升提问、解释证据、比较不同解释、设计实验、校准 claim 和进行 scientific judgment 的能力。如果 paper 变好了，而研究者只是被动等待 AI 产出，那么这种 human–LLM collaboration 并没有达到 WIT 的目标。
+
+> **Automate labor; augment judgment.**  
+> **自动化劳动，增强判断。**
+
+对于低 learning-value 的劳动，例如检索整理、格式处理、重复性 coding、机械分析和文字整理，可以充分利用 AI 自动化；但不应把研究者本应掌握的 reasoning 自动化掉。研究者应持续参与高价值的 judgment nodes：什么问题值得研究、一个重要 finding 应如何解释、有哪些 competing hypotheses、哪个 experiment 最有 discrimination power、证据能够支持多强的 claim、结论的 boundary 在哪里，以及什么时候应该停止扩展研究。
+
+因此，LLM 在 WIT 中应主要扮演 **scaffold、challenger、generator 和 auditor of reasoning**：必要时先让研究者给出初步判断，再补充遗漏、提出反例、比较 alternatives、帮助修正判断。这并不意味着每次都要强行采用苏格拉底式问答；如果用户明确要求直接答案，或者处于 Deadline Mode，WIT 应直接帮助完成任务，同时仍把关键假设、备选解释和决策逻辑显性化。
+
 ## 2. WIT 解决哪些痛点问题
 
 WIT 主要解决科学研究与论文写作中以下常见困惑：
@@ -61,6 +73,9 @@ WIT 主要解决科学研究与论文写作中以下常见困惑：
 
 （7）**真实研究会出现异常结果、审稿人挑战和 deadline。**  
    如何处理 unexpected findings？如何从 reviewer perspective 做压力测试？如何在有限时间和资源下形成一个最小但完整、可信、可辩护的 scientific story？
+
+（8）**AI 可以提高研究产出，但如果把 reasoning 过度外包，也可能削弱研究者自身的科研能力。**  
+   如何让 human–LLM collaboration 在推进 project 的同时，也训练研究者提出问题、解释 finding、比较 hypotheses、选择实验和独立进行 scientific judgment 的能力？
 
 ## 3. 如何使用 WIT
 
@@ -1614,6 +1629,14 @@ Storyline Freeze 不是不允许研究变化。
 ---
 
 ## 13. WIT 的核心原则
+
+> **推进研究，成长研究者。**  
+> **Advance the research. Grow the researcher.**
+
+> **Automate labor; augment judgment.**  
+> **自动化劳动，增强判断。**
+
+> **不要把研究者本应掌握的 reasoning 自动化掉。**
 
 > **WIT 用来生成问题，而不是用来完成清单。**
 

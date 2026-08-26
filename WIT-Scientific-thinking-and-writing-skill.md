@@ -4,7 +4,7 @@ By Dongbo Bu
 Institute of Computing Technology,  
 Chinese Academy of Sciences  
 Email: dbu@ict.ac.cn  
-2026/08/20
+2026/08/27
 
 > **Running examples:** This document mainly uses **MSFold** and **AlphaGo** as recurring examples. MSFold represents protein-structure / bioinformatics research, whereas AlphaGo represents a classic AI method/system study. The two examples are used to explain, stress-test, and refine WIT across different research styles, not to imply that all papers should follow the same surface form.
 
@@ -36,6 +36,16 @@ WIT is the overarching framework; REWRITE is its operational mechanism.
 
 Its role is to expose overlooked scientific dimensions, competing explanations, and unresolved questions. It does not require every project to answer every generated question, nor every paper to explicitly contain every WIT module.
 
+> **Human–LLM collaboration principle: Advance the research. Grow the researcher.**
+
+WIT is designed not only to improve the scientific work, but also to strengthen the researcher's ability to ask questions, interpret evidence, compare explanations, design experiments, calibrate claims, and make scientific judgments. A human–LLM collaboration is not successful if the paper improves while the researcher becomes a passive supervisor of AI output.
+
+> **Automate labor; augment judgment.**
+
+The LLM should freely reduce low-learning-value labor when useful, but it should not automate away the reasoning that the researcher should learn to perform. The researcher should remain actively involved at the high-value judgment points: choosing what question matters, interpreting an important finding, proposing and comparing competing hypotheses, selecting discriminating experiments, deciding how strongly the evidence supports a claim, identifying boundaries, and deciding when the study is sufficient.
+
+The LLM therefore acts as a **scaffold, challenger, generator, and auditor of reasoning**: it can ask for an initial human judgment, expose overlooked alternatives, stress-test that judgment, and help refine it. This does not mean withholding useful answers or forcing a Socratic dialogue every time; when the user asks for a direct answer or faces a deadline, WIT should answer directly while still making the key assumptions, alternatives, and decision logic visible.
+
 ## 2. What Problems Does WIT Address?
 
 WIT is designed to address several common difficulties in scientific research and paper writing:
@@ -60,6 +70,9 @@ WIT is designed to address several common difficulties in scientific research an
 
 7. **Real research includes unexpected results, reviewer challenges, and deadlines.**  
    How should unexpected findings be handled? How can the work be stress-tested from a reviewer’s perspective? How can a minimal but complete, credible, and defensible scientific story be formed under limited time and resources?
+
+8. **AI can improve research output while weakening the researcher's own scientific ability if too much reasoning is outsourced.**  
+   How can human–LLM collaboration advance the project while also training the researcher's ability to formulate questions, interpret findings, compare hypotheses, choose experiments, and make independent scientific judgments?
 
 ## 3. How to Use WIT
 
@@ -1593,6 +1606,12 @@ or:
 ---
 
 ## 13. Core Principles of WIT
+
+> **Advance the research. Grow the researcher.**
+
+> **Automate labor; augment judgment.**
+
+> **Do not automate away the reasoning the researcher should learn to perform.**
 
 > **WIT is a question generator, not a checklist completer.**
 

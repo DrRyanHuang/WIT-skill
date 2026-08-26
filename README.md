@@ -1,19 +1,35 @@
 # WIT
 
-**WIT (Writing Is Thinking)** is a skill for **scientific thinking and writing**.
+**WIT (Writing Is Thinking)** is a **human–LLM collaborative skill for scientific thinking and writing**.
+
+> **Advance the research. Grow the researcher.**
+
+WIT is designed not only to improve scientific work, but also to strengthen the researcher's ability to ask questions, interpret evidence, design experiments, and make scientific judgments.
+
+> **Automate labor; augment judgment.**
+
+WIT uses the LLM to extend, challenge, scaffold, and audit the researcher's thinking—not simply to replace it.
+
+Core principle:
+
+> **WIT specifies scientific reasoning functions, not a rigid surface template for papers.**
 
 It helps researchers:
 
-- open up vague ideas into testable questions;
-- structure Results as **Fact → 1-hop Opinion**;
-- distinguish Results from Discussion;
-- move from findings to broader principles;
-- decide which questions should become new Results and which belong in Limitations / Future Studies;
-- audit the logical chain of a paper.
+- open vague ideas into a testable scientific question space;
+- organize Results around evidence and restrained interpretation;
+- distinguish local Results-level interpretation from integrated Discussion-level interpretation;
+- move from findings toward broader meaning or general principles;
+- generate competing hypotheses and choose high-information next experiments;
+- decide which new questions deserve further experiments and which belong to boundaries, limitations, or future studies;
+- audit the logical chain and claim–evidence alignment of a paper;
+- keep the researcher actively involved in the scientific judgments that matter most.
 
 ## Use
 
-Ask the AI to read:
+If your agent supports `SKILL.md`, install or expose this repository as a skill and let the agent load `SKILL.md`.
+
+Otherwise, ask the AI to read:
 
 `WIT-Scientific-thinking-and-writing-skill.md`
 
@@ -27,14 +43,23 @@ Then invoke it directly:
 
 > Use WIT to audit the logical chain of this paper.
 
+> Use WIT in human–LLM collaboration mode: help me think, not just finish the task for me.
+
 ## Paper Logic Audit
 
-- **Introduction:** Final Goal → Missing Component → This Study
-- **Results titles:** can they form a small essay?
-- **Results subsection:** Motivation → Fact → 1-hop Opinion
-- **Discussion:** 2-hop Interpretation → General Principle → New Questions → Limitations → Future Studies → Conclusion
+- **Introduction:** does it explain why the study is necessary?
+- **Results titles:** do they form a coherent progression? Question-driven and pipeline-driven forms can both work.
+- **Results subsection:** is the underlying Motivation / Question → Fact → restrained 1-hop Opinion → Next Step chain recoverable?
+- **Discussion core:** Integrated Interpretation → Broader Meaning / justified abstraction
+- **Discussion optional:** New Questions → Boundary / Limitations → Future Studies, when scientifically useful
 
-> **Writing is thinking.**
+> **Audit the reasoning, not the template.**
+
+Three ideas summarize WIT:
+
+> **Writing is thinking.**  
+> **WIT is a question generator, not a checklist completer.**  
+> **Advance the research. Grow the researcher.**
 
 For details, see `WIT-Scientific-thinking-and-writing-skill.md`.
 
