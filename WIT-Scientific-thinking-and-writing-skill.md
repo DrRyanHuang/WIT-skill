@@ -226,82 +226,138 @@ These are not seven independent modules, but one continuous cycle.
 
 ### 4.1 R — Research Question
 
-Do not begin with “What method should I use?” Do not organize the research around an algorithm, model, dataset, benchmark, or visualization technique.
+Problem formulation is not merely choosing a topic. It means:
+
+> **expanding a single question into a scientific question space.**
+
+The goal is not to mechanically list interrogative words, but to map the problem into six relatively orthogonal scientific dimensions.
+
+#### 4.1.1 Whether → Existence
 
 First ask:
 
-> **What scientific question are we actually trying to answer?**
+> **Does the phenomenon really exist?**
 
-Academic research often begins with a process of **opening up the problem**. This is more than merely choosing a topic.
+This is the basic existence question.
 
-> **To formulate a research problem is to open it up.**
+For example:
 
-A practical way to do this is to examine the same core phenomenon from multiple dimensions:
+> Does MSFold truly recover alternative conformations more effectively than standard decoding?
 
-> **When / What / Why / How / Whether / To what extent**
+This dimension asks whether the phenomenon is stable, statistically supported, reproducible, and more than an accidental observation.
 
-These question words are not merely linguistic forms. They correspond to different modes of scientific thinking:
+#### 4.1.2 What → Determinants
 
-- **When**: identify conditions and boundaries;
-- **What**: identify key factors, objects, or determining variables;
-- **Why**: identify causes, mechanisms, or explanations;
-- **How**: identify processes, pathways, or mechanisms of action;
-- **Whether**: test whether a phenomenon exists, is necessary, or generalizes;
-- **To what extent**: determine effect size, scope, and quantitative boundaries.
+Once the phenomenon is established, ask:
 
-Therefore, opening up a research problem can be understood as:
+> **What variables or factors determine whether it occurs and how strongly?**
 
-> **Starting from an initial question or finding, use these dimensions to expand a single-point problem into a question space.**
+For example:
 
-This approach applies both at the beginning of a project and after an important finding has been obtained.
+> What protein properties determine whether MSFold successfully recovers alternative conformations?
 
-Typical question types include:
+Possible determinants may include protein size, conformational-change type, sequence identity, token-space diversity, and sampling budget.
 
-#### 4.1.1 Whether
+This dimension asks:
 
-- Does X really improve Y?
-- Is the advantage stable?
-- Does it remain after controlling for other factors?
-- Does it generalize to new data, tasks, or systems?
+> **What determines the outcome?**
 
-#### 4.1.2 What
+#### 4.1.3 Why → Cause
 
-- Which component contributes the most?
-- What feature determines success or failure?
-- Which variable actually drives the observed phenomenon?
+Why does not ask for the detailed process. It asks:
 
-#### 4.1.3 How
+> **What causes the phenomenon?**
 
-- How does X change the representation?
-- How does an algorithm escape a local optimum?
-- How does structural information improve prediction?
+That is, identify the causal driver.
 
-#### 4.1.4 Why
+For example:
 
-- Why does X outperform Y?
-- What mechanism or principle explains the effect?
+> Why does standard decoding fail to recover alternative conformations?
 
-#### 4.1.5 When
+Possible causes include:
 
-- Under what conditions does the advantage appear?
-- When does it disappear?
-- What are the boundary conditions?
+- the states are not encoded in the representation;
+- search is trapped in a local mode;
+- the decoding objective favors the dominant state.
 
-#### 4.1.6 Where
+Thus:
 
-- In which data domains, tasks, organisms, systems, or regimes does it hold?
+> **Why asks what causes the phenomenon.**
 
-#### 4.1.7 To what extent
+#### 4.1.4 How → Mechanism
 
-- How strong is the effect?
-- Where is the quantitative boundary?
-- How much perturbation causes the conclusion to fail?
+How is different from Why.
 
-The starting point of a study should therefore be:
+Why asks:
 
-> **Scientific Question → Hypothesis → Experimental Design**
+> **What causes the phenomenon?**
 
----
+How asks:
+
+> **Through what process or mechanism does that cause produce the outcome?**
+
+For example:
+
+> If standard decoding fails because it becomes trapped in local modes, how does parallel tempering help cross token-space barriers and reach alternative states?
+
+Thus:
+
+> **Cause → Mechanism → Outcome**
+
+and:
+
+> **Why asks what causes it; How asks through what mechanism the cause produces the effect.**
+
+#### 4.1.5 When → Boundary Conditions
+
+When should not be interpreted only as time.
+
+It represents the more general question:
+
+> **Under what conditions does the conclusion hold or fail?**
+
+For example:
+
+- For which protein classes does it hold?
+- For which conformational-change types does it fail?
+- Is the effect stronger in low-data or high-data regimes?
+- Over what sequence-identity range does it generalize?
+- In which tissues, cell types, or spatial regions does it hold?
+
+Many questions that might previously have been phrased as “Where” are actually boundary-condition questions, so Where does not need to be a separate dimension.
+
+This dimension asks:
+
+> **What are the boundary conditions?**
+
+#### 4.1.6 To what extent → Magnitude
+
+Finally ask:
+
+> **How large is the effect, and over what range does it hold?**
+
+For example:
+
+- How much does the success rate improve?
+- Is the gain concentrated in only a few samples?
+- How large a conformational change can be recovered?
+- Is the effect practically meaningful, not merely statistically significant?
+
+This dimension concerns:
+
+> **Magnitude / effect size / range**
+
+Thus, opening up a research question can be represented as six scientific dimensions:
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+corresponding to:
+
+> **Whether → What → Why → How → When → To what extent**
+
+Not every project must answer all six. Their purpose is to systematically ask:
+
+> **Which important dimensions of the question space have not yet been opened?**
 
 ### 4.2 E — Examine the Literature
 
@@ -497,6 +553,151 @@ A good finding should open up a new question space.
 
 ---
 
+
+#### 4.5.1 Competing Hypotheses: Do Not Settle on a Single Explanation Too Early
+
+After a finding appears, do not ask only:
+
+> **Why did this happen?**
+
+Force yourself to construct multiple plausible explanations:
+
+> **Finding → Hypothesis A / Hypothesis B / Hypothesis C**
+
+For example:
+
+> Finding: MSFold still outperforms baselines on unseen proteins.
+
+Possible explanations include:
+
+- **H1:** the ESM3 token space contains generalizable alternative conformations;
+- **H2:** the gain mainly comes from a larger sampling budget;
+- **H3:** some structural-transition classes in the benchmark are intrinsically easier for parallel tempering.
+
+The next step should not be to choose the most appealing explanation, but to ask:
+
+> **What experiment can distinguish these competing hypotheses?**
+
+Mechanistic research should prioritize **discriminating experiments**, not merely accumulate supportive evidence.
+
+---
+
+#### 4.5.2 Falsification / Counterexample Check: Attack Your Own Conclusion
+
+For every important conclusion, ask:
+
+> **What result would falsify this conclusion?**
+
+and:
+
+> **What is the most plausible counterexample?**
+
+For example:
+
+> Claim: structural information improves OOD robustness.
+
+Do not only search for more supporting datasets. Also ask:
+
+- Is there a dataset where adding structural information hurts performance?
+- Does the advantage disappear when sequence diversity is already high?
+- Is the gain actually caused by additional model capacity rather than structural information itself?
+
+The purpose is to determine:
+
+> **Where is the evidence boundary of the claim?**
+
+If a conclusion has no clear potential falsifier, it is often not yet scientifically defined tightly enough.
+
+---
+
+
+##### What if a counterexample is found?
+
+Do not immediately conclude that the original conclusion is simply “wrong.” First classify the counterexample.
+
+- **Technical or data problem**: bug, measurement error, data leakage, sample contamination.  
+  → Fix the issue and rerun the experiment.
+- **Random noise**: the result is not reproducible.  
+  → Do not overturn the conclusion yet, but reduce confidence.
+- **Stable, reproducible counterexample**:  
+  → The claim should usually be revised rather than discarded outright.
+
+A stable counterexample can have three major scientific consequences:
+
+1. **Narrow the claim**
+
+For example:
+
+> “X always improves Y”
+
+may become:
+
+> “X improves Y under conditions A and B.”
+
+2. **Reveal a boundary condition**
+
+The counterexample may answer:
+
+> **When does this conclusion fail?**
+
+This can be more informative than accumulating additional supportive examples.
+
+3. **Rewrite the hypothesis or principle**
+
+If the counterexample strikes at the proposed mechanism, revisit the central claim and possibly the entire research storyline.
+
+Thus:
+
+> **Counterexample → Boundary Condition → Better Claim**
+
+A good counterexample does not necessarily weaken a paper; it can make the conclusion more precise and credible.
+
+##### What if no counterexample is found?
+
+Do not conclude that the claim has been “proven.”
+
+Instead, ask two further questions.
+
+1. **Was the falsification attempt strong enough?**
+
+Did we actively test:
+
+- adverse conditions;
+- extreme cases;
+- OOD data;
+- negative controls;
+- alternative explanations;
+- subgroups where failure is plausible?
+
+2. **Is the claim genuinely falsifiable?**
+
+If every possible result can be accommodated by rephrasing the claim, the claim may be too vague.
+
+State explicitly:
+
+> **What observation would make me accept that this claim is false?**
+
+The full logic is:
+
+> **Claim → Potential Falsifier → Test → Counterexample?**
+
+If a stable counterexample is found:
+
+> **Revise Claim / Identify Boundary / Rewrite Hypothesis**
+
+If none is found:
+
+> **The claim gains support, but is not “proven.”**
+
+If the potential falsifier cannot yet be tested:
+
+> **Record it as an unresolved question → Limitation / Future Study**
+
+A useful summary is:
+
+> **A failed falsification strengthens a claim; a successful falsification sharpens it.**
+
+
 ### 4.6 T — Test Answerability
 
 This is the key decision point in the REWRITE loop.
@@ -522,6 +723,34 @@ Likewise, if “Which component drives the improvement?” can be answered throu
 Only then should the question move into Discussion:
 
 > **New Question → Why the Current Study Cannot Answer It → Limitation → Future Study**
+
+---
+
+
+#### 4.6.3 Information Gain: Choose the Experiment That Most Changes Your Belief
+
+When several questions are answerable, do not choose only by convenience.
+
+A better rule is:
+
+> **Prioritize experiments with the highest information gain and discrimination power.**
+
+Ask:
+
+- If the result is A, how much would my interpretation change?
+- If the result is B, would I revise the central claim?
+- Can the experiment distinguish two currently plausible explanations?
+- Does it merely add another supporting example, or substantially reduce uncertainty?
+
+For example:
+
+- one more similar benchmark may increase confidence only slightly;
+- a control experiment that separates two competing mechanisms may change the interpretation entirely.
+
+Thus:
+
+> **Next experiment ≠ easiest experiment**  
+> **Next experiment = highest-value information test**
 
 ---
 
@@ -780,7 +1009,40 @@ This paragraph should still focus on:
 ---
 
 
-## 7. Reviewer Stress Test
+
+## 7. Claim–Evidence Mapping: What Exactly Supports Each Major Claim?
+
+Before the reviewer stress test, extract all major claims and map each one to its evidence:
+
+> **Claim → Figure / Table → Evidence → Strength → Remaining Uncertainty**
+
+Example:
+
+| Claim | Supporting evidence | Remaining uncertainty |
+|---|---|---|
+| MSFold improves alternative-conformation recovery | Fig. 2 benchmark | Could sampling budget explain part of the gain? |
+| The improvement is not due to memorization | unseen-protein test | Does this hold across all protein classes? |
+| Parallel tempering enables broader exploration | sampling analysis / ablation | Does it correspond to physical energy barriers? |
+
+Check:
+
+- Is there any major claim without direct evidence?
+- Is one figure being asked to support too many conclusions?
+- Does Discussion contain claims never supported in Results?
+- Is the strength of the claim greater than the strength of the evidence?
+- Should “demonstrates” be narrowed to “suggests”?
+
+This step establishes:
+
+> **Claim–Evidence alignment**
+
+If a claim cannot be mapped to explicit evidence:
+
+> **add evidence, narrow the claim, or remove it.**
+
+---
+
+## 8. Reviewer Stress Test
 
 Before submission, actively switch to a reviewer’s perspective.
 
@@ -794,19 +1056,19 @@ Generate:
 
 Then classify them.
 
-### 7.1 Can be resolved with additional experiments now
+### 9.1 Can be resolved with additional experiments now
 
 → Return to Results.
 
-### 7.2 Can be resolved through existing data analysis or interpretation
+### 9.2 Can be resolved through existing data analysis or interpretation
 
 → Strengthen Results / Discussion.
 
-### 7.3 Cannot genuinely be resolved within the current study
+### 9.3 Cannot genuinely be resolved within the current study
 
 → Write as a Limitation and design a corresponding Future Study.
 
-### 7.4 Fatal Flaw
+### 9.4 Fatal Flaw
 
 Examples include an unfair central comparison, mismatch between claim and experimental design, severe confounding, or a central conclusion unsupported by the available evidence.
 
@@ -824,7 +1086,7 @@ The reviewer perspective is a **stress test**; a limitation is only one possible
 
 ---
 
-## 8. Deadline Mode: How to Close a Study Under Limited Time
+## 9. Deadline Mode: How to Close a Study Under Limited Time
 
 WIT / REWRITE can create a problem: every finding can generate more questions, so research can continue indefinitely.
 
@@ -834,7 +1096,7 @@ Therefore, WIT includes a:
 
 > **Stop Rule / Minimum Sufficient Story**
 
-### 8.1 Near a Deadline: prioritize three types of questions
+### 9.1 Near a Deadline: prioritize three types of questions
 
 #### (1) Questions that could change the central claim
 
@@ -863,7 +1125,7 @@ Examples:
 
 If the cost is low and the information gain is high, prioritize them.
 
-### 8.2 Questions that can be deferred
+### 9.2 Questions that can be deferred
 
 If a question:
 
@@ -876,7 +1138,37 @@ then move it to:
 
 > **Discussion → Limitation → Future Study**
 
-### 8.3 Stop Rule
+
+### 9.3 Research Storyline Freeze: Prevent the Project from Expanding Without Focus
+
+At a mature stage of the project, temporarily freeze the storyline by writing down:
+
+> **Central Question**  
+> **Central Claim**  
+> **3–5 Key Findings**  
+> **General Principle**
+
+Then ask for every proposed new experiment:
+
+> **Will it change or substantially strengthen this storyline?**
+
+If it:
+
+- changes the central claim → high priority;
+- rules out an important competing hypothesis → high priority;
+- establishes an important boundary condition → potentially valuable;
+- merely adds another similar result → proceed cautiously.
+
+Storyline Freeze does not mean the story can never change. A strong unexpected finding may justify rewriting it.
+
+Its purpose is to prevent:
+
+> **the project from losing its center because too many “also possible” experiments are added.**
+
+---
+
+### 9.4 Stop Rule
+
 
 Stop expanding Results when:
 
@@ -892,7 +1184,7 @@ Principle:
 
 ---
 
-## 9. Where Should This Sentence Go? A Decision Tree
+## 10. Where Should This Sentence Go? A Decision Tree
 
 ```text
 What is this sentence doing?
@@ -921,9 +1213,9 @@ What is this sentence doing?
 
 ---
 
-## 10. The Two Loops Inside REWRITE
+## 11. The Two Loops Inside REWRITE
 
-### 10.1 Inner Loop: Research Progression
+### 12.1 Inner Loop: Research Progression
 
 > **Finding → Question → Answerability → Experiment → Finding**
 
@@ -931,7 +1223,7 @@ Purpose:
 
 > Drive the current project forward.
 
-### 10.2 Outer Loop: Interpretation and Abstraction
+### 12.2 Outer Loop: Interpretation and Abstraction
 
 > **Finding → Literature → Interpretation → Principle → New Question**
 
@@ -945,33 +1237,33 @@ Together, the two loops determine:
 
 ---
 
-## 11. Research Depth Diagnostic
+## 12. Research Depth Diagnostic
 
-### 11.1 Level 0 — Observation
+### 12.1 Level 0 — Observation
 
 > A > B.
 
 Only reports a phenomenon.
 
-### 11.2 Level 1 — Implication
+### 12.2 Level 1 — Implication
 
 > X improves Y.
 
 Identifies what the result means.
 
-### 11.3 Level 2 — Interpretation
+### 12.3 Level 2 — Interpretation
 
 > X improves Y because it changes Z.
 
 Begins to explain mechanism.
 
-### 11.4 Level 3 — General Principle
+### 12.4 Level 3 — General Principle
 
 > More generally, Z may govern this class of problems.
 
 Forms a transferable abstraction.
 
-### 11.5 Level 4 — Boundary / Mechanism Questions
+### 12.5 Level 4 — Boundary / Mechanism Questions
 
 Ask:
 
@@ -980,7 +1272,7 @@ Ask:
 - Why does it fail in some cases?
 - Are there counterexamples?
 
-### 11.6 Level 5 — New Research Program
+### 12.6 Level 5 — New Research Program
 
 Develop:
 
@@ -998,7 +1290,20 @@ or:
 
 ---
 
-## 12. Core Principles of WIT
+## 13. Core Principles of WIT
+
+
+> **Do not settle on one explanation too early; compare competing hypotheses.**
+
+> **Every important claim should survive a falsification / counterexample check.**
+
+> **Every major claim should map to explicit evidence.**
+
+> **Choose the next experiment by information gain, not convenience alone.**
+
+> **Freeze the storyline periodically to prevent uncontrolled project expansion.**
+
+
 
 > **Results are answers to questions.**
 

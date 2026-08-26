@@ -6,6 +6,7 @@ Chinese Academy of Sciences
 Email: dbu@ict.ac.cn  
 2026/08/20
 
+
 ## 1. WIT 的释义
 
 **WIT = Writing Is Thinking。**
@@ -226,82 +227,143 @@ WIT 内部通过 **REWRITE** 循环推进研究：
 
 ### 4.1 R — Research Question：研究问题
 
-不要从“我要用什么方法”开始，也不要从某个算法、模型、数据集、benchmark 或可视化技术开始组织研究。
+“开题”不只是确定一个题目，而是：
+
+> **把一个单点问题展开成一个 scientific question space。**
+
+这里不应只是机械地罗列疑问词。更本质的做法，是把问题展开成六类彼此尽量正交的科学维度。
+
+#### 4.1.1 Whether → Existence：现象是否存在？
 
 首先问：
 
-> **我们真正想回答的 scientific question 是什么？**
+> **这个现象真的存在吗？**
 
-学术研究通常有一个重要的“**开题**”过程。所谓开题，不只是确定一个题目，而是：
+这是最基础的 existence question。
 
-> **把问题打开。**
+例如：
 
-一个最有效、也最可操作的办法，就是围绕同一个核心现象，从多个问题维度继续展开：
+> MSFold 是否真的比标准 decoding 更容易恢复 alternative conformations？
 
-> **When / What / Why / How / Whether / To what extent**
+这一层的目标是确认：
 
-这些问题词并不是简单的语言形式，而是不同的科研思维方向：
+- 现象是否稳定存在；
+- 是否具有统计显著性；
+- 是否可重复；
+- 是否只是偶然结果。
 
-- **When**：寻找成立条件与边界；
-- **What**：寻找关键因素、对象或决定变量；
-- **Why**：寻找原因、机制或解释；
-- **How**：寻找过程、路径与实现机制；
-- **Whether**：检验现象是否成立、是否必要、是否可泛化；
-- **To what extent**：确定效应强度、适用范围与定量边界。
+#### 4.1.2 What → Determinants：哪些因素决定它？
 
-因此，“开题”的本质可以理解为：
+当现象存在后，进一步问：
 
-> **从一个初始问题或 finding 出发，用这些问题维度把单点问题展开成一个 question space。**
+> **哪些变量、因素或属性决定这个现象的强弱与出现？**
 
-这套方法既适用于研究刚开始时的选题与开题，也适用于得到一个重要 finding 之后继续生成新的 scientific questions。
+例如：
 
-常见问题类型包括：
+> 哪些 protein properties 决定 MSFold 是否能够恢复 alternative conformations？
 
-#### 4.1.1 Whether：是否成立
+可能的 determinants 包括 protein size、conformational change type、sequence identity、token-space diversity、sampling budget 等。
 
-- X 是否真的提高 Y？
-- 这种优势是否稳定？
-- 控制其他因素后是否仍然存在？
-- 是否能够泛化到新数据、新任务或新体系？
+这一层关注：
 
-#### 4.1.2 What：什么因素决定
+> **What determines the outcome?**
 
-- 哪个模块贡献最大？
-- 什么特征决定成功或失败？
-- 哪个变量真正驱动观察到的现象？
+#### 4.1.3 Why → Cause：为什么会发生？
 
-#### 4.1.3 How：如何发生
+Why 问的不是“具体过程怎么发生”，而是：
 
-- X 如何改变 representation？
-- 一个算法如何跳出局部最优？
-- 结构信息如何改善预测？
+> **什么原因导致了这个现象？**
 
-#### 4.1.4 Why：为什么发生
+即寻找 causal driver。
 
-- 为什么 X 会优于 Y？
-- 背后的机制或原理是什么？
+例如：
 
-#### 4.1.5 When：何时成立
+> 为什么标准 decoding 难以恢复 alternative conformations？
 
-- 在什么条件下优势出现？
-- 什么时候优势消失？
-- 边界条件是什么？
+可能原因包括：
 
-#### 4.1.6 Where：在哪里成立
+- representation 中根本没有编码这些 states；
+- search 被限制在局部 mode；
+- decoding objective 偏好 dominant state。
 
-- 在哪些数据域、任务、物种、体系或 regime 中成立？
+因此：
 
-#### 4.1.7 To what extent：成立到什么程度
+> **Why asks what causes the phenomenon.**
 
-- 效应有多强？
-- 定量边界在哪里？
-- 多大的扰动以后结论失效？
+#### 4.1.4 How → Mechanism：原因通过什么机制产生结果？
 
-研究起点应当形成：
+How 与 Why 不同。
 
-> **Scientific Question → Hypothesis → Experimental Design**
+Why 已经回答：
 
----
+> **是什么原因导致了现象？**
+
+How 则继续问：
+
+> **这个原因通过什么过程、路径或机制产生结果？**
+
+例如：
+
+> 如果原因是标准 decoding 容易陷入局部 mode，那么 parallel tempering 是如何帮助跨越 token-space barrier、进入 alternative states 的？
+
+因此：
+
+> **Cause → Mechanism → Outcome**
+
+以及：
+
+> **Why asks what causes it; How asks through what mechanism the cause produces the effect.**
+
+#### 4.1.5 When → Boundary Conditions：什么条件下成立或失效？
+
+这里的 When 不应只理解为时间。
+
+它代表更一般的：
+
+> **Under what conditions does the conclusion hold or fail?**
+
+例如：
+
+- 在哪些 protein classes 上成立？
+- 在哪些 conformational change types 上失效？
+- 在 low-data regime 还是 high-data regime 更明显？
+- 在什么 sequence identity 范围内成立？
+- 在哪些组织、细胞类型、空间区域中成立？
+
+原先可以归入 “Where” 的很多问题，本质上也属于这一维度，因此不再单独设置 Where。
+
+这一层关注：
+
+> **Boundary conditions**
+
+#### 4.1.6 To what extent → Magnitude：效应有多大？
+
+最后问：
+
+> **这个效应到底有多强？范围有多宽？**
+
+例如：
+
+- success rate 提高多少？
+- improvement 是否只在少数 samples 中出现？
+- 能恢复多大幅度的 conformational change？
+- effect size 是否具有实际意义，而不只是统计显著？
+
+这一层关注：
+
+> **Magnitude / effect size / range**
+
+因此，“把问题打开”可以压缩为六个科学维度：
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+对应：
+
+> **Whether → What → Why → How → When → To what extent**
+
+这六维并不要求每个 project 都全部回答，而是用于系统检查：
+
+> **当前研究的问题空间中，还有哪些重要维度没有被打开？**
 
 ### 4.2 E — Examine the Literature：审视文献
 
@@ -491,6 +553,153 @@ Results subsection 的结尾应当回答：
 
 ---
 
+
+#### 4.5.1 Competing Hypotheses：不要过早接受单一解释
+
+当一个 finding 出现后，不要只问：
+
+> **“为什么会这样？”**
+
+还应强制提出多个可能解释：
+
+> **Finding → Hypothesis A / Hypothesis B / Hypothesis C**
+
+例如：
+
+> Finding：MSFold 在未见蛋白上仍然优于 baseline。
+
+可能解释包括：
+
+- **H1：** ESM3 的 token space 确实编码了可泛化的 alternative conformations；
+- **H2：** improvement 主要来自更大的 sampling budget；
+- **H3：** benchmark 中某些结构类型更容易被 parallel tempering 恢复。
+
+真正有价值的下一步不是选择“最顺眼”的解释，而是问：
+
+> **什么实验能够区分这些 competing hypotheses？**
+
+因此，机制研究应优先寻找 **discriminating experiment**，而不是仅仅继续积累支持性证据。
+
+---
+
+#### 4.5.2 Falsification / Counterexample Check：主动攻击自己的结论
+
+对每个重要 conclusion，再反过来问：
+
+> **什么结果会推翻这个 conclusion？**
+
+以及：
+
+> **最可能的 counterexample 是什么？**
+
+例如：
+
+> Claim：结构信息提高了模型的 OOD robustness。
+
+不要只继续找支持这个 claim 的数据，还应问：
+
+- 是否存在加入结构信息后性能下降的数据集？
+- 在 sequence diversity 已经很高时，这个优势是否消失？
+- improvement 是否其实来自额外参数量，而不是结构信息本身？
+
+这一检查的目的不是“证明自己错”，而是确定：
+
+> **这个 claim 的证据边界在哪里？**
+
+如果一个 conclusion 没有明确的潜在反证条件，它往往还没有被定义得足够科学。
+
+---
+
+
+##### 如果找到了 counterexample，怎么办？
+
+不要立刻宣布“结论错了”。先判断反例属于哪一类：
+
+- **技术或数据问题**：如 bug、measurement error、data leakage、sample contamination。  
+  → 修正后重新实验。
+- **偶然噪声**：结果不可重复。  
+  → 暂不推翻 conclusion，但应降低 confidence。
+- **稳定、可重复的 counterexample**：  
+  → 这通常意味着原 claim 需要被修正，而不是简单丢弃。
+
+稳定反例通常有三种价值：
+
+（1）**收缩 claim**
+
+例如：
+
+> “X always improves Y”
+
+收缩为：
+
+> “X improves Y under conditions A and B.”
+
+（2）**发现 boundary condition**
+
+反例可能告诉我们：
+
+> **这个结论什么时候不成立？**
+
+这往往比继续堆支持性结果更有科学价值。
+
+（3）**重写 hypothesis / principle**
+
+如果反例击中了核心机制，就需要重新检查 central claim，甚至重写 research storyline。
+
+因此：
+
+> **Counterexample → Boundary Condition → Better Claim**
+
+一个好的反例未必削弱论文，反而可能让结论更精确、更可信。
+
+##### 如果找不到 counterexample，怎么办？
+
+也不能因此说：
+
+> **“Conclusion 已被证明。”**
+
+应继续检查两个问题：
+
+（1）**我们是否真的进行了足够强的 falsification？**
+
+是否主动测试了：
+
+- 最不利条件；
+- extreme cases；
+- OOD data；
+- negative controls；
+- alternative explanations；
+- 可能失败的 subgroups。
+
+（2）**这个 claim 是否具有可证伪性？**
+
+如果无论出现什么结果，都可以通过改写措辞让 claim 保持成立，那么这个 claim 可能定义得过于含糊。
+
+应明确写出：
+
+> **什么结果出现时，我会承认这个 claim 不成立？**
+
+因此完整流程是：
+
+> **Claim → Potential Falsifier → Test → Counterexample?**
+
+如果找到稳定反例：
+
+> **Revise Claim / Identify Boundary / Rewrite Hypothesis**
+
+如果没有找到：
+
+> **Claim gains support, but is not “proven.”**
+
+如果当前无法检验潜在 falsifier：
+
+> **记录为 unresolved question → Limitation / Future Study**
+
+可以把这一原则压缩成：
+
+> **A failed falsification strengthens a claim; a successful falsification sharpens it.**
+
+
 ### 4.6 T — Test Answerability：检验可回答性
 
 这是 WIT 中 REWRITE loop 最关键的决策点。
@@ -516,6 +725,36 @@ Results subsection 的结尾应当回答：
 问题才进入 Discussion：
 
 > **New Question → Why current study cannot answer → Limitation → Future Study**
+
+---
+
+
+#### 4.6.3 Information Gain：下一实验不是“最容易做”，而是“最能改变判断”
+
+当多个问题都可以继续实验时，不应只按方便程度选择。
+
+更好的原则是：
+
+> **优先选择 information gain 最大、最能区分 competing hypotheses 的实验。**
+
+可以问：
+
+- 如果实验结果为 A，我的判断会改变多少？
+- 如果结果为 B，我是否会修改 central claim？
+- 这个实验能否区分两个目前都合理的解释？
+- 它只是增加更多 supporting data，还是会真正减少 uncertainty？
+
+例如：
+
+- 再增加一个相似 benchmark，可能只让 confidence 从 0.85 变成 0.88；
+- 一个针对 competing hypotheses 的 control experiment，可能直接决定机制解释 A 还是 B。
+
+通常后者更值得优先做。
+
+因此：
+
+> **Next experiment ≠ easiest experiment**  
+> **Next experiment = highest-value information test**
 
 ---
 
@@ -776,7 +1015,40 @@ Future Work 不应该是一张愿望清单。
 ---
 
 
-## 7. Reviewer Stress Test
+
+## 7. Claim–Evidence Mapping：投稿前检查“每个结论凭什么成立”
+
+在进入 reviewer stress test 之前，先把论文中的 major claims 全部抽取出来，并为每个 claim 建立 evidence map：
+
+> **Claim → Figure / Table → Evidence → Strength → Remaining Uncertainty**
+
+例如：
+
+| Claim | Supporting evidence | 仍存在的问题 |
+|---|---|---|
+| MSFold improves alternative-conformation recovery | Fig. 2 benchmark | 是否受 sampling budget 影响？ |
+| Improvement is not due to memorization | unseen-protein test | 是否对所有 protein classes 都成立？ |
+| Parallel tempering enables broader exploration | sampling analysis / ablation | 是否真正对应物理 energy barrier？ |
+
+重点检查：
+
+- 有没有 **claim 没有直接 evidence**？
+- 有没有一个 figure 被用来支持过多不同结论？
+- Discussion 中有没有出现 Results 从未支持过的 claim？
+- claim 的强度是否超过 evidence 的强度？
+- 是否应该把 “demonstrates” 收缩成 “suggests”？
+
+这一步本质上是在建立：
+
+> **Claim–Evidence alignment**
+
+如果一个 claim 找不到明确 supporting evidence，应当：
+
+> **补证据、收缩 claim，或删除 claim。**
+
+---
+
+## 8. Reviewer Stress Test
 
 在准备投稿前，主动切换到 reviewer perspective。
 
@@ -790,19 +1062,19 @@ Future Work 不应该是一张愿望清单。
 
 然后逐一分类：
 
-### 7.1 当前可以补实验解决
+### 9.1 当前可以补实验解决
 
 → 回到 Results。
 
-### 7.2 可以通过已有数据分析或解释解决
+### 9.2 可以通过已有数据分析或解释解决
 
 → 补充 Results / Discussion。
 
-### 7.3 当前研究确实无法解决
+### 9.3 当前研究确实无法解决
 
 → 写入 Limitation，并设计对应 Future Study。
 
-### 7.4 Fatal Flaw
+### 9.4 Fatal Flaw
 
 例如 central comparison 不公平、claim 与实验设计不匹配、关键变量严重混杂、核心结论无法由现有证据支持。
 
@@ -820,7 +1092,7 @@ Reviewer perspective 是一个 **stress test**，而 limitation 只是其可能�
 
 ---
 
-## 8. Deadline Mode：有限时间下如何收束研究
+## 9. Deadline Mode：有限时间下如何收束研究
 
 WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题，因此研究可以无限延伸。
 
@@ -830,7 +1102,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > **Stop Rule / Minimum Sufficient Story**
 
-### 8.1 Deadline 临近时，优先回答三类问题
+### 9.1 Deadline 临近时，优先回答三类问题
 
 #### （1）会改变 central claim 的问题
 
@@ -848,7 +1120,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 如果成本低、收益高，应优先补。
 
-### 8.2 可以暂时停止的问题
+### 9.2 可以暂时停止的问题
 
 如果一个问题：
 
@@ -861,7 +1133,38 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > Discussion → Limitation → Future Study
 
-### 8.3 Stop Rule
+
+### 9.3 Research Storyline Freeze：防止 project 越做越散
+
+研究进行到一定阶段后，先暂时“冻结”一次主线，写下：
+
+> **Central Question**  
+> **Central Claim**  
+> **3–5 Key Findings**  
+> **General Principle**
+
+然后对每一个新实验问：
+
+> **它会改变或显著加强这条主线吗？**
+
+如果答案是：
+
+- **会改变 central claim** → 值得优先做；
+- **能排除重要 competing hypothesis** → 值得做；
+- **能明确重要 boundary condition** → 可能值得做；
+- **只是再增加一个相似结果** → 谨慎继续。
+
+Storyline Freeze 不是不允许研究变化。  
+如果出现强的 unexpected finding，当然可以重新打开并重写 storyline。
+
+它的作用是防止：
+
+> **项目因为不断追加“也可以做”的实验而失去中心。**
+
+---
+
+### 9.4 Stop Rule
+
 
 当满足以下条件时，可以停止继续扩展 Results：
 
@@ -877,7 +1180,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 9. 句子应该放在哪里：决策图
+## 10. 句子应该放在哪里：决策图
 
 ```text
 这句话在说什么？
@@ -906,9 +1209,9 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 10. REWRITE loop 的两个循环
+## 11. REWRITE loop 的两个循环
 
-### 10.1 Inner Loop：研究推进循环
+### 12.1 Inner Loop：研究推进循环
 
 > **Finding → Question → Answerability → Experiment → Finding**
 
@@ -916,7 +1219,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > 推动当前 project 继续生长。
 
-### 10.2 Outer Loop：理解与抽象循环
+### 12.2 Outer Loop：理解与抽象循环
 
 > **Finding → Literature → Interpretation → Principle → New Question**
 
@@ -930,33 +1233,33 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 11. Research Depth Diagnostic：科研深度诊断
+## 12. Research Depth Diagnostic：科研深度诊断
 
-### 11.1 Level 0 — Observation
+### 12.1 Level 0 — Observation
 
 > A > B。
 
 只报告现象。
 
-### 11.2 Level 1 — Implication
+### 12.2 Level 1 — Implication
 
 > X improves Y。
 
 知道结果意味着什么。
 
-### 11.3 Level 2 — Interpretation
+### 12.3 Level 2 — Interpretation
 
 > X improves Y because it changes Z。
 
 开始解释机制。
 
-### 11.4 Level 3 — General Principle
+### 12.4 Level 3 — General Principle
 
 > 更一般地，Z 可能决定这一类问题。
 
 形成可迁移的抽象。
 
-### 11.5 Level 4 — Boundary / Mechanism Questions
+### 12.5 Level 4 — Boundary / Mechanism Questions
 
 开始追问：
 
@@ -965,7 +1268,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 - 为什么有些情况失效？
 - 是否存在反例？
 
-### 11.6 Level 5 — New Research Program
+### 12.6 Level 5 — New Research Program
 
 进一步形成：
 
@@ -983,7 +1286,20 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 12. WIT 的核心原则
+## 13. WIT 的核心原则
+
+
+> **Do not settle on one explanation too early; compare competing hypotheses.**
+
+> **Every important claim should survive a falsification / counterexample check.**
+
+> **Every major claim should map to explicit evidence.**
+
+> **Choose the next experiment by information gain, not convenience alone.**
+
+> **Freeze the storyline periodically to prevent uncontrolled project expansion.**
+
+
 
 > **Results are answers to questions.**
 
@@ -1037,12 +1353,12 @@ Results 是对 scientific questions 的回答。
 
 这就是 **WIT：Writing Is Thinking**。
 
-## 13. 如何检验一篇文章的逻辑链？
+## 14. 如何检验一篇文章的逻辑链？
 
 WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查四层：Introduction、Results titles、Results subsection 和 Discussion。
 
 
-### 13.1 Introduction 层面：段首句能否组成完整的“问题链”？
+### 14.1 Introduction 层面：段首句能否组成完整的“问题链”？
 
 先把 Introduction 每一段的**第一句**单独抽取出来，按顺序排列，然后暂时不看段内细节，只问：
 
@@ -1094,7 +1410,7 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 ---
 
 
-### 13.2 全文层面：Results subsection titles 能否组成一篇“小 essay”？
+### 14.2 全文层面：Results subsection titles 能否组成一篇“小 essay”？
 
 先把 Results 中所有 subsection titles 单独抽取出来，按顺序排列，然后暂时不看正文，只问：
 
@@ -1108,7 +1424,7 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 
 > **只读 subsection titles，也能大致理解这篇文章解决了什么问题、得到了哪些主要答案。**
 
-### 13.3 Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
+### 14.3 Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
 
 逐个进入 Results subsection，检查内部是否形成：
 
@@ -1128,7 +1444,7 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 （4）Opinion 是否只走了 1-hop，而没有提前跳到 general principle？
 （5）subsection 最后是否自然产生下一步 question？
 
-### 13.4 Discussion 层面：是否形成完整的上升—展开—收束链条？
+### 14.4 Discussion 层面：是否形成完整的上升—展开—收束链条？
 
 Discussion 应检查是否大致形成：
 
@@ -1148,7 +1464,7 @@ Discussion 应检查是否大致形成：
 - **Future Studies**：下一步什么实验或分析能够回答这些 unresolved questions？
 - **Conclusion Sentence**：用一句话收束全文，留下最终 take-home message，而不是重复性能数字。
 
-### 13.5 简化检查图
+### 14.5 简化检查图
 
 ```text
 Paper-level storyline
