@@ -1,1178 +1,173 @@
-# WIT: A Workflow for Scientific Thinking and Writing
+# WIT: A Skill for Scientific Thinking and Writing
 
 By Dongbo Bu  
-Institute of Computing Technology,  
-Chinese Academy of Sciences  
+Institute of Computing Technology, Chinese Academy of Sciences  
 Email: dbu@ict.ac.cn  
 2026/08/20
 
-## 1. What WIT Means
+## 1. What Is WIT?
 
 **WIT = Writing Is Thinking.**
 
-WIT is a workflow for **using writing to drive scientific thinking**. It connects problem formulation, experimental results, Discussion, Limitations, and Future Studies into one continuous process of scientific reasoning.
-
-Its core idea is simple:
-
 > **Writing is not merely the expression of completed thinking; it is part of scientific thinking itself.**
 
-WIT uses the **REWRITE loop** as its execution cycle:
+WIT connects research and paper writing into one loop: start from a question, obtain a finding, generate new questions from that finding, and decide which questions should become new Results and which belong in Discussion, Limitations, and Future Studies.
+
+WIT uses a compact **REWRITE loop**:
 
 > **Research Question → Examine Literature → Work → Read Finding → Interrogate → Test Answerability → Extend / Exit**
 
-WIT is the overarching framework; REWRITE is its operational mechanism.
+## 2. What Problems Does WIT Solve?
 
-## 2. What Problems Does WIT Address?
+WIT addresses common difficulties such as:
 
-WIT is designed to address several common difficulties in scientific research and paper writing:
+1. A project starts with a vague idea, but it is unclear how to “open up” the problem.
+2. Results and Discussion are mixed, and Discussion merely repeats Results.
+3. A finding raises many questions, but it is unclear which should be answered now.
+4. Discussion is either too shallow or too speculative.
+5. Introduction lists papers and gaps without identifying the true missing component.
+6. Limitations and Future Studies become ritualized lists.
+7. Unexpected findings, reviewer challenges, and deadlines make it difficult to decide when to continue and when to stop.
 
-1. **At the beginning of a project, there is only a vague idea, and it is unclear how to truly “open up” the problem.**  
-   How can a single initial question be expanded into a researchable **question space** through **When / What / Why / How / Whether / To what extent**?
+## 3. How to Load and Use WIT
 
-2. **Results and Discussion are often mixed together.**  
-   How far should a Results subsection go? When should it remain a Fact, and when can it include a 1-hop Opinion? Why should Discussion not simply repeat the Results?
+Place `WIT-Scientific-thinking-and-writing-skill.md` in the current chat, ChatGPT Work, or project repository, then explicitly tell the AI:
 
-3. **A finding generates many new questions, but it is unclear which ones should be answered now and which should be left for later.**  
-   Which questions can be answered with the current data or additional experiments and should become new Results? Which questions truly belong in Discussion, Limitations, and Future Studies?
+> Read `WIT-Scientific-thinking-and-writing-skill.md` first and use WIT as the scientific-thinking and writing framework for this project.
 
-4. **Discussion is often either too shallow or overly speculative.**  
-   How can multiple 1-hop Opinions be integrated into a 2-hop Interpretation, and then abstracted into a General Principle beyond this study while remaining within the evidence boundary?
+**Do not merely place the file in the project; explicitly ask the AI to read and follow it.**
 
-5. **Introduction often becomes a literature list of “many previous studies exist, but a gap remains.”**  
-   How can we start from the final scientific goal, identify the necessary components already established by previous studies, and clarify which **missing component** is provided by the present study?
-
-6. **Limitations and Future Studies often become ritualized sections.**  
-   How can limitations arise from important questions that the current study cannot answer, and how can future studies naturally follow from these unresolved questions?
-
-7. **Real research includes unexpected results, reviewer challenges, and deadlines.**  
-   How should unexpected findings be handled? How can the work be stress-tested from a reviewer’s perspective? How can a minimal but complete, credible, and defensible scientific story be formed under limited time and resources?
-
-## 3. How to Use WIT
-
-### 3.1 Load This `.md` File First
-
-Using WIT is simple: **first ask the AI to read `WIT-Scientific-Thinking-and-Writing-Workflow.md`, and then ask it to analyze the current research problem or manuscript according to WIT.**
-
-#### In ChatGPT
-
-Upload `WIT-Scientific-Thinking-and-Writing-Workflow.md` to the current conversation, then say:
-
-> Please read this WIT skill and follow it throughout this conversation.
-
-After that, you can directly say:
-
-> Use WIT to expand this finding: ...
-
-or:
-
-> Use WIT to review the Results and Discussion of this paper.
-
-If you start a new conversation and the file is not automatically available, upload or provide the `.md` file again.
-
-#### In ChatGPT Work / Project Spaces
-
-Place `WIT-Scientific-Thinking-and-Writing-Workflow.md` in the relevant project or Work materials, then say at the beginning of the task:
-
-> Please read `WIT-Scientific-Thinking-and-Writing-Workflow.md` first and use it as the research and writing framework for this project.
-
-This allows WIT to be used together with manuscript drafts, experimental results, and project documents over the long term.
-
-#### In VSCode / Codex / Copilot
-
-Place the file in the project repository, for example:
-
-```text
-project/
-├── WIT-Scientific-Thinking-and-Writing-Workflow.md
-├── README.md
-├── results/
-├── manuscript/
-└── src/
-```
-
-Then explicitly instruct the AI:
-
-> Read `WIT-Scientific-Thinking-and-Writing-Workflow.md` first, and use it as the research-thinking and scientific-writing workflow for this project.
-
-If the tool supports project-level instructions, you can add:
-
-> Before analyzing research questions, results, or manuscript text, read and follow `WIT-Scientific-Thinking-and-Writing-Workflow.md`.
-
-Core rule:
-
-> **Do not merely place the WIT file in the project; explicitly tell the AI to read and follow it first.**
-
----
-
-### 3.2 How to Invoke WIT After Loading
-
-#### Mode A: Open Up a Research Question
-
-Input:
+Common invocations:
 
 > Use WIT to open up this question: XXX.
 
-Expand it mainly from:
-
-> **When / What / Why / How / Whether / To what extent**
-
-The goal is to turn a vague question into a researchable **question space**.
-
----
-
-#### Mode B: Advance Research from a Finding
-
-Input:
-
 > This is a finding: XXX. Use WIT to expand it.
 
-Expected output:
+> Use WIT to review the Results and Discussion.
 
-1. Fact;
-2. 1-hop Opinion;
-3. Literature positioning;
-4. New Why / How / What / When / Whether / To what extent questions;
-5. Which questions are answerable now;
-6. The most valuable additional experiments or analyses;
-7. Which questions are not answerable now;
-8. 2-hop Interpretation;
-9. General Principle;
-10. Limitation;
-11. Future Study.
+> Use WIT to audit the logical chain of this paper.
 
-This is the most important day-to-day use of WIT:
+> Use WIT to identify the most valuable next experiment.
 
-> **Every time an important finding appears, open up the problem again.**
+> The deadline is close. Use WIT to help me close this project.
 
----
+## 4. Open Up the Problem
 
-#### Mode C: Review Results
+Problem formulation means:
 
-Input:
-
-> Use WIT to review the Results.
-
-Check whether:
-
-- each subsection is driven by a scientific question;
-- it forms a clear **Fact → 1-hop Opinion** structure;
-- it is organized around “what question was answered” rather than “what technique was used”;
-- questions that could be answered now have been prematurely pushed into Discussion;
-- key controls, alternative explanations, or unexpected results have been overlooked.
-
----
-
-#### Mode D: Review Discussion
-
-Input:
-
-> Use WIT to review the Discussion.
-
-Check whether:
-
-- the opening completes **multiple 1-hop Opinions → 2-hop Interpretation**;
-- it merely repeats the Results;
-- the middle completes **2-hop → General Principle**;
-- existing findings open up a new question space;
-- Limitations correspond to genuinely unresolved questions;
-- Future Studies naturally follow from those limitations.
-
----
-
-#### Mode E: Identify the Next Experiment
-
-Input:
-
-> Use WIT to determine the most valuable next experiment.
-
-Prioritize:
-
-1. questions that could change the central claim;
-2. major challenges a reviewer is likely to raise;
-3. competing explanations;
-4. boundary conditions;
-5. low-cost, high-information experiments.
-
----
-
-#### Mode F: Deadline Mode
-
-Input:
-
-> The deadline is close. Use WIT to help me close the project.
-
-Output:
-
-- Must do;
-- Should do;
-- Can omit;
-- Should be written as a Limitation;
-- Should be left for Future Study;
-- Whether the central claim should be narrowed.
-
-WIT can be summarized as:
-
-> **Load WIT first; start from a question; every important finding should generate new questions; answerable questions become new Results, while unanswerable ones move into Discussion, Limitations, and Future Studies.**
-
-# R — Research Question
-
-Do not begin with “What method should I use?” Do not organize the research around an algorithm, model, dataset, benchmark, or visualization technique.
-
-First ask:
-
-> **What scientific question are we actually trying to answer?**
-
-Academic research often begins with a process of **opening up the problem**. This is more than merely choosing a topic.
-
-> **To formulate a research problem is to open it up.**
-
-A practical way to do this is to examine the same core phenomenon from multiple dimensions:
-
-> **When / What / Why / How / Whether / To what extent**
-
-These question words are not merely linguistic forms. They correspond to different modes of scientific thinking:
-
-- **When**: identify conditions and boundaries;
-- **What**: identify key factors, objects, or determining variables;
-- **Why**: identify causes, mechanisms, or explanations;
-- **How**: identify processes, pathways, or mechanisms of action;
-- **Whether**: test whether a phenomenon exists, is necessary, or generalizes;
-- **To what extent**: determine effect size, scope, and quantitative boundaries.
-
-Therefore, opening up a research problem can be understood as:
-
-> **Starting from an initial question or finding, use these dimensions to expand a single-point problem into a question space.**
-
-This approach applies both at the beginning of a project and after an important finding has been obtained.
-
-Typical question types include:
-
-### Whether
-
-- Does X really improve Y?
-- Is the advantage stable?
-- Does it remain after controlling for other factors?
-- Does it generalize to new data, tasks, or systems?
-
-### What
-
-- Which component contributes the most?
-- What feature determines success or failure?
-- Which variable actually drives the observed phenomenon?
-
-### How
-
-- How does X change the representation?
-- How does an algorithm escape a local optimum?
-- How does structural information improve prediction?
-
-### Why
-
-- Why does X outperform Y?
-- What mechanism or principle explains the effect?
-
-### When
-
-- Under what conditions does the advantage appear?
-- When does it disappear?
-- What are the boundary conditions?
-
-### Where
-
-- In which data domains, tasks, organisms, systems, or regimes does it hold?
-
-### To what extent
-
-- How strong is the effect?
-- Where is the quantitative boundary?
-- How much perturbation causes the conclusion to fail?
-
-The starting point of a study should therefore be:
-
-> **Scientific Question → Hypothesis → Experimental Design**
-
----
-
-# E — Examine the Literature
-
-The literature is not decoration for the Introduction; it is the coordinate system for scientific reasoning.
-
-WIT uses two literature checkpoints.
-
-## Literature Checkpoint 1: Before the Study
-
-After defining the core scientific question, ask:
-
-1. Has this question already been answered?
-2. What explanations have previous studies proposed?
-3. What competing hypotheses exist?
-4. What boundary conditions are already known?
-5. What exactly does the present study add?
-
-The purpose is not to “collect enough references,” but to determine:
-
-> **Where is the novelty?**
-
-and:
-
-> **Which existing explanations must the current study distinguish among?**
-
-## Literature Checkpoint 2: After an Important Finding
-
-After every important finding, return to the literature and ask:
-
-> **How does this finding relate to existing knowledge?**
-
-Possible relationships include:
-
-- **Confirm**: supports an existing conclusion;
-- **Contradict**: conflicts with an existing conclusion;
-- **Refine**: adds boundaries, conditions, or a more precise interpretation;
-- **Extend**: generalizes an existing conclusion to new tasks, systems, or settings;
-- **Reframe**: changes how the original problem should be understood.
-
-This checkpoint directly determines the depth of the Discussion.
-
-What matters is usually not:
-
-> “Our result is consistent with a previous study.”
-
-but:
-
-> **What does our finding change, refine, or extend in the existing understanding?**
-
----
-
-# W — Work / Experiment
-
-Every experiment should correspond to a clear question.
-
-Do not perform an ablation simply because “papers usually need ablation.” Do not draw a t-SNE plot simply because others do.
-
-First ask:
-
-> **What question is this experiment intended to answer?**
-
-The ideal structure is:
-
-> **Question → Experiment → Data → Finding**
-
-Experiments are tools for answering questions, not the organizing units of Results.
-
----
-
-# R — Read the Finding
-
-After obtaining a result, do not immediately move on to the next experiment. First distinguish three levels.
-
-## 1. Data
-
-Raw observations or quantitative results.
-
-## 2. Finding
-
-A qualitative statement directly supported by the data.
-
-## 3. 1-hop Opinion
-
-A one-step interpretation that remains close to the data.
-
-A Results subsection can therefore be compressed into a practical **Fact–Opinion** structure:
-
-> **Question → Experiment → Fact → 1-hop Opinion**
-
-### Fact
-
-A fact directly obtained from experiments or analyses, including data, comparisons, observed phenomena, and statistical results.
-
-Example:
-
-> Method A significantly outperforms Method B under distribution shift.
-
-### 1-hop Opinion
-
-A **one-step interpretation** of the Fact. It may contain author judgment, but it must remain close to the current result and should not jump directly to a broader theoretical claim.
-
-Example:
-
-> These results suggest that X may improve robustness under distribution shift.
-
-Therefore:
-
-> **Results = Fact + 1-hop Opinion**
-
-The end of a Results subsection should answer:
-
-> **What does this specific Fact mean?**
-
-But the Opinion should remain only one step away from the Fact.
-
-Core rule:
-
-> **Results may contain opinion, but only opinion that is one hop away from the fact.**
-
-Do not jump directly to a field-level general principle.
-
----
-
-# Unexpected Results and Serendipitous Findings: The Anomaly Branch
-
-Real research is not perfectly linear. Experiments often produce results opposite to the hypothesis, anomalous samples, unexpected subgroups, apparently failed but reproducible phenomena, or observations inconsistent with existing theory.
-
-After every important experiment, ask:
-
-> **Did the result match the original expectation?**
-
-If yes, continue with the normal WIT / REWRITE process.
-
-If no, enter the **Anomaly Branch**.
-
-### 1. Is it a technical error?
-
-Check for:
-
-- data-processing errors;
-- implementation bugs;
-- measurement errors;
-- data leakage;
-- batch effects;
-- sample contamination;
-- statistical artifacts.
-
-If yes:
-
-> Fix the problem and rerun the experiment.
-
-### 2. Is it random noise?
+> **expanding a single question into a question space.**
 
 Ask:
 
-> Is it reproducible?
+- **What** determines the phenomenon?
+- **Why** does it happen?
+- **How** does it happen?
+- **When** does it hold or fail?
+- **Whether** is it real, necessary, or generalizable?
+- **To what extent** does it hold, and where are its boundaries?
 
-If not:
+> **Initial Question → Question Space → Testable Questions**
 
-> Do not treat it as a major finding yet.
+## 5. Literature: Two Checkpoints
 
-### 3. Is it a stable, reproducible anomaly?
-
-If yes, do not force it back into the original hypothesis.
-
-Ask:
-
-> **Does this anomaly imply that the original scientific question was incomplete—or even wrong?**
-
-At this point, allow:
-
-> **Unexpected Finding → Rewrite the Question**
-
-REWRITE is therefore not merely a way to organize completed results; it also allows new findings to redefine the research question itself.
-
----
-
-# I — Interrogate the Finding
-
-Every important finding should generate new questions.
-
-Systematically ask:
-
-- **Why?**
-- **How?**
-- **What?**
-- **Whether?**
-- **When?**
-- **Where?**
-- **To what extent?**
-
-A good finding should open up a new question space.
-
----
-
-# T — Test Answerability
-
-This is the key decision point in the REWRITE loop.
-
-For every new question, ask:
-
-> **Can the current study answer this question through additional analysis or experiments?**
-
-## If YES
-
-Do not move it prematurely into Discussion.
-
-Instead:
-
-> **New Question → New Experiment / Analysis → New Finding → New Results**
-
-For example, if A outperforms B on OOD data and the next question is whether the advantage is consistent across protein families, and the existing dataset already contains multiple families, analyze it now and turn it into a new Results subsection.
-
-Likewise, if “Which component drives the improvement?” can be answered through ablation, it should not be left as Future Work.
-
-## If NO
-
-Only then should the question move into Discussion:
-
-> **New Question → Why the Current Study Cannot Answer It → Limitation → Future Study**
-
----
-
-# Organize Results by Scientific Questions, Not Techniques
-
-Avoid titles such as:
-
-- Ablation Study
-- OOD Evaluation
-- t-SNE Visualization
-- Case Study
-
-These describe:
-
-> **What we did.**
-
-Better titles describe:
-
-> **What we learned.**
-
-For example:
-
-- “Module X is the primary contributor to the performance gain”
-- “The performance advantage persists under distribution shift”
-- “The learned representation better separates functional states”
-
-Core principle:
-
-> **The research process begins with a Question; the Results subsection title usually states the Answer.**
-
-A concise distinction between Results and Discussion is:
-
-> **Results: one Fact → one 1-hop Opinion.**  
-> **Discussion opening: multiple 1-hop Opinions → one 2-hop Interpretation.**
-
-# Discussion Opening: 1-hop → 2-hop
-
-Each Results subsection usually ends with a 1-hop Opinion.
-
-The purpose of the opening paragraph of Discussion is not to repeat Results, but to:
-
-> **Integrate multiple 1-hop Opinions into a 2-hop Interpretation.**
+### Before the Study
 
 Ask:
 
-> **Taken together, what do these results mean for this study as a whole?**
-
-Therefore:
-
-> **Multiple 1-hop Opinions → Integrated 2-hop Interpretation**
-
-This paragraph should still stay close to the present study.
-
----
-
-# Discussion Middle: 2-hop → General Principle
-
-The middle of the Discussion moves upward through abstraction.
-
-Ask:
-
-> **Is there a broader principle behind these observations that goes beyond this study?**
-
-Structure:
-
-> **2-hop Interpretation → Abstraction → General Principle**
-
-Example:
-
-Specific finding: a better search strategy recovers alternative conformations.
-
-2-hop interpretation: failure to recover alternative conformations may partly result from insufficient decoding rather than the complete absence of those states from the representation.
-
-General principle:
-
-> **Model capability is jointly determined by representation and search.**
-
----
-
-# Expand Outward from the General Principle into a Question Space
-
-Discussion should not stop at abstraction.
-
-Ask further:
-
-- Why does this principle hold?
-- When does it hold?
-- When does it fail?
-- What determines its strength?
-- Does it generalize to other models, tasks, organisms, or systems?
-- Are there counterexamples?
-- How can competing explanations be distinguished?
-
-The full progression becomes:
-
-> **Fact → 1-hop Opinion → 2-hop Interpretation → General Principle → New Question Space**
-
-The first half moves:
-
-> **upward through abstraction**
-
-The second half moves:
-
-> **outward into new questions**
-
-Many Discussions feel “thin” not because their interpretations are wrong, but because they stop after abstraction and fail to open up new scientific questions.
-
----
-
-# What a Limitation Really Is
-
-A limitation is not:
-
-> **Something we did not do.**
-
-There are infinitely many things a study did not do.
-
-A meaningful limitation is:
-
-> **A constraint that prevents the current study from answering an important question raised by its own findings.**
-
-Use this test:
-
-> **Because we did not / could not do X, does an important scientific question remain unresolved?**
-
-If yes, X is a meaningful limitation.
-
-Example:
-
-New Question: Does this principle apply to other model architectures?
-
-Limitation: The current study systematically evaluated only one model family.
-
-Therefore: the present evidence cannot establish whether the principle is architecture-independent.
-
----
-
-# Future Studies Should Follow from Limitations
-
-Future Work should not be a wish list.
-
-Every future study should answer a specific unresolved question.
-
-Structure:
-
-> **Finding → New Question → Limitation → Future Study**
-
-Principle:
-
-> **Future studies are experiments designed to answer questions that the current study cannot answer.**
-
----
-
-# Reviewer Stress Test
-
-Before submission, actively switch to a reviewer’s perspective.
-
-Ask:
-
-> **If I were the most demanding and knowledgeable reviewer, what would be the top three challenges to this paper?**
-
-Generate:
-
-> **Top 3 Reviewer Challenges**
-
-Then classify them.
-
-### A. Can be resolved with additional experiments now
-
-→ Return to Results.
-
-### B. Can be resolved through existing data analysis or interpretation
-
-→ Strengthen Results / Discussion.
-
-### C. Cannot genuinely be resolved within the current study
-
-→ Write as a Limitation and design a corresponding Future Study.
-
-### D. Is a Fatal Flaw
-
-Examples include an unfair central comparison, mismatch between claim and experimental design, severe confounding, or a central conclusion unsupported by the available evidence.
-
-Do not simply place these in Limitations.
-
-Instead:
-
-> **Redesign the study or narrow the central claim.**
-
-Therefore:
-
-> **Reviewer challenge ≠ limitation**
-
-The reviewer perspective is a **stress test**; a limitation is only one possible outcome.
-
----
-
-# Deadline Mode: How to Close a Study Under Limited Time
-
-WIT / REWRITE can create a problem: every finding can generate more questions, so research can continue indefinitely.
-
-Real research is constrained by submission deadlines, graduation timelines, computational resources, wet-lab costs, and project duration.
-
-Therefore, WIT includes a:
-
-> **Stop Rule / Minimum Sufficient Story**
-
-## Near a Deadline, Prioritize Three Types of Questions
-
-### Priority 1: Questions that could change the central claim
-
-If a different answer would invalidate or substantially narrow the main conclusion, address it first.
-
-### Priority 2: Fatal questions a reviewer is highly likely to raise
-
-Examples include:
-
-- data leakage;
-- memorization;
-- unfair baselines;
-- missing key controls;
-- alternative explanations.
-
-Address these first.
-
-### Priority 3: Low-cost questions that substantially improve interpretation
-
-Examples:
-
-- a simple ablation;
-- subgroup analysis;
-- error analysis;
-- a key negative control.
-
-If the cost is low and the information gain is high, prioritize them.
-
-## Questions That Can Be Deferred
-
-If a question:
-
-- does not change the central claim;
-- does not affect the main evidence chain;
-- requires substantial new experiments;
-- is better suited to a separate study;
-
-then move it to:
-
-> **Discussion → Limitation → Future Study**
-
-## Stop Rule
-
-Stop expanding Results when:
-
-1. the central scientific question has been answered credibly;
-2. major competing explanations have been ruled out to a reasonable extent;
-3. major reviewer challenges have been addressed;
-4. the most important boundary conditions have basic supporting evidence;
-5. the remaining questions clearly require experiments beyond the scope of the current study.
-
-Principle:
-
-> **The goal is not to answer every possible question, but to build a minimal yet complete, credible, and defensible scientific story.**
-
----
-
-# Guided Mode for Beginners: Results Subsection Template
-
-For less experienced researchers, use a fill-in-the-blank structure.
-
-### 1. Scientific Question
-
-> We want to know: ________________________.
-
-### 2. Why This Question Matters
-
-> This question matters because: ________________________.
-
-### 3. Experiment / Analysis
-
-> To answer this question, we: ________________________.
-
-### 4. Data
-
-> The results show: ________________________.
-
-### 5. Finding
-
-> These data directly show that: ________________________.
-
-### 6. 1-hop Opinion
-
-> These results suggest that: ________________________.
-
-### 7. New Question
-
-> This finding raises the question of: ________________________.
-
-### 8. Answerability Check
-
-> Can the current study answer it?
-
-- Yes → design the next experiment / analysis;
-- No → move it to Discussion / Limitation / Future Study.
-
----
-
-# Discussion Template
-
-## Opening Paragraph: 2-hop
-
-> Taken together, the results of this study show that: ________________________.
-
-> Beyond the individual findings, this means that: ________________________.
-
-This paragraph should still focus on:
-
-> **this study**
-
-## Middle Paragraphs: General Principle
-
-> More broadly, these findings suggest that: ________________________.
-
-> This principle may apply not only to the current system but also to: ________________________.
-
-## New Question Space
-
-> These findings further raise the following unresolved questions:
-
-- Why: ________________________
-- How: ________________________
-- What: ________________________
-- When: ________________________
-- Whether: ________________________
-
-## Limitations
-
-> The current study cannot answer ________________________, because ________________________.
-
-## Future Study
-
-> To address this question, future work could test ________________________.
-
----
-
-# Where Should This Sentence Go? A Decision Tree
-
-```text
-What is this sentence doing?
-│
-├─ Reporting data, comparison, or direct observation?
-│      └─ Results
-│
-├─ Giving a one-step interpretation of one specific result?
-│      └─ End of Results subsection: 1-hop Opinion
-│
-├─ Integrating multiple findings into an interpretation of the study as a whole?
-│      └─ Discussion opening: 2-hop Interpretation
-│
-├─ Proposing a broader mechanism or principle beyond this study?
-│      └─ Discussion middle: General Principle
-│
-├─ Raising a new unresolved question from the findings / principle?
-│      └─ Late Discussion: New Question
-│
-├─ Explaining why the current study cannot answer that question?
-│      └─ Limitations
-│
-└─ Explaining what experiment or analysis could answer it next?
-       └─ Future Studies
-```
-
----
-
-# The Two Loops Inside REWRITE
-
-## Inner Loop: Research Progression
-
-> **Finding → Question → Answerability → Experiment → Finding**
-
-Purpose:
-
-> Drive the current project forward.
-
-## Outer Loop: Interpretation and Abstraction
-
-> **Finding → Literature → Interpretation → Principle → New Question**
-
-Purpose:
-
-> Turn a specific result into deeper scientific understanding.
-
-Together, the two loops determine:
-
-> which new experiments to perform, and how Results / Discussion should be organized.
-
----
-
-# Research Depth Diagnostic
-
-## Level 0 — Observation
-
-> A > B.
-
-Only reports a phenomenon.
-
-## Level 1 — Implication
-
-> X improves Y.
-
-Identifies what the result means.
-
-## Level 2 — Interpretation
-
-> X improves Y because it changes Z.
-
-Begins to explain mechanism.
-
-## Level 3 — General Principle
-
-> More generally, Z may govern this class of problems.
-
-Forms a transferable abstraction.
-
-## Level 4 — Boundary / Mechanism Questions
-
-Ask:
-
-- When does it hold?
-- What determines the effect size?
-- Why does it fail in some cases?
-- Are there counterexamples?
-
-## Level 5 — New Research Program
-
-Develop:
-
-- What experiments can distinguish competing hypotheses?
-- How can the scope of the principle be systematically established?
-- What new research questions follow from it?
-
-Strong research should not remain at:
-
-> **A > B**
-
-or:
-
-> **Our model improves the baseline by a few percentage points.**
-
----
-
-# Recommended Ways to Invoke WIT
-
-## Mode 1: Project Design
-
-> This is my core idea: XXX. Use WIT to help me design the research storyline.
+- Has the question already been answered?
+- What competing hypotheses exist?
+- What boundary conditions are known?
+- What exactly is new here?
 
 Goal:
 
-> **Scientific Question → Hypothesis → Experiments → Possible Findings → Next Questions**
+> **Where is the novelty?**
 
-## Mode 2: Expand a Finding
+### After an Important Finding
 
-> This is a finding: XXX. Use WIT to expand it.
+Revisit the literature and ask whether the finding:
 
-Default output:
+- **Confirms**
+- **Contradicts**
+- **Refines**
+- **Extends**
+- **Reframes**
 
-1. Finding;
-2. 1-hop Opinion;
-3. Literature positioning;
-4. Why / How / What / When / Whether questions;
-5. Which are answerable now;
-6. Suggested additional experiments;
-7. Which are not answerable now;
-8. 2-hop Interpretation;
-9. General Principle;
-10. Limitation;
-11. Future Study.
+existing understanding.
 
-This is the core everyday use of REWRITE.
+The key question is:
 
-## Mode 3: Review Results
+> **What does this finding change, refine, or extend?**
 
-> Use WIT to review the Results.
+## 6. Introduction: Find the Missing Component, Not Just a Gap
 
-Check whether each subsection is driven by a scientific question, whether it is organized around a clear finding rather than a technique, whether it contains an appropriate 1-hop Opinion, whether answerable questions have been prematurely pushed into Discussion, whether unexpected results remain unresolved, and whether key controls or alternative explanations are missing.
+A strong Introduction follows:
 
-## Mode 4: Review Discussion
-
-> Use WIT to review the Discussion.
-
-Check whether the opening moves from multiple 1-hop Opinions to a 2-hop Interpretation, whether the middle moves from 2-hop Interpretation to abstraction, whether a General Principle is articulated, whether the principle opens up a new question space, whether Limitations correspond to genuine unresolved questions, and whether Future Studies address those limitations.
-
-## Mode 5: Identify the Next Experiment
-
-> Use WIT to determine the most valuable next experiment.
-
-Priority:
-
-1. Central claim;
-2. Reviewer fatal challenges;
-3. Competing explanations;
-4. Boundary conditions;
-5. Low-cost, high-information experiments;
-6. Everything else moves to Future Study.
-
-## Mode 6: Deadline Mode
-
-> The deadline is close. Use WIT's Deadline Mode to help me close the project.
-
-Output:
-
-- Must do;
-- Should do;
-- Can omit;
-- Should be written as a Limitation;
-- Should be left for Future Study;
-- Whether the central claim should be narrowed.
-
----
-
-
-# How to Audit the Logical Chain of a Paper
-
-WIT can be used not only to write a paper, but also to **audit its logical structure**. The audit can be performed at four levels.
-
-## 1. Introduction Level: Can the Opening Sentences Form a Complete Problem Chain?
-
-Extract the **first sentence of each paragraph** in the Introduction and read them in sequence without the supporting details.
+> **Final Goal → Necessary Components → Established Components → Missing Component → This Study**
 
 Ask:
 
-> **Do these opening sentences clearly explain why this study needs to be done?**
+1. What is the final scientific goal?
+2. What components are required to reach it?
+3. Which have previous studies established?
+4. What critical component is still missing?
+5. Why does that missing component block the final goal?
+6. How does this study provide it?
 
-An ideal logical chain is:
+Core rule:
 
-> **Final Goal → Necessary Components → What Previous Studies Have Established → Missing Component → Why the Missing Component Matters → This Study Provides It**
+> **Do not merely say that nobody has done X; explain why X is necessary.**
 
-In other words, the Introduction should answer:
+Typical structure:
 
-1. **Final Goal**: What is the ultimate scientific goal?
-2. **Necessary Components**: What key components are required to achieve that goal?
-3. **Previous Studies**: Which of those components have already been established?
-4. **Missing Component**: Which critical piece is still missing?
-5. **Why It Matters**: Why does the missing piece prevent the final goal from being achieved?
-6. **This Study**: How does the present study provide that missing component?
+> To achieve **[final goal]**, previous studies have established most necessary components, including **A, B, and C**. However, **X** remains unresolved.  
+> This study provides the missing component by **[method / idea]**.
 
-A strong Introduction should not merely say:
+## 7. Results: Fact + 1-hop Opinion
 
-> X is important.  
-> Many studies have investigated X.  
-> However, some gaps remain.  
-> Here, we propose a new method.
-
-A stronger completion-oriented logic is:
-
-> **To achieve the final goal, A, B, C, and X are required.**  
-> **Previous studies have established A, B, and C.**  
-> **However, X remains unresolved.**  
-> **Without X, the final goal cannot be completed.**  
-> **This study provides X by ...**
-
-Check:
-
-- Does the first paragraph define a real final goal rather than merely introduce a topic?
-- Do the middle paragraphs explain which necessary components have already been established, rather than merely list papers?
-- Is the missing component explicit, important, and necessary for the final goal?
-- Is it truly a missing component, rather than simply something “no one has done”?
-- Does the last paragraph of the Introduction match the missing component precisely?
-- Does the study actually provide the component that the Introduction claims is missing?
-
-A useful test is:
-
-> **By reading only the opening sentence of each Introduction paragraph, can the reader understand how far the field has progressed, what is still missing, and why the present study is necessary?**
-
-If not, the Introduction may still be literature-driven rather than problem-driven.
-
----
-
-## 2. Paper Level: Can the Results Subsection Titles Form a Small Essay?
-
-Extract all Results subsection titles and place them in order. Then ignore the body text and ask:
-
-> **Can these titles alone tell a complete and progressive scientific story?**
-
-Ideally, they should form a progression such as:
-
-> **Core Question → Main Finding → Further Validation → Mechanism / Explanation → Generalization / Boundary → Integrated Understanding**
-
-A strong test is:
-
-> **By reading only the subsection titles, can the reader roughly understand what problem the paper addresses and what major answers it provides?**
-
-If the titles are merely:
-
-> Benchmark → Ablation → Case Study → t-SNE → OOD Test
-
-they describe what was done rather than what was learned.
-
----
-
-## 3. Results Subsection Level: Does Each Subsection Form a Motivation → Fact → 1-hop Opinion Chain?
-
-Enter each Results subsection and inspect its internal logic.
-
-The desired structure is:
+Each Results subsection should be driven by a scientific question:
 
 > **Motivation → Experiment / Analysis → Fact → 1-hop Opinion**
 
-### Motivation
-
-Why does this subsection exist?
-
-It should explain:
-
-> **What new question was raised by the previous finding, and why is this experiment needed?**
-
-Avoid a purely procedural transition such as:
-
-> “We next performed an ablation study.”
-
-Prefer a question-driven transition such as:
-
-> “Because the previous results showed X, we next asked whether Y was responsible for this improvement.”
-
-That is:
-
-> **Previous Finding → New Question → Motivation for This Subsection**
-
-### Fact
-
-What do the experiment, comparison, and statistics directly show?
-
-Fact answers:
+**Fact:** What was directly observed?
 
 > **What did we observe?**
 
-### 1-hop Opinion
+**1-hop Opinion:** What does this specific fact suggest?
 
-What does the Fact mean?
+Core rule:
 
-In Results, the Opinion should remain:
+> **Results may contain opinion, but only one hop away from the fact.**
 
-> **one hop away from the Fact**
+A good subsection naturally raises:
 
-It should interpret the current result without jumping prematurely to a broad General Principle.
+> **Finding → New Question**
 
-Check:
+## 8. After a Finding: Test Answerability
 
-1. Does the Motivation arise from a scientific question?
-2. Does the Fact truly support the subsection title?
-3. Does the Opinion follow directly from the Fact?
-4. Is the Opinion limited to 1 hop?
-5. Does the end of the subsection naturally raise the next question?
+For every important finding, ask:
 
----
+> **What / Why / How / When / Whether / To what extent**
 
-## 4. Discussion Level: Does It Form a Complete Upward–Outward–Closing Chain?
+Then ask:
 
-Discussion should not repeat Results and should not be a loose collection of opinions.
+> **Can the current study answer this question?**
 
-A strong structure is:
+### If YES
+
+> **New Question → New Experiment / Analysis → New Results**
+
+Do not prematurely move it to Future Work.
+
+### If NO
+
+> **New Question → Discussion → Limitation → Future Study**
+
+This is the core branching rule of WIT.
+
+## 9. Discussion: Interpret, Generalize, Reopen
+
+A strong Discussion follows:
 
 > **2-hop Interpretation (this study)**  
 > → **General Principle (beyond this study)**  
@@ -1181,113 +176,166 @@ A strong structure is:
 > → **Future Studies**  
 > → **Conclusion Sentence**
 
-### 2-hop Interpretation — This Study
-
-The opening should integrate multiple 1-hop Opinions from Results:
+### Opening: 2-hop Interpretation
 
 > **multiple 1-hop Opinions → integrated 2-hop Interpretation**
 
-It answers:
+Ask:
 
 > **Taken together, what do the findings of this study mean?**
 
-### General Principle — Beyond This Study
-
-Then move upward in abstraction:
-
-> **What broader principle may be suggested beyond the current method, dataset, or task?**
-
-This is the move from:
-
-> **this study**
-
-to:
-
-> **beyond this study**
-
-### Raise New Questions
-
-After reaching a General Principle, open the problem again:
-
-> **Why / How / What / When / Whether / To what extent?**
-
-That is:
-
-> **Use existing answers to open a new question space.**
-
-### Limitations
+### Middle: General Principle
 
 Ask:
 
-> **Which important questions cannot be answered by the current study, and why?**
+> **What broader principle may explain these findings beyond this study?**
 
-Limitations should correspond to these unresolved questions rather than merely list things that were not done.
+### New Questions
 
-### Future Studies
+Reopen the problem:
+
+> **Why / How / What / When / Whether / To what extent**
+
+A strong Discussion does not merely summarize answers; it generates better questions.
+
+## 10. Limitations and Future Studies
+
+A Limitation is not simply “something we did not do.”
+
+It is:
+
+> **A constraint that prevents the current study from answering an important question raised by its own findings.**
+
+Future Study should directly address that unresolved question:
+
+> **Finding → New Question → Limitation → Future Study**
+
+## 11. Unexpected Findings
+
+If a result contradicts expectation, check:
+
+1. Technical error?
+2. Random noise?
+3. Reproducible?
+
+If the anomaly is stable and reproducible:
+
+> **Do not force it back into the original hypothesis.**
+
+Allow:
+
+> **Unexpected Finding → Rewrite the Question**
+
+## 12. Reviewer Stress Test
+
+Before submission, ask:
+
+> **If I were the toughest reviewer, what would be the top three challenges to this paper?**
+
+Classify each challenge:
+
+- Can be resolved now → Results
+- Can be addressed with existing evidence → Results / Discussion
+- Cannot be resolved within the study → Limitation / Future Study
+- Fatal flaw → redesign the study or narrow the central claim
+
+> **Reviewer challenge ≠ limitation.**
+
+## 13. Deadline Mode: Minimum Sufficient Story
+
+Near a deadline, prioritize:
+
+1. Questions that could change the central claim
+2. Fatal reviewer challenges
+3. Low-cost, high-information experiments
+
+Stop when:
+
+- the central question is credibly answered;
+- major competing explanations are reasonably addressed;
+- major reviewer challenges are handled;
+- key boundary conditions have basic evidence;
+- remaining questions clearly exceed the scope of the study.
+
+The goal is:
+
+> **a minimal, complete, credible, and defensible scientific story.**
+
+## 14. Audit the Logical Chain of a Paper
+
+### Introduction: Read Paragraph Openings
+
+Extract the **first sentence of each Introduction paragraph**.
+
+Do they form:
+
+> **Final Goal → Established Components → Missing Component → This Study**
+
+The reader should understand:
+
+> **where the field stands → what is missing → why this study is necessary.**
+
+### Results: Read Subsection Titles
+
+List all Results subsection titles.
 
 Ask:
 
-> **What experiment or analysis should be performed next to answer these unresolved questions?**
+> **Can they form a small essay?**
 
-Thus:
+The titles should reveal:
 
-> **Limitation → Future Study**
+> **what was asked → what was found → how the story progressed.**
 
-should ideally be paired.
+### Results Subsection: Check the Local Chain
 
-### Conclusion Sentence
+> **Motivation → Fact → 1-hop Opinion → Next Question**
 
-The Discussion should end with a concise sentence that answers:
+### Discussion: Check the Upward–Outward–Closing Chain
 
-> **What has this study ultimately changed in our understanding of the problem?**
+> **2-hop Interpretation (this study)**  
+> → **General Principle (beyond this study)**  
+> → **New Questions**  
+> → **Limitations**  
+> → **Future Studies**  
+> → **Conclusion Sentence**
 
-It should leave the reader with the final take-home message rather than repeat performance numbers.
-
----
-
-## 5. Simplified Logic-Audit Diagram
+Paper skeleton:
 
 ```text
-Paper-level logical chain
-│
-├─ Introduction paragraph openings
-│      └─ Final Goal
-│          → Previous Studies / Established Components
-│          → Missing Component
-│          → This Study
-│
-├─ Results subsection titles
-│      └─ Can they form a small essay?
-│
-├─ Each Results subsection
-│      └─ Motivation
-│          → Fact
-│          → 1-hop Opinion
-│          → Next Question
-│
-└─ Discussion
-       └─ 2-hop Interpretation (this study)
-           → General Principle (beyond this study)
-           → Raise New Questions
-           → Limitations
-           → Future Studies
-           → Conclusion Sentence
+Introduction
+Final Goal → Missing Component → This Study
+
+Results
+Question → Fact → 1-hop Opinion → Next Question
+
+Discussion
+2-hop Interpretation → General Principle
+→ New Questions → Limitations → Future Studies → Conclusion
 ```
 
-The entire audit can be compressed into four questions:
+## 15. Guided Templates
 
-> **1. By reading only the opening sentence of each Introduction paragraph, can we see the chain Final Goal → Previous Studies → Missing Component → This Study?**
+### Results Subsection
 
-> **2. By reading only the Results subsection titles, does the scientific story hold together?**
+> **Question:** We want to know ______.  
+> **Motivation:** This matters because ______.  
+> **Experiment:** To answer it, we ______.  
+> **Fact:** We observed ______.  
+> **1-hop Opinion:** These results suggest ______.  
+> **Next Question:** This finding raises ______.
 
-> **3. Inside each Results subsection, is there a Motivation → Fact → 1-hop Opinion chain?**
+### Discussion
 
-> **4. In Discussion, does the logic progress from this study → beyond this study → new questions → limitations → future studies → conclusion?**
+> **2-hop Interpretation:** Taken together, the results show ______.  
+> **General Principle:** More generally, this suggests ______.  
+> **New Question:** This raises the question of ______.  
+> **Limitation:** The current study cannot answer it because ______.  
+> **Future Study:** This could be tested by ______.
 
-If all four layers are coherent, the main logical chain of the paper is usually clear.
+## 16. Core Principles
 
-
-# Core Principles of WIT
+> **Writing is thinking.**
 
 > **Results are answers to questions.**
 
@@ -1297,28 +345,4 @@ If all four layers are coherent, the main logical chain of the paper is usually 
 
 > **Questions not answerable now define Discussion, Limitations, and Future Studies.**
 
-> **Unexpected findings may rewrite the original question.**
-
-> **Literature defines the coordinates of novelty and interpretation.**
-
-> **Reviewer criticism is a stress test, not automatically a limitation.**
-
-> **A good project is not the project that answers every possible question.**
-
-> **A good project answers enough of the right questions to support a coherent and defensible scientific story.**
-
-Ultimately:
-
-> **Writing is thinking.**
-
-More specifically:
-
-> **Discussion writing is research thinking.**
-
-The core research loop of WIT can be compressed into:
-
 > **Finding → Question → Test → Finding**
-
-Research keeps rewriting the question through new findings, while paper writing makes this thinking process explicit.
-
-That is **WIT: Writing Is Thinking**.

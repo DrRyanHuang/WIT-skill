@@ -1,41 +1,41 @@
 # WIT
 
-**WIT（Writing Is Thinking）** 是一套用于**科学思考与论文写作**的工作流。
+**WIT（Writing Is Thinking）** 是一个用于**科学思考及写作**的 skill。
 
-它帮助研究者把一个问题“打开”，从 **Fact → 1-hop Opinion → 2-hop Interpretation → General Principle** 推进科学思考，并判断哪些新问题应继续做成 Results，哪些进入 Discussion、Limitations 和 Future Studies。
+它帮助研究者：
 
-## 如何使用
+- 把模糊想法“打开”为可检验的问题；
+- 用 **Fact → 1-hop Opinion** 组织 Results；
+- 区分 Results 与 Discussion；
+- 从 findings 上升到 general principle；
+- 判断哪些新问题应继续做成 Results，哪些进入 Limitations / Future Studies；
+- 审计一篇论文的逻辑链。
+
+## 使用
 
 先让 AI 读取：
 
-`WIT-科学思考与写作工作流.md`
+`WIT-科学思考及写作skill.md`
 
-然后直接调用，例如：
+然后直接调用：
 
 > 按 WIT 把这个问题打开：XXX。
 
 > 这是一个 finding：XXX。按 WIT 展开。
 
-> 按 WIT 检查这篇文章的逻辑链。
+> 按 WIT 检查 Results 和 Discussion。
 
-> 按 WIT 判断下一步最值得做什么实验。
+> 按 WIT 审计这篇论文的逻辑链。
 
-## 论文逻辑链检查
+## 论文逻辑链
 
-WIT 可以从四层检验一篇论文：
-
-1. **Introduction**：抽取各段段首句，能否形成  
-   **Final Goal → Previous Studies → Missing Component → This Study**
-2. **Results titles**：所有 subsection titles 能否连成一篇“小 essay”
-3. **Results subsection**：是否形成  
-   **Motivation → Fact → 1-hop Opinion**
-4. **Discussion**：是否形成  
-   **2-hop Interpretation → General Principle → New Questions → Limitations → Future Studies → Conclusion**
-
-## 核心思想
+- **Introduction：** Final Goal → Missing Component → This Study
+- **Results titles：** 能否组成一篇“小 essay”？
+- **Results subsection：** Motivation → Fact → 1-hop Opinion
+- **Discussion：** 2-hop Interpretation → General Principle → New Questions → Limitations → Future Studies → Conclusion
 
 > **Writing is thinking.**
 
-> **Finding → Question → Test → Finding**
+详细说明见 `WIT-科学思考及写作skill.md`。
 
-详细说明见：`WIT-科学思考与写作工作流.md`
+English version: `README.md`。

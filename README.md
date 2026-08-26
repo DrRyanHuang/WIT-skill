@@ -1,41 +1,41 @@
 # WIT
 
-**WIT (Writing Is Thinking)** is a workflow for **scientific thinking and paper writing**.
+**WIT (Writing Is Thinking)** is a skill for **scientific thinking and writing**.
 
-It helps researchers open up a problem, move from **Fact → 1-hop Opinion → 2-hop Interpretation → General Principle**, and decide which new questions should become new Results and which belong in Discussion, Limitations, and Future Studies.
+It helps researchers:
 
-## How to Use
+- open up vague ideas into testable questions;
+- structure Results as **Fact → 1-hop Opinion**;
+- distinguish Results from Discussion;
+- move from findings to broader principles;
+- decide which questions should become new Results and which belong in Limitations / Future Studies;
+- audit the logical chain of a paper.
 
-First ask the AI to read:
+## Use
 
-`WIT-Scientific-Thinking-and-Writing-Workflow.md`
+Ask the AI to read:
 
-Then invoke WIT directly, for example:
+`WIT-Scientific-thinking-and-writing-skill.md`
+
+Then invoke it directly:
 
 > Use WIT to open up this question: XXX.
 
 > This is a finding: XXX. Use WIT to expand it.
 
-> Use WIT to audit the logical chain of this paper.
+> Use WIT to review the Results and Discussion.
 
-> Use WIT to determine the most valuable next experiment.
+> Use WIT to audit the logical chain of this paper.
 
 ## Paper Logic Audit
 
-WIT checks a paper at four levels:
-
-1. **Introduction**: do the opening sentences form  
-   **Final Goal → Previous Studies → Missing Component → This Study**?
-2. **Results titles**: can all subsection titles form a small essay?
-3. **Results subsection**: does each form  
-   **Motivation → Fact → 1-hop Opinion**?
-4. **Discussion**: does it form  
-   **2-hop Interpretation → General Principle → New Questions → Limitations → Future Studies → Conclusion**?
-
-## Core Idea
+- **Introduction:** Final Goal → Missing Component → This Study
+- **Results titles:** can they form a small essay?
+- **Results subsection:** Motivation → Fact → 1-hop Opinion
+- **Discussion:** 2-hop Interpretation → General Principle → New Questions → Limitations → Future Studies → Conclusion
 
 > **Writing is thinking.**
 
-> **Finding → Question → Test → Finding**
+For details, see `WIT-Scientific-thinking-and-writing-skill.md`.
 
-For details, see: `WIT-Scientific-Thinking-and-Writing-Workflow.md`
+中文说明见 `README-cn.md`。
