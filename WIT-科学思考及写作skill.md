@@ -6,7 +6,6 @@ Chinese Academy of Sciences
 Email: dbu@ict.ac.cn  
 2026/08/20
 
-
 ## 1. WIT 的释义
 
 **WIT = Writing Is Thinking。**
