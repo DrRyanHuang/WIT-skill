@@ -1,4 +1,4 @@
-# WIT: A Workflow for Scientific Thinking and Writing
+# WIT: A Scientific Thinking and Writing Skill
 
 By Dongbo Bu  
 Institute of Computing Technology,  
@@ -21,6 +21,8 @@ WIT uses the **REWRITE loop** as its execution cycle:
 > **Research Question → Examine Literature → Work → Read Finding → Interrogate → Test Answerability → Extend / Exit**
 
 WIT is the overarching framework; REWRITE is its operational mechanism.
+
+> **Usage principle:** WIT is not merely a checklist. For important rules, it should explain *why*, provide a representative example, and give an actionable decision criterion.
 
 ## 2. What Problems Does WIT Address?
 
@@ -51,11 +53,11 @@ WIT is designed to address several common difficulties in scientific research an
 
 ### 3.1 Load This `.md` File First
 
-Using WIT is simple: **first ask the AI to read `WIT-Scientific-Thinking-and-Writing-Workflow.md`, and then ask it to analyze the current research problem or manuscript according to WIT.**
+Using WIT is simple: **first ask the AI to read `WIT-Scientific-thinking-and-writing-skill.md`, and then ask it to analyze the current research problem or manuscript according to WIT.**
 
 #### In ChatGPT
 
-Upload `WIT-Scientific-Thinking-and-Writing-Workflow.md` to the current conversation, then say:
+Upload `WIT-Scientific-thinking-and-writing-skill.md` to the current conversation, then say:
 
 > Please read this WIT skill and follow it throughout this conversation.
 
@@ -71,9 +73,9 @@ If you start a new conversation and the file is not automatically available, upl
 
 #### In ChatGPT Work / Project Spaces
 
-Place `WIT-Scientific-Thinking-and-Writing-Workflow.md` in the relevant project or Work materials, then say at the beginning of the task:
+Place `WIT-Scientific-thinking-and-writing-skill.md` in the relevant project or Work materials, then say at the beginning of the task:
 
-> Please read `WIT-Scientific-Thinking-and-Writing-Workflow.md` first and use it as the research and writing framework for this project.
+> Please read `WIT-Scientific-thinking-and-writing-skill.md` first and use it as the research and writing framework for this project.
 
 This allows WIT to be used together with manuscript drafts, experimental results, and project documents over the long term.
 
@@ -83,7 +85,7 @@ Place the file in the project repository, for example:
 
 ```text
 project/
-├── WIT-Scientific-Thinking-and-Writing-Workflow.md
+├── WIT-Scientific-thinking-and-writing-skill.md
 ├── README.md
 ├── results/
 ├── manuscript/
@@ -92,11 +94,11 @@ project/
 
 Then explicitly instruct the AI:
 
-> Read `WIT-Scientific-Thinking-and-Writing-Workflow.md` first, and use it as the research-thinking and scientific-writing workflow for this project.
+> Read `WIT-Scientific-thinking-and-writing-skill.md` first, and use it as the research-thinking and scientific-writing workflow for this project.
 
 If the tool supports project-level instructions, you can add:
 
-> Before analyzing research questions, results, or manuscript text, read and follow `WIT-Scientific-Thinking-and-Writing-Workflow.md`.
+> Before analyzing research questions, results, or manuscript text, read and follow `WIT-Scientific-thinking-and-writing-skill.md`.
 
 Core rule:
 
@@ -214,7 +216,15 @@ WIT can be summarized as:
 
 > **Load WIT first; start from a question; every important finding should generate new questions; answerable questions become new Results, while unanswerable ones move into Discussion, Limitations, and Future Studies.**
 
-# R — Research Question
+## 4. REWRITE: The Core Research Loop
+
+WIT advances research through the **REWRITE** loop:
+
+> **Research Question → Examine Literature → Work / Experiment → Read Finding → Interrogate Finding → Test Answerability → Extend / Exit**
+
+These are not seven independent modules, but one continuous cycle.
+
+### 4.1 R — Research Question
 
 Do not begin with “What method should I use?” Do not organize the research around an algorithm, model, dataset, benchmark, or visualization technique.
 
@@ -247,41 +257,41 @@ This approach applies both at the beginning of a project and after an important 
 
 Typical question types include:
 
-### Whether
+#### 4.1.1 Whether
 
 - Does X really improve Y?
 - Is the advantage stable?
 - Does it remain after controlling for other factors?
 - Does it generalize to new data, tasks, or systems?
 
-### What
+#### 4.1.2 What
 
 - Which component contributes the most?
 - What feature determines success or failure?
 - Which variable actually drives the observed phenomenon?
 
-### How
+#### 4.1.3 How
 
 - How does X change the representation?
 - How does an algorithm escape a local optimum?
 - How does structural information improve prediction?
 
-### Why
+#### 4.1.4 Why
 
 - Why does X outperform Y?
 - What mechanism or principle explains the effect?
 
-### When
+#### 4.1.5 When
 
 - Under what conditions does the advantage appear?
 - When does it disappear?
 - What are the boundary conditions?
 
-### Where
+#### 4.1.6 Where
 
 - In which data domains, tasks, organisms, systems, or regimes does it hold?
 
-### To what extent
+#### 4.1.7 To what extent
 
 - How strong is the effect?
 - Where is the quantitative boundary?
@@ -293,13 +303,13 @@ The starting point of a study should therefore be:
 
 ---
 
-# E — Examine the Literature
+### 4.2 E — Examine the Literature
 
 The literature is not decoration for the Introduction; it is the coordinate system for scientific reasoning.
 
 WIT uses two literature checkpoints.
 
-## Literature Checkpoint 1: Before the Study
+#### 4.2.1 Literature Checkpoint 1: Before the Study
 
 After defining the core scientific question, ask:
 
@@ -317,7 +327,7 @@ and:
 
 > **Which existing explanations must the current study distinguish among?**
 
-## Literature Checkpoint 2: After an Important Finding
+#### 4.2.2 Literature Checkpoint 2: After an Important Finding
 
 After every important finding, return to the literature and ask:
 
@@ -343,7 +353,7 @@ but:
 
 ---
 
-# W — Work / Experiment
+### 4.3 W — Work / Experiment
 
 Every experiment should correspond to a clear question.
 
@@ -361,19 +371,19 @@ Experiments are tools for answering questions, not the organizing units of Resul
 
 ---
 
-# R — Read the Finding
+### 4.4 R — Read the Finding
 
 After obtaining a result, do not immediately move on to the next experiment. First distinguish three levels.
 
-## 1. Data
+#### 4.4.1 Data
 
 Raw observations or quantitative results.
 
-## 2. Finding
+#### 4.4.2 Finding
 
 A qualitative statement directly supported by the data.
 
-## 3. 1-hop Opinion
+#### 4.4.3 1-hop Opinion
 
 A one-step interpretation that remains close to the data.
 
@@ -381,7 +391,7 @@ A Results subsection can therefore be compressed into a practical **Fact–Opini
 
 > **Question → Experiment → Fact → 1-hop Opinion**
 
-### Fact
+#### 4.4.4 Fact
 
 A fact directly obtained from experiments or analyses, including data, comparisons, observed phenomena, and statistical results.
 
@@ -389,7 +399,7 @@ Example:
 
 > Method A significantly outperforms Method B under distribution shift.
 
-### 1-hop Opinion
+#### 4.4.5 1-hop Opinion
 
 A **one-step interpretation** of the Fact. It may contain author judgment, but it must remain close to the current result and should not jump directly to a broader theoretical claim.
 
@@ -415,7 +425,7 @@ Do not jump directly to a field-level general principle.
 
 ---
 
-# Unexpected Results and Serendipitous Findings: The Anomaly Branch
+#### 4.4.6 Unexpected Results and Serendipitous Findings: The Anomaly Branch
 
 Real research is not perfectly linear. Experiments often produce results opposite to the hypothesis, anomalous samples, unexpected subgroups, apparently failed but reproducible phenomena, or observations inconsistent with existing theory.
 
@@ -427,7 +437,7 @@ If yes, continue with the normal WIT / REWRITE process.
 
 If no, enter the **Anomaly Branch**.
 
-### 1. Is it a technical error?
+##### (1) Is it a technical error?
 
 Check for:
 
@@ -443,7 +453,7 @@ If yes:
 
 > Fix the problem and rerun the experiment.
 
-### 2. Is it random noise?
+##### (2) Is it random noise?
 
 Ask:
 
@@ -453,7 +463,7 @@ If not:
 
 > Do not treat it as a major finding yet.
 
-### 3. Is it a stable, reproducible anomaly?
+##### (3) Is it a stable, reproducible anomaly?
 
 If yes, do not force it back into the original hypothesis.
 
@@ -469,7 +479,7 @@ REWRITE is therefore not merely a way to organize completed results; it also all
 
 ---
 
-# I — Interrogate the Finding
+### 4.5 I — Interrogate the Finding
 
 Every important finding should generate new questions.
 
@@ -487,7 +497,7 @@ A good finding should open up a new question space.
 
 ---
 
-# T — Test Answerability
+### 4.6 T — Test Answerability
 
 This is the key decision point in the REWRITE loop.
 
@@ -495,7 +505,7 @@ For every new question, ask:
 
 > **Can the current study answer this question through additional analysis or experiments?**
 
-## If YES
+#### 4.6.1 If YES
 
 Do not move it prematurely into Discussion.
 
@@ -507,7 +517,7 @@ For example, if A outperforms B on OOD data and the next question is whether the
 
 Likewise, if “Which component drives the improvement?” can be answered through ablation, it should not be left as Future Work.
 
-## If NO
+#### 4.6.2 If NO
 
 Only then should the question move into Discussion:
 
@@ -515,7 +525,19 @@ Only then should the question move into Discussion:
 
 ---
 
-# Organize Results by Scientific Questions, Not Techniques
+### 4.7 E — Extend / Exit
+
+If a new question is answerable now:
+
+> **New Question → New Experiment / Analysis → New Results**
+
+If it is not answerable now or lies beyond scope:
+
+> **New Question → Discussion → Limitation → Future Study**
+
+## 5. Results: Question → Fact → 1-hop Opinion
+
+### 5.1 Organize by Scientific Questions, Not Techniques
 
 Avoid titles such as:
 
@@ -547,7 +569,61 @@ A concise distinction between Results and Discussion is:
 > **Results: one Fact → one 1-hop Opinion.**  
 > **Discussion opening: multiple 1-hop Opinions → one 2-hop Interpretation.**
 
-# Discussion Opening: 1-hop → 2-hop
+### 5.2 Standard Logic of a Results Subsection
+
+A strong Results subsection usually follows:
+
+> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion → Next Question**
+
+Thus:
+
+> **Results = Fact + 1-hop Opinion**
+
+### 5.3 Guided Template: Results Subsection
+
+For less experienced researchers, use a fill-in-the-blank structure.
+
+#### (1) Scientific Question
+
+> We want to know: ________________________.
+
+#### (2) Why This Question Matters
+
+> This question matters because: ________________________.
+
+#### (3) Experiment / Analysis
+
+> To answer this question, we: ________________________.
+
+#### (4) Data
+
+> The results show: ________________________.
+
+#### (5) Finding
+
+> These data directly show that: ________________________.
+
+#### (6) 1-hop Opinion
+
+> These results suggest that: ________________________.
+
+#### (7) New Question
+
+> This finding raises the question of: ________________________.
+
+#### (8) Answerability Check
+
+> Can the current study answer it?
+
+- Yes → design the next experiment / analysis;
+- No → move it to Discussion / Limitation / Future Study.
+
+---
+
+
+## 6. Discussion
+
+### 6.1 Opening: 2-hop Interpretation (this study)
 
 Each Results subsection usually ends with a 1-hop Opinion.
 
@@ -567,7 +643,7 @@ This paragraph should still stay close to the present study.
 
 ---
 
-# Discussion Middle: 2-hop → General Principle
+### 6.2 General Principle: beyond this study
 
 The middle of the Discussion moves upward through abstraction.
 
@@ -591,7 +667,7 @@ General principle:
 
 ---
 
-# Expand Outward from the General Principle into a Question Space
+### 6.3 Raise New Questions: reopen the question space
 
 Discussion should not stop at abstraction.
 
@@ -621,7 +697,7 @@ Many Discussions feel “thin” not because their interpretations are wrong, bu
 
 ---
 
-# What a Limitation Really Is
+### 6.4 Limitations: what important questions remain unanswered?
 
 A limitation is not:
 
@@ -649,7 +725,7 @@ Therefore: the present evidence cannot establish whether the principle is archit
 
 ---
 
-# Future Studies Should Follow from Limitations
+### 6.5 Future Studies: how to answer unresolved questions
 
 Future Work should not be a wish list.
 
@@ -665,7 +741,46 @@ Principle:
 
 ---
 
-# Reviewer Stress Test
+### 6.6 Guided Template: Discussion
+
+#### (1) Opening Paragraph: 2-hop
+
+> Taken together, the results of this study show that: ________________________.
+
+> Beyond the individual findings, this means that: ________________________.
+
+This paragraph should still focus on:
+
+> **this study**
+
+#### (2) Middle Paragraphs: General Principle
+
+> More broadly, these findings suggest that: ________________________.
+
+> This principle may apply not only to the current system but also to: ________________________.
+
+#### (3) New Question Space
+
+> These findings further raise the following unresolved questions:
+
+- Why: ________________________
+- How: ________________________
+- What: ________________________
+- When: ________________________
+- Whether: ________________________
+
+#### (4) Limitations
+
+> The current study cannot answer ________________________, because ________________________.
+
+#### (5) Future Study
+
+> To address this question, future work could test ________________________.
+
+---
+
+
+## 7. Reviewer Stress Test
 
 Before submission, actively switch to a reviewer’s perspective.
 
@@ -679,19 +794,19 @@ Generate:
 
 Then classify them.
 
-### A. Can be resolved with additional experiments now
+### 7.1 Can be resolved with additional experiments now
 
 → Return to Results.
 
-### B. Can be resolved through existing data analysis or interpretation
+### 7.2 Can be resolved through existing data analysis or interpretation
 
 → Strengthen Results / Discussion.
 
-### C. Cannot genuinely be resolved within the current study
+### 7.3 Cannot genuinely be resolved within the current study
 
 → Write as a Limitation and design a corresponding Future Study.
 
-### D. Is a Fatal Flaw
+### 7.4 Fatal Flaw
 
 Examples include an unfair central comparison, mismatch between claim and experimental design, severe confounding, or a central conclusion unsupported by the available evidence.
 
@@ -709,7 +824,7 @@ The reviewer perspective is a **stress test**; a limitation is only one possible
 
 ---
 
-# Deadline Mode: How to Close a Study Under Limited Time
+## 8. Deadline Mode: How to Close a Study Under Limited Time
 
 WIT / REWRITE can create a problem: every finding can generate more questions, so research can continue indefinitely.
 
@@ -719,13 +834,13 @@ Therefore, WIT includes a:
 
 > **Stop Rule / Minimum Sufficient Story**
 
-## Near a Deadline, Prioritize Three Types of Questions
+### 8.1 Near a Deadline: prioritize three types of questions
 
-### Priority 1: Questions that could change the central claim
+#### (1) Questions that could change the central claim
 
 If a different answer would invalidate or substantially narrow the main conclusion, address it first.
 
-### Priority 2: Fatal questions a reviewer is highly likely to raise
+#### (2) Fatal questions a reviewer is highly likely to raise
 
 Examples include:
 
@@ -737,7 +852,7 @@ Examples include:
 
 Address these first.
 
-### Priority 3: Low-cost questions that substantially improve interpretation
+#### (3) Low-cost questions that substantially improve interpretation
 
 Examples:
 
@@ -748,7 +863,7 @@ Examples:
 
 If the cost is low and the information gain is high, prioritize them.
 
-## Questions That Can Be Deferred
+### 8.2 Questions that can be deferred
 
 If a question:
 
@@ -761,7 +876,7 @@ then move it to:
 
 > **Discussion → Limitation → Future Study**
 
-## Stop Rule
+### 8.3 Stop Rule
 
 Stop expanding Results when:
 
@@ -777,86 +892,7 @@ Principle:
 
 ---
 
-# Guided Mode for Beginners: Results Subsection Template
-
-For less experienced researchers, use a fill-in-the-blank structure.
-
-### 1. Scientific Question
-
-> We want to know: ________________________.
-
-### 2. Why This Question Matters
-
-> This question matters because: ________________________.
-
-### 3. Experiment / Analysis
-
-> To answer this question, we: ________________________.
-
-### 4. Data
-
-> The results show: ________________________.
-
-### 5. Finding
-
-> These data directly show that: ________________________.
-
-### 6. 1-hop Opinion
-
-> These results suggest that: ________________________.
-
-### 7. New Question
-
-> This finding raises the question of: ________________________.
-
-### 8. Answerability Check
-
-> Can the current study answer it?
-
-- Yes → design the next experiment / analysis;
-- No → move it to Discussion / Limitation / Future Study.
-
----
-
-# Discussion Template
-
-## Opening Paragraph: 2-hop
-
-> Taken together, the results of this study show that: ________________________.
-
-> Beyond the individual findings, this means that: ________________________.
-
-This paragraph should still focus on:
-
-> **this study**
-
-## Middle Paragraphs: General Principle
-
-> More broadly, these findings suggest that: ________________________.
-
-> This principle may apply not only to the current system but also to: ________________________.
-
-## New Question Space
-
-> These findings further raise the following unresolved questions:
-
-- Why: ________________________
-- How: ________________________
-- What: ________________________
-- When: ________________________
-- Whether: ________________________
-
-## Limitations
-
-> The current study cannot answer ________________________, because ________________________.
-
-## Future Study
-
-> To address this question, future work could test ________________________.
-
----
-
-# Where Should This Sentence Go? A Decision Tree
+## 9. Where Should This Sentence Go? A Decision Tree
 
 ```text
 What is this sentence doing?
@@ -885,9 +921,9 @@ What is this sentence doing?
 
 ---
 
-# The Two Loops Inside REWRITE
+## 10. The Two Loops Inside REWRITE
 
-## Inner Loop: Research Progression
+### 10.1 Inner Loop: Research Progression
 
 > **Finding → Question → Answerability → Experiment → Finding**
 
@@ -895,7 +931,7 @@ Purpose:
 
 > Drive the current project forward.
 
-## Outer Loop: Interpretation and Abstraction
+### 10.2 Outer Loop: Interpretation and Abstraction
 
 > **Finding → Literature → Interpretation → Principle → New Question**
 
@@ -909,33 +945,33 @@ Together, the two loops determine:
 
 ---
 
-# Research Depth Diagnostic
+## 11. Research Depth Diagnostic
 
-## Level 0 — Observation
+### 11.1 Level 0 — Observation
 
 > A > B.
 
 Only reports a phenomenon.
 
-## Level 1 — Implication
+### 11.2 Level 1 — Implication
 
 > X improves Y.
 
 Identifies what the result means.
 
-## Level 2 — Interpretation
+### 11.3 Level 2 — Interpretation
 
 > X improves Y because it changes Z.
 
 Begins to explain mechanism.
 
-## Level 3 — General Principle
+### 11.4 Level 3 — General Principle
 
 > More generally, Z may govern this class of problems.
 
 Forms a transferable abstraction.
 
-## Level 4 — Boundary / Mechanism Questions
+### 11.5 Level 4 — Boundary / Mechanism Questions
 
 Ask:
 
@@ -944,7 +980,7 @@ Ask:
 - Why does it fail in some cases?
 - Are there counterexamples?
 
-## Level 5 — New Research Program
+### 11.6 Level 5 — New Research Program
 
 Develop:
 
@@ -962,77 +998,7 @@ or:
 
 ---
 
-# Recommended Ways to Invoke WIT
-
-## Mode 1: Project Design
-
-> This is my core idea: XXX. Use WIT to help me design the research storyline.
-
-Goal:
-
-> **Scientific Question → Hypothesis → Experiments → Possible Findings → Next Questions**
-
-## Mode 2: Expand a Finding
-
-> This is a finding: XXX. Use WIT to expand it.
-
-Default output:
-
-1. Finding;
-2. 1-hop Opinion;
-3. Literature positioning;
-4. Why / How / What / When / Whether questions;
-5. Which are answerable now;
-6. Suggested additional experiments;
-7. Which are not answerable now;
-8. 2-hop Interpretation;
-9. General Principle;
-10. Limitation;
-11. Future Study.
-
-This is the core everyday use of REWRITE.
-
-## Mode 3: Review Results
-
-> Use WIT to review the Results.
-
-Check whether each subsection is driven by a scientific question, whether it is organized around a clear finding rather than a technique, whether it contains an appropriate 1-hop Opinion, whether answerable questions have been prematurely pushed into Discussion, whether unexpected results remain unresolved, and whether key controls or alternative explanations are missing.
-
-## Mode 4: Review Discussion
-
-> Use WIT to review the Discussion.
-
-Check whether the opening moves from multiple 1-hop Opinions to a 2-hop Interpretation, whether the middle moves from 2-hop Interpretation to abstraction, whether a General Principle is articulated, whether the principle opens up a new question space, whether Limitations correspond to genuine unresolved questions, and whether Future Studies address those limitations.
-
-## Mode 5: Identify the Next Experiment
-
-> Use WIT to determine the most valuable next experiment.
-
-Priority:
-
-1. Central claim;
-2. Reviewer fatal challenges;
-3. Competing explanations;
-4. Boundary conditions;
-5. Low-cost, high-information experiments;
-6. Everything else moves to Future Study.
-
-## Mode 6: Deadline Mode
-
-> The deadline is close. Use WIT's Deadline Mode to help me close the project.
-
-Output:
-
-- Must do;
-- Should do;
-- Can omit;
-- Should be written as a Limitation;
-- Should be left for Future Study;
-- Whether the central claim should be narrowed.
-
----
-
-# Core Principles of WIT
+## 12. Core Principles of WIT
 
 > **Results are answers to questions.**
 
