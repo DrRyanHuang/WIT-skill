@@ -217,7 +217,6 @@ WIT 的日常使用可以压缩成一句话：
 
 > **先加载 WIT；从问题开始；每得到一个 finding 再产生问题；能回答的继续做，不能回答的进入 Discussion、Limitations 和 Future Studies。**
 
-<<<<<<< HEAD
 ## 4. REWRITE：核心研究循环
 
 WIT 内部通过 **REWRITE** 循环推进研究：
@@ -227,9 +226,6 @@ WIT 内部通过 **REWRITE** 循环推进研究：
 七个步骤不是彼此独立的模块，而是一个连续循环。
 
 ### 4.1 R — Research Question：研究问题
-=======
-## 4. 开题：R — Research Question
->>>>>>> refs/remotes/origin/main
 
 不要从“我要用什么方法”开始，也不要从某个算法、模型、数据集、benchmark 或可视化技术开始组织研究。
 
@@ -308,21 +304,13 @@ WIT 内部通过 **REWRITE** 循环推进研究：
 
 ---
 
-<<<<<<< HEAD
 ### 4.2 E — Examine the Literature：审视文献
-=======
-## 5. Literature：E — Examine the Literature
->>>>>>> refs/remotes/origin/main
 
 文献不是 Introduction 的装饰，而是科研推理的坐标系。
 
 WIT 设置两个文献检查点。
 
-<<<<<<< HEAD
 #### 4.2.1 Literature Checkpoint 1：研究开始之前
-=======
-### Literature Checkpoint 1：研究开始之前
->>>>>>> refs/remotes/origin/main
 
 在确定核心 scientific question 后，检查：
 
@@ -340,11 +328,7 @@ WIT 设置两个文献检查点。
 
 > **当前研究真正需要区分哪些已有解释？**
 
-<<<<<<< HEAD
 #### 4.2.2 Literature Checkpoint 2：得到重要 Finding 之后
-=======
-### Literature Checkpoint 2：得到重要 Finding 之后
->>>>>>> refs/remotes/origin/main
 
 每得到一个重要 finding，再回到文献，问：
 
@@ -370,11 +354,7 @@ WIT 设置两个文献检查点。
 
 ---
 
-<<<<<<< HEAD
 ### 4.3 W — Work / Experiment：开展研究与实验
-=======
-## 6. 实验：W — Work / Experiment
->>>>>>> refs/remotes/origin/main
 
 每个实验都应当对应一个明确问题。
 
@@ -392,7 +372,6 @@ WIT 设置两个文献检查点。
 
 ---
 
-<<<<<<< HEAD
 ### 4.4 R — Read the Finding：读懂 Finding
 
 得到结果以后，不要立刻跳到下一项实验。首先区分三个层级。
@@ -406,21 +385,6 @@ WIT 设置两个文献检查点。
 数据直接支持的定性陈述。
 
 #### 4.4.3 1-hop Opinion：一步推论
-=======
-## 7. Results：R — Read the Finding
-
-得到结果以后，不要立刻跳到下一项实验。首先区分三个层级。
-
-### Data：数据
-
-原始观察或定量结果。
-
-### Finding：发现
-
-数据直接支持的定性陈述。
-
-### 1-hop Opinion：一步推论
->>>>>>> refs/remotes/origin/main
 
 在不远离数据的前提下，向前走一步。
 
@@ -464,11 +428,7 @@ Results subsection 的结尾应当回答：
 
 ---
 
-<<<<<<< HEAD
 #### 4.4.6 异常结果与偶然发现：Anomaly Branch
-=======
-## 8. 异常结果与偶然发现：Anomaly Branch
->>>>>>> refs/remotes/origin/main
 
 真实科研不是完全线性的。实验经常会出现与假设相反的结果、异常样本、unexpected subgroup、看似失败但可重复的现象，或与已有理论不一致的结果。
 
@@ -514,11 +474,7 @@ Results subsection 的结尾应当回答：
 
 ---
 
-<<<<<<< HEAD
 ### 4.5 I — Interrogate the Finding：追问 Finding
-=======
-## 9. 追问 Finding：I — Interrogate the Finding
->>>>>>> refs/remotes/origin/main
 
 每个重要 finding 都应该继续产生问题。
 
@@ -536,11 +492,7 @@ Results subsection 的结尾应当回答：
 
 ---
 
-<<<<<<< HEAD
 ### 4.6 T — Test Answerability：检验可回答性
-=======
-## 10. Answerability Check：T — Test Answerability
->>>>>>> refs/remotes/origin/main
 
 这是 WIT 中 REWRITE loop 最关键的决策点。
 
@@ -548,11 +500,7 @@ Results subsection 的结尾应当回答：
 
 > **当前研究能不能通过额外分析或实验回答这个问题？**
 
-<<<<<<< HEAD
 #### 4.6.1 如果答案是 YES
-=======
-### 如果答案是 YES
->>>>>>> refs/remotes/origin/main
 
 不要把它过早写进 Discussion。
 
@@ -564,11 +512,7 @@ Results subsection 的结尾应当回答：
 
 同样，如果“哪个模块带来主要提升？”可以通过 ablation 回答，就不应该写成 Future Work。
 
-<<<<<<< HEAD
 #### 4.6.2 如果答案是 NO
-=======
-### 如果答案是 NO
->>>>>>> refs/remotes/origin/main
 
 问题才进入 Discussion：
 
@@ -576,7 +520,6 @@ Results subsection 的结尾应当回答：
 
 ---
 
-<<<<<<< HEAD
 ### 4.7 E — Extend / Exit：拓展或收束
 
 如果新问题当前可回答：
@@ -590,9 +533,6 @@ Results subsection 的结尾应当回答：
 ## 5. Results：Question → Fact → 1-hop Opinion
 
 ### 5.1 按 Scientific Question 组织，而不是按技术组织
-=======
-## 11. Results 应按 Scientific Question 组织，而不是按技术组织
->>>>>>> refs/remotes/origin/main
 
 不推荐：
 
@@ -626,7 +566,6 @@ Results subsection 的结尾应当回答：
 > **Results：一个 Fact → 一个 1-hop Opinion。**  
 > **Discussion opening：多个 1-hop Opinions → 一个 2-hop Interpretation。**
 
-<<<<<<< HEAD
 ### 5.2 Results subsection 的标准逻辑链
 
 一个 Results subsection 最好形成：
@@ -682,9 +621,6 @@ Results subsection 的结尾应当回答：
 ## 6. Discussion
 
 ### 6.1 Opening：2-hop Interpretation (this study)
-=======
-## 12. Discussion Opening：1-hop → 2-hop
->>>>>>> refs/remotes/origin/main
 
 Results 中每个 subsection 通常已经得到一个 1-hop opinion。
 
@@ -704,11 +640,7 @@ Discussion 第一段的任务不是重复 Results，而是：
 
 ---
 
-<<<<<<< HEAD
 ### 6.2 General Principle：beyond this study
-=======
-## 13. Discussion Middle：2-hop → General Principle
->>>>>>> refs/remotes/origin/main
 
 Discussion 中间部分继续向上抽象。
 
@@ -732,11 +664,7 @@ General principle：
 
 ---
 
-<<<<<<< HEAD
 ### 6.3 Raise New Questions：重新打开 question space
-=======
-## 14. 从 General Principle 再打开 Question Space
->>>>>>> refs/remotes/origin/main
 
 Discussion 不应止于 abstraction。
 
@@ -766,11 +694,7 @@ Discussion 不应止于 abstraction。
 
 ---
 
-<<<<<<< HEAD
 ### 6.4 Limitations：哪些重要问题当前回答不了
-=======
-## 15. Limitations 的正确含义
->>>>>>> refs/remotes/origin/main
 
 Limitation 不是：
 
@@ -798,11 +722,7 @@ Limitation：当前研究只系统测试了一个 model family。
 
 ---
 
-<<<<<<< HEAD
 ### 6.5 Future Studies：如何回答 unresolved questions
-=======
-## 16. Future Studies：从 Limitation 推导
->>>>>>> refs/remotes/origin/main
 
 Future Work 不应该是一张愿望清单。
 
@@ -818,7 +738,6 @@ Future Work 不应该是一张愿望清单。
 
 ---
 
-<<<<<<< HEAD
 ### 6.6 初学者模板：Discussion
 
 #### （1）Opening Paragraph：2-hop
@@ -859,9 +778,6 @@ Future Work 不应该是一张愿望清单。
 
 
 ## 7. Reviewer Stress Test
-=======
-## 17. Reviewer Stress Test
->>>>>>> refs/remotes/origin/main
 
 在准备投稿前，主动切换到 reviewer perspective。
 
@@ -905,11 +821,7 @@ Reviewer perspective 是一个 **stress test**，而 limitation 只是其可能�
 
 ---
 
-<<<<<<< HEAD
 ## 8. Deadline Mode：有限时间下如何收束研究
-=======
-## 18. Deadline Mode：有限时间下如何收束研究
->>>>>>> refs/remotes/origin/main
 
 WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题，因此研究可以无限延伸。
 
@@ -966,90 +878,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-<<<<<<< HEAD
 ## 9. 句子应该放在哪里：决策图
-=======
-## 19. 新手模式：Results Subsection 填空模板
-
-对于经验较少的研究者，可以使用 Guided Mode。
-
-### 1. Scientific Question
-
-> 我们想知道：________________________。
-
-### 2. Why this question matters
-
-> 这个问题重要，因为：________________________。
-
-### 3. Experiment / Analysis
-
-> 为了回答这个问题，我们：________________________。
-
-### 4. Data
-
-> 结果显示：________________________。
-
-### 5. Finding
-
-> 这些数据直接表明：________________________。
-
-### 6. 1-hop Opinion
-
-> 这些结果提示：________________________。
-
-### 7. New Question
-
-> 这一 finding 又引出了问题：________________________。
-
-### 8. Answerability Check
-
-> 当前研究能否回答？
-
-- 能 → 设计下一项 experiment / analysis；
-- 不能 → 放入 Discussion / Limitation / Future Study。
-
----
-
-## 20. Discussion 填空模板
-
-## Opening Paragraph：2-hop
-
-> 本研究的多个结果共同表明：________________________。
-
-> 与单个实验结果相比，这意味着：________________________。
-
-这一段仍然围绕：
-
-> **this study**
-
-## Middle Paragraphs：General Principle
-
-> 更进一步，这些发现提示一个更一般的可能性：________________________。
-
-> 这一原则可能不仅适用于当前体系，还可能适用于：________________________。
-
-## New Question Space
-
-> 这些发现进一步提出了以下尚未解决的问题：
-
-- Why：________________________
-- How：________________________
-- What：________________________
-- When：________________________
-- Whether：________________________
-
-## Limitations
-
-> 当前研究无法回答其中的 ________________________，因为 ________________________。
-
-## Future Study
-
-> 为回答这一问题，下一步可以通过 ________________________ 进行检验。
-
----
-
-## 21. 句子应该放在哪里：决策图
->>>>>>> refs/remotes/origin/main
 
 ```text
 这句话在说什么？
@@ -1078,11 +907,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-<<<<<<< HEAD
 ## 10. REWRITE loop 的两个循环
-=======
-## 22. REWRITE loop 的两个循环
->>>>>>> refs/remotes/origin/main
 
 ### 10.1 Inner Loop：研究推进循环
 
@@ -1106,11 +931,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-<<<<<<< HEAD
 ## 11. Research Depth Diagnostic：科研深度诊断
-=======
-## 23. Research Depth Diagnostic：科研深度诊断
->>>>>>> refs/remotes/origin/main
 
 ### 11.1 Level 0 — Observation
 
@@ -1163,11 +984,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-<<<<<<< HEAD
 ## 12. WIT 的核心原则
-=======
-# 二十五、REWRITE 的核心原则
->>>>>>> refs/remotes/origin/main
 
 > **Results are answers to questions.**
 
@@ -1221,20 +1038,12 @@ Results 是对 scientific questions 的回答。
 
 这就是 **WIT：Writing Is Thinking**。
 
-<<<<<<< HEAD
 ## 13. 如何检验一篇文章的逻辑链？
-=======
-## 25. 如何检验一篇文章的逻辑链？
->>>>>>> refs/remotes/origin/main
 
 WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查四层：Introduction、Results titles、Results subsection 和 Discussion。
 
 
-<<<<<<< HEAD
 ### 13.1 Introduction 层面：段首句能否组成完整的“问题链”？
-=======
-## 1. Introduction 层面：段首句能否组成完整的“问题链”？
->>>>>>> refs/remotes/origin/main
 
 先把 Introduction 每一段的**第一句**单独抽取出来，按顺序排列，然后暂时不看段内细节，只问：
 
@@ -1246,21 +1055,12 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 
 也就是说，Introduction 应依次回答：
 
-<<<<<<< HEAD
 （1）**Final Goal**：最终想解决的 scientific goal 是什么？
 （2）**Necessary Components**：实现这个目标需要哪些关键组成部分？
 （3）**Previous Studies**：前人已经建立了哪些必要组件？
 （4）**Missing Component**：还缺哪一块关键拼图？
 （5）**Why It Matters**：为什么缺少这一块，最终目标就无法真正闭环？
 （6）**This Study**：本研究如何补上这块 missing component？
-=======
-1. **Final Goal**：最终想解决的 scientific goal 是什么？
-2. **Necessary Components**：实现这个目标需要哪些关键组成部分？
-3. **Previous Studies**：前人已经建立了哪些必要组件？
-4. **Missing Component**：还缺哪一块关键拼图？
-5. **Why It Matters**：为什么缺少这一块，最终目标就无法真正闭环？
-6. **This Study**：本研究如何补上这块 missing component？
->>>>>>> refs/remotes/origin/main
 
 一个强的 Introduction，不是简单地写：
 
@@ -1295,11 +1095,7 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 ---
 
 
-<<<<<<< HEAD
 ### 13.2 全文层面：Results subsection titles 能否组成一篇“小 essay”？
-=======
-## 2. 全文层面：Results subsection titles 能否组成一篇“小 essay”？
->>>>>>> refs/remotes/origin/main
 
 先把 Results 中所有 subsection titles 单独抽取出来，按顺序排列，然后暂时不看正文，只问：
 
@@ -1313,11 +1109,7 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 
 > **只读 subsection titles，也能大致理解这篇文章解决了什么问题、得到了哪些主要答案。**
 
-<<<<<<< HEAD
 ### 13.3 Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
-=======
-## 3. Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
->>>>>>> refs/remotes/origin/main
 
 逐个进入 Results subsection，检查内部是否形成：
 
@@ -1331,7 +1123,6 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 
 进一步检查：
 
-<<<<<<< HEAD
 （1）Motivation 是否来自前面的 scientific question？
 （2）Fact 是否真正支持 subsection title？
 （3）Opinion 是否由 Fact 直接推出？
@@ -1339,15 +1130,6 @@ WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查
 （5）subsection 最后是否自然产生下一步 question？
 
 ### 13.4 Discussion 层面：是否形成完整的上升—展开—收束链条？
-=======
-1. Motivation 是否来自前面的 scientific question？
-2. Fact 是否真正支持 subsection title？
-3. Opinion 是否由 Fact 直接推出？
-4. Opinion 是否只走了 1-hop，而没有提前跳到 general principle？
-5. subsection 最后是否自然产生下一步 question？
-
-## 4. Discussion 层面：是否形成完整的上升—展开—收束链条？
->>>>>>> refs/remotes/origin/main
 
 Discussion 应检查是否大致形成：
 
@@ -1367,11 +1149,7 @@ Discussion 应检查是否大致形成：
 - **Future Studies**：下一步什么实验或分析能够回答这些 unresolved questions？
 - **Conclusion Sentence**：用一句话收束全文，留下最终 take-home message，而不是重复性能数字。
 
-<<<<<<< HEAD
 ### 13.5 简化检查图
-=======
-## 5. 简化检查图
->>>>>>> refs/remotes/origin/main
 
 ```text
 Paper-level storyline

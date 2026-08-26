@@ -998,11 +998,7 @@ or:
 
 ---
 
-<<<<<<< HEAD
 ## 12. Core Principles of WIT
-=======
-# Core Principles of WIT
->>>>>>> refs/remotes/origin/main
 
 > **Results are answers to questions.**
 
