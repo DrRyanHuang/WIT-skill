@@ -4,7 +4,7 @@ title: WIT
 
 # WIT: Writing Is Thinking
 
-**A workflow for scientific thinking and writing**
+**An LLM skill for scientific thinking and writing**
 
 > Writing is not merely the expression of completed thinking;  
 > it is part of scientific thinking itself.
@@ -22,9 +22,9 @@ WIT helps researchers:
 
 ## Get Started
 
-👉 [Read the WIT workflow](WIT-Scientific-Thinking-and-Writing-Workflow.md)
+👉 [Read the WIT workflow](WIT-Scientific-thinking-and-writing-skill.md)
 
-👉 [中文版本](WIT-skill-CN.md)
+👉 [中文版本](WIT-科学思考及写作skill.md)
 
 ## Core Loop
 
