@@ -1,0 +1,85 @@
+---
+name: wit
+description: Apply WIT (Writing Is Thinking) to scientific question formulation, finding-driven research planning, next-experiment selection, Results or Discussion review, claim–evidence and reviewer stress tests, manuscript logic audits, and deadline closure. Use when the user invokes WIT or asks for these question-driven scientific reasoning workflows; do not use for generic copyediting, summarization, or literature search alone.
+---
+
+# WIT
+
+Use WIT to turn writing into scientific decision-making. Answer the user's actual question and preserve its scope.
+
+WIT is a **question generator and claim stress test**, not a checklist completer or a rigid paper template. Require the reasoning functions a study needs; do not prescribe one surface form for every paper.
+
+## Load only the material the task needs
+
+Read one complete authoritative workflow before applying WIT:
+
+- Chinese output: [WIT-科学思考及写作skill.md](WIT-科学思考及写作skill.md)
+- English output: [WIT-Scientific-thinking-and-writing-skill.md](WIT-Scientific-thinking-and-writing-skill.md)
+- Bilingual output, translation, or cross-language comparison: read both.
+
+Load a case study only when it changes the current judgment:
+
+- Read [Assess-WIT-using-AlphaGo.md](Assess-WIT-using-AlphaGo.md), or its [Chinese version](检验WIT-using-AlphaGo.md), for AlphaGo, external tests or refinements of WIT, or method/system papers where pipeline-driven Results and non-formulaic Discussion matter.
+- Read [Assess-WIT-using-MSFold.md](Assess-WIT-using-MSFold.md), or its [Chinese version](检验WIT-using-MSFold.md), for MSFold, protein-structure or bioinformatics work involving representation, search, sampling, or ranking, or a constructive manuscript audit.
+
+Treat the workflows as the method and the cases as stress tests, not as evidence for unrelated scientific claims. Verify consequential literature claims from appropriate primary sources.
+
+## Select the requested mode
+
+Use only the mode or combination needed; do not dump the full framework by default.
+
+- **Open a question:** turn a vague idea into a researchable question space.
+- **Advance from a finding:** interpret evidence, generate competing explanations, and decide what becomes new Results.
+- **Choose the next experiment:** rank discriminating tests by information gain and consequence for the central claim.
+- **Review Results:** test storyline progression, local evidence–claim distance, controls, boundaries, and overlooked anomalies.
+- **Review Discussion:** test integrated interpretation, broader meaning, evidence-proportional abstraction, and only useful optional extensions.
+- **Place a sentence or diagnose depth:** distinguish direct evidence, local Results interpretation, study-level Discussion synthesis, broader principle, unresolved question, Limitation, and Future Study; identify the next reasoning level rather than merely rewriting the sentence.
+- **Audit a paper:** inspect Introduction, Results titles, Results subsections, Discussion, and the claim–evidence chain as one linked argument.
+- **Stress-test a study:** generate strong reviewer challenges, potential falsifiers, counterexamples, and fatal-flaw checks.
+- **Deadline Mode:** freeze the storyline, triage remaining work, narrow claims when necessary, and close a minimum sufficient story.
+
+## Run REWRITE as a decision loop
+
+Start from the central question, central claim, available evidence, known constraints, and the user's immediate decision.
+
+1. **Research Question** — Map the relevant dimensions: Whether/Existence, What/Determinants, Why/Cause, How/Mechanism, When/Boundary Conditions, and To what extent/Magnitude. Use them to find omissions, not to force six answers.
+2. **Examine Literature** — Check novelty and competing hypotheses before the study; after an important finding, determine whether it confirms, contradicts, refines, extends, or reframes prior knowledge.
+3. **Work / Experiment** — Keep the link `Question → Test → Data → Finding`. Do not recommend an experiment merely because it is conventional.
+4. **Read Finding** — Separate Data, Finding/Fact, and restrained 1-hop Opinion. Integrate multiple local findings into a 2-hop interpretation only when the evidence supports it; abstract further only within the evidence boundary.
+5. **Interrogate** — Generate plausible competing hypotheses, the most informative potential falsifier, likely counterexamples, and relevant boundary questions. If a result is unexpected, distinguish technical error, noise, and a stable anomaly; a stable anomaly may require rewriting the question.
+6. **Test Answerability** — If the current study can answer an important question, return it to Results through analysis or experiment. If it cannot, explain why and decide whether it is important enough for Discussion, a Limitation, or Future Study.
+7. **Extend / Exit** — Continue only when the next test could change the claim, discriminate explanations, establish an important boundary, or materially strengthen the evidence chain. Otherwise apply the stop rule.
+
+Treat 1-hop and 2-hop as **inference-distance diagnostics**, not mechanical sentence labels.
+
+## Preserve these reasoning invariants
+
+- **Reasoning structure is not surface prose structure.** Question/finding-driven and component/pipeline-driven Results are both valid when the scientific progression is recoverable.
+- **Results:** the reader should recover `why this part exists → evidence → restrained local meaning → why the next part follows`. Subsection titles should form a coherent “small essay,” not obey one naming style.
+- **Discussion core:** `Integrated Interpretation → Broader Meaning / justified abstraction`. New Questions, Boundaries, Limitations, and Future Studies are optional when scientifically useful, not mandatory sections.
+- **Introduction audit:** paragraph openings should reveal where the field stands, what necessary capability is missing, why it matters, and what this study contributes. A central story may have a primary missing component plus secondary bottlenecks; make their hierarchy explicit. This is a logic test, not a required paragraph count.
+- **Claim–evidence alignment:** map every major claim to explicit evidence, its strength, and remaining uncertainty. Add evidence, narrow the claim, or remove it when the mapping fails.
+- **Falsification sharpens claims:** a stable counterexample may narrow the claim, reveal a boundary, or rewrite the hypothesis. Failure to find one adds support but never proves the claim.
+- **Reviewer criticism is a stress test, not automatically a limitation.** Resolve it with new evidence, existing analysis, or clearer interpretation when possible. A fatal flaw requires redesign or a narrower central claim.
+- **The next experiment is not necessarily the easiest.** Prefer the test that most changes belief, separates live hypotheses, or protects the central claim, while considering feasibility and cost.
+
+## Shape the output to the decision
+
+- For a **question**, return the central formulation, relevant dimension map, highest-value unresolved questions, and their answerability.
+- For a **finding**, label the Fact and 1-hop Opinion; position it in literature; list credible competing hypotheses and falsifiers; prioritize tests; then state only justified broader interpretations, boundaries, and future directions.
+- For a **next experiment**, state the question, hypotheses distinguished, possible outcomes and how each changes the claim, expected information gain, feasibility, and priority.
+- For a **Results or Discussion review**, lead with the most consequential logical problems, show the evidence or text that creates each problem, and give an actionable correction criterion.
+- For a **paper audit**, connect Introduction necessity, Results progression, subsection reasoning, Discussion synthesis, and claim–evidence mapping; do not score template compliance.
+- For **Deadline Mode**, classify Must do, Should do, Can omit, Limitation, Future Study, and Claim to narrow.
+
+Prioritize rather than enumerate everything that could be asked. Distinguish observation, inference, uncertainty, and proposal. For consequential recommendations, explain why and give a representative example or decision criterion when useful. Never invent data, citations, manuscript content, or certainty.
+
+## Stop rule
+
+Freeze the storyline as:
+
+`Central Question → Central Claim → 3–5 Key Findings → Broader Meaning / General Principle`
+
+Stop expanding the current study when the central question is credibly answered, major competing explanations and reviewer risks are handled to a reasonable extent, the most important boundaries have adequate evidence, and remaining questions require work outside the present scope.
+
+Optimize for a **minimal sufficient, coherent, credible, and defensible scientific story**—not for answering every question WIT can generate.
