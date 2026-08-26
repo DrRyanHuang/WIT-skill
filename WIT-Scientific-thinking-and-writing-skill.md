@@ -1033,3 +1033,159 @@ The core research loop of WIT can be compressed into:
 Research keeps rewriting the question through new findings, while paper writing makes this thinking process explicit.
 
 That is **WIT: Writing Is Thinking**.
+
+## 13. How to Audit the Logical Chain of a Paper
+
+WIT can also be used in reverse to **audit the logical structure of a paper** at four levels: the Introduction, Results subsection titles, individual Results subsections, and the Discussion.
+
+### 13.1 Introduction: Do the Opening Sentences Form a Complete Problem Chain?
+
+Extract the **first sentence of each Introduction paragraph**, place them in order, and temporarily ignore the paragraph-level details. Then ask:
+
+> **Taken together, do these opening sentences clearly explain why this study must be done?**
+
+The ideal logical chain is:
+
+> **Final Goal → Necessary Components → What Previous Studies Have Established → Missing Component → Why the Missing Component Matters → This Study Provides It**
+
+In other words, the Introduction should answer:
+
+1. **Final Goal**: What scientific goal does the field ultimately seek to achieve?
+2. **Necessary Components**: What key components are required to achieve that goal?
+3. **Previous Studies**: Which necessary components have previous studies already established?
+4. **Missing Component**: Which critical piece is still missing?
+5. **Why It Matters**: Why does the final goal remain incomplete without that piece?
+6. **This Study**: How does the present study provide the missing component?
+
+A strong Introduction does not merely say:
+
+> X is important.
+>
+> Many studies have investigated X.
+>
+> However, some gaps remain.
+>
+> Here, we propose a new method.
+
+Instead, it should establish a clearer logic of completion:
+
+> **Achieving the final goal requires A, B, C, and X.**
+>
+> **Previous studies have established A, B, and C.**
+>
+> **But X remains unresolved.**
+>
+> **Without X, the final goal cannot be completed.**
+>
+> **This study provides X by ...**
+
+Check:
+
+- Does the first paragraph state the final goal rather than merely introduce the research object?
+- Do the middle paragraphs explain which necessary components have already been established, rather than simply list prior work?
+- Is the missing component explicit, important, and necessary for the final goal?
+- Is the missing component more than something that “has not been done before”?
+- Does the final Introduction paragraph map precisely onto the missing component?
+- Is what the study claims to provide exactly the piece identified as missing?
+
+A practical criterion is:
+
+> **By reading only the first sentence of each Introduction paragraph, a reader should understand how far the field has progressed, what is still missing, and why the present study is necessary.**
+
+If those opening sentences do not form this chain, the Introduction is likely still literature-driven rather than question-driven.
+
+---
+
+### 13.2 Paper Level: Can the Results Subsection Titles Form a “Small Essay”?
+
+Extract all Results subsection titles, place them in order, and temporarily ignore the body text. Then ask:
+
+> **Can these titles independently tell a complete and progressively developing scientific story?**
+
+Ideally, they form a sequence such as:
+
+> **Core Question → Main Finding → Further Validation → Mechanism / Cause → Generalization / Boundary → Integrated Understanding**
+
+A strong criterion is:
+
+> **By reading only the subsection titles, a reader should roughly understand what problem the paper solved and what major answers it obtained.**
+
+### 13.3 Subsection Level: Does Each Results Subsection Follow Motivation → Fact → 1-hop Opinion?
+
+Inspect each Results subsection for the following internal chain:
+
+> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion**
+
+Here:
+
+- **Motivation**: What question follows from the previous finding, and why is this subsection needed?
+- **Fact**: What was directly observed in the experiments, comparisons, or statistical analyses?
+- **1-hop Opinion**: What do those Facts mean, staying only one inferential step away from the evidence?
+
+Check:
+
+1. Does the Motivation arise from a scientific question established earlier?
+2. Do the Facts genuinely support the subsection title?
+3. Does the Opinion follow directly from the Facts?
+4. Does the Opinion remain one hop away rather than jumping prematurely to a General Principle?
+5. Does the subsection naturally produce the next question?
+
+### 13.4 Discussion Level: Does It Complete the Full Rise–Expand–Close Chain?
+
+The Discussion should approximately follow:
+
+> **2-hop Interpretation (this study)**
+>
+> → **General Principle (beyond this study)**
+>
+> → **Raise New Questions**
+>
+> → **Limitations**
+>
+> → **Future Studies**
+>
+> → **Conclusion Sentence**
+
+Specifically:
+
+- **2-hop Interpretation (this study)**: Integrate the 1-hop Opinions from multiple Results subsections and answer, “Taken together, what does this study show?”
+- **General Principle (beyond this study)**: Abstract a broader principle beyond the current method, dataset, or task.
+- **Raise New Questions**: Reopen the question space through Why / How / What / When / Whether / To what extent.
+- **Limitations**: Identify important questions the current study cannot answer and explain why.
+- **Future Studies**: Specify experiments or analyses that could answer those unresolved questions.
+- **Conclusion Sentence**: Close with the final take-home message rather than repeat performance numbers.
+
+### 13.5 Simplified Audit Map
+
+~~~text
+Paper-level storyline
+│
+├─ Results subsection titles
+│      └─ Can they form a small essay?
+│
+├─ Each Results subsection
+│      └─ Motivation
+│          → Fact
+│          → 1-hop Opinion
+│          → Next Question
+│
+└─ Discussion
+       └─ 2-hop Interpretation (this study)
+           → General Principle (beyond this study)
+           → Raise New Questions
+           → Limitations
+           → Future Studies
+           → Conclusion Sentence
+~~~
+
+The audit can be compressed into four questions:
+
+> **1. By reading only the first sentence of each Introduction paragraph, can we recover the chain Final Goal → Previous Studies → Missing Component → This Study?**
+
+> **2. By reading only the Results subsection titles, does the scientific story hold together?**
+
+> **3. Within each Results subsection, is there a clear Motivation → Fact → 1-hop Opinion chain?**
+
+> **4. Does the Discussion complete this study → beyond this study → new questions → limitations → future studies → conclusion?**
+
+If all four levels hold, the paper's main logical chain is usually clear.
