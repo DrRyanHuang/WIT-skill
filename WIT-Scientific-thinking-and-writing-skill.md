@@ -32,6 +32,10 @@ WIT is the overarching framework; REWRITE is its operational mechanism.
 >
 > **Reasoning structure ≠ Surface prose structure.**
 
+> **WIT is a question generator, not a checklist completer.**
+
+Its role is to expose overlooked scientific dimensions, competing explanations, and unresolved questions. It does not require every project to answer every generated question, nor every paper to explicitly contain every WIT module.
+
 ## 2. What Problems Does WIT Address?
 
 WIT is designed to address several common difficulties in scientific research and paper writing:
@@ -1589,6 +1593,8 @@ or:
 ---
 
 ## 13. Core Principles of WIT
+
+> **WIT is a question generator, not a checklist completer.**
 
 > **WIT specifies reasoning functions, not rigid prose forms.**
 

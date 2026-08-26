@@ -33,6 +33,10 @@ WIT 内部使用 **REWRITE loop** 作为执行循环：
 >
 > **Reasoning structure ≠ Surface prose structure.**
 
+> **WIT 用来生成问题，而不是用来完成清单。**
+
+WIT 的作用是帮助研究者暴露可能遗漏的 scientific dimensions、competing explanations 和 unresolved questions；它不要求每个 project 把所有问题逐项回答，也不要求每篇论文把所有模块逐项写完。
+
 ## 2. WIT 解决哪些痛点问题
 
 WIT 主要解决科学研究与论文写作中以下常见困惑：
@@ -1610,6 +1614,8 @@ Storyline Freeze 不是不允许研究变化。
 ---
 
 ## 13. WIT 的核心原则
+
+> **WIT 用来生成问题，而不是用来完成清单。**
 
 > **WIT specifies reasoning functions, not rigid prose forms.**
 
