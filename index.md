@@ -34,7 +34,7 @@ WIT helps researchers:
 
 - AlphaGo
 👉 [Assess WIT using AlphaGo](tests/AlphaGo/Assess-WIT-using-AlphaGo.md)
-👉 [中文版本](tests/AlphaGo/检验WIT-using-AlphaGo.md)
+👉 [中文版本](tests/AlphaGo/Assess-WIT-using-AlphaGo-cn.md)
 
 ## Applying WIT to Research and Writing
 
