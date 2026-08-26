@@ -6,6 +6,9 @@ Chinese Academy of Sciences
 Email: dbu@ict.ac.cn  
 2026/08/20
 
+
+> **贯穿示例：** 本文主要以 **MSFold** 和 **AlphaGo** 两篇研究作为贯穿示例。MSFold 代表蛋白质结构 / 生物信息学研究，AlphaGo 代表经典 AI / method-system research。两者用于从不同研究范式解释、检验和修正 WIT，而不是要求所有论文都采用相同的表面写法。
+
 ## 1. WIT 的释义
 
 **WIT = Writing Is Thinking。**
@@ -24,12 +27,22 @@ WIT 内部使用 **REWRITE loop** 作为执行循环：
 
 > **使用原则：** WIT 不是只给结论的 checklist。对于关键规则，应同时说明“为什么”、给出典型例子，并提供可执行的判断标准。
 
+> **元原则：WIT 约束的是科学思考需要完成的逻辑功能，而不是论文表面的固定格式。**
+>
+> 同一种 reasoning function，可以用不同的 prose form 表达。WIT 应要求作者能够回答“为什么这一部分存在、证据支持什么、下一步逻辑是什么”，但不要求每篇论文都机械地使用同一种 subsection title、同一种段落顺序或固定的 Limitations / Future Studies 模板。
+>
+> **Reasoning structure ≠ Surface prose structure.**
+
+> **WIT 用来生成问题，而不是用来完成清单。**
+
+WIT 的作用是帮助研究者暴露可能遗漏的 scientific dimensions、competing explanations 和 unresolved questions；它不要求每个 project 把所有问题逐项回答，也不要求每篇论文把所有模块逐项写完。
+
 ## 2. WIT 解决哪些痛点问题
 
 WIT 主要解决科学研究与论文写作中以下常见困惑：
 
 （1）**开题时只有一个模糊想法，不知道怎样把问题真正“打开”。**  
-   如何从 **When / What / Why / How / Whether / To what extent** 等角度，把一个单点问题展开成可以研究的 question space？
+   如何从 **Whether / What / Why / How / When / To what extent** 等角度，把一个单点问题展开成可以研究的 question space？
 
 （2）**Results 与 Discussion 经常混在一起。**  
    Results 的 subsection 应该写到什么程度？什么时候只是 Fact，什么时候可以加入 1-hop Opinion？Discussion 为什么不能只是把 Results 再重复一遍？
@@ -116,7 +129,7 @@ project/
 
 重点从以下方向展开：
 
-> **When / What / Why / How / Whether / To what extent**
+> **Whether / What / Why / How / When / To what extent**
 
 目标是把一个模糊问题展开成可研究的 **question space**。
 
@@ -139,8 +152,8 @@ project/
 （7）哪些当前不可回答；
 （8）2-hop Interpretation；
 （9）General Principle；
-10. Limitation；
-11. Future Study。
+（10）Potential Limitation（若与当前 story 相关）；
+（11）Potential Future Study（若值得显式展开）。
 
 这是 WIT 最核心的日常使用方式：
 
@@ -156,11 +169,17 @@ project/
 
 重点检查：
 
-- subsection 是否由 scientific question 驱动；
-- 是否形成清晰的 **Fact → 1-hop Opinion**；
-- 是否按“回答了什么问题”而不是“做了什么技术”组织；
+- subsection titles 连起来，是否能形成清楚、递进的 scientific story；
+- 每个 subsection 的存在是否有明确的逻辑功能，而不只是“又做了一个实验”；
+- 是否形成清楚的 **Fact → restrained 1-hop Opinion**；
+- **Question / Finding-driven** 的组织是否合适；如果是 method / system paper，**Component / Pipeline-driven** 的组织是否更自然；
+- 即使表面按 pipeline 组织，背后的 **Question → Test → Finding → Next Step** reasoning 是否仍然可恢复；
 - 是否有本来可以回答的问题被过早扔进 Discussion；
-- 是否遗漏关键 control、alternative explanation 或异常结果。
+- 是否遗漏关键 control、competing explanation、counterexample 或异常结果。
+
+原则：
+
+> **Results should expose the logical progression of the scientific story, not obey a single title format.**
 
 ---
 
@@ -170,14 +189,21 @@ project/
 
 > 按 WIT 检查 Discussion。
 
-重点检查：
+先检查 **core functions**：
 
-- Opening 是否完成 **multiple 1-hop Opinions → 2-hop Interpretation**；
-- 是否只是重复 Results；
-- Middle 是否完成 **2-hop → General Principle**；
-- 是否从已有 findings 打开新的 question space；
-- Limitations 是否对应真正 unresolved questions；
-- Future Studies 是否由 limitations 自然推出。
+- 是否把多个局部 findings / 1-hop Opinions 综合成 integrated interpretation；
+- 是否超越逐条重复 Results；
+- 是否进一步说明 broader meaning，必要时上升到 General Principle。
+
+再检查 **optional extensions**（仅在研究需要时）：
+
+- 是否值得从 findings 再打开新的 question space；
+- 是否存在真正需要明确写出的 boundary / limitation；
+- Future Studies 是否能够针对 unresolved questions，而不是例行公事。
+
+原则：
+
+> **Discussion 的核心功能是 interpretation and abstraction；New Questions、Limitations 和 Future Studies 是有价值的扩展，但不是每篇论文都必须显式出现的固定段落。**
 
 ---
 
@@ -214,7 +240,7 @@ project/
 
 WIT 的日常使用可以压缩成一句话：
 
-> **先加载 WIT；从问题开始；每得到一个 finding 再产生问题；能回答的继续做，不能回答的进入 Discussion、Limitations 和 Future Studies。**
+> **先加载 WIT；从问题开始；每得到一个 finding 再产生问题；能回答的继续做，不能回答的先判断是否重要，再决定是否进入 Discussion、Limitations 或 Future Studies。**
 
 ## 4. REWRITE：核心研究循环
 
@@ -226,82 +252,342 @@ WIT 内部通过 **REWRITE** 循环推进研究：
 
 ### 4.1 R — Research Question：研究问题
 
-不要从“我要用什么方法”开始，也不要从某个算法、模型、数据集、benchmark 或可视化技术开始组织研究。
+“开题”不只是确定一个题目，而是：
+
+> **把一个单点问题展开成一个 scientific question space。**
+
+这里不应只是机械地罗列疑问词。更本质的做法，是把问题展开成六类彼此尽量正交的科学维度。
+
+#### 4.1.1 Whether → Existence：现象是否存在？
 
 首先问：
 
-> **我们真正想回答的 scientific question 是什么？**
+> **这个现象真的存在吗？**
 
-学术研究通常有一个重要的“**开题**”过程。所谓开题，不只是确定一个题目，而是：
+这是最基础的 existence question。
+
+例如：
+
+> MSFold 是否真的比标准 decoding 更容易恢复 alternative conformations？
+
+这一层的目标是确认：
+
+- 现象是否稳定存在；
+- 是否具有统计显著性；
+- 是否可重复；
+- 是否只是偶然结果。
+
+#### 4.1.2 What → Determinants：哪些因素决定它？
+
+当现象存在后，进一步问：
+
+> **哪些变量、因素或属性决定这个现象的强弱与出现？**
+
+例如：
+
+> 哪些 protein properties 决定 MSFold 是否能够恢复 alternative conformations？
+
+可能的 determinants 包括 protein size、conformational change type、sequence identity、token-space diversity、sampling budget 等。
+
+这一层关注：
+
+> **What determines the outcome?**
+
+#### 4.1.3 Why → Cause：为什么会发生？
+
+Why 问的不是“具体过程怎么发生”，而是：
+
+> **什么原因导致了这个现象？**
+
+即寻找 causal driver。
+
+例如：
+
+> 为什么标准 decoding 难以恢复 alternative conformations？
+
+可能原因包括：
+
+- representation 中根本没有编码这些 states；
+- search 被限制在局部 mode；
+- decoding objective 偏好 dominant state。
+
+因此：
+
+> **Why asks what causes the phenomenon.**
+
+#### 4.1.4 How → Mechanism：原因通过什么机制产生结果？
+
+How 与 Why 不同。
+
+Why 已经回答：
+
+> **是什么原因导致了现象？**
+
+How 则继续问：
+
+> **这个原因通过什么过程、路径或机制产生结果？**
+
+例如：
+
+> 如果原因是标准 decoding 容易陷入局部 mode，那么 parallel tempering 是如何帮助跨越 token-space barrier、进入 alternative states 的？
+
+因此：
+
+> **Cause → Mechanism → Outcome**
+
+以及：
+
+> **Why asks what causes it; How asks through what mechanism the cause produces the effect.**
+
+#### 4.1.5 When → Boundary Conditions：什么条件下成立或失效？
+
+这里的 When 不应只理解为时间。
+
+它代表更一般的：
+
+> **Under what conditions does the conclusion hold or fail?**
+
+例如：
+
+- 在哪些 protein classes 上成立？
+- 在哪些 conformational change types 上失效？
+- 在 low-data regime 还是 high-data regime 更明显？
+- 在什么 sequence identity 范围内成立？
+- 在哪些组织、细胞类型、空间区域中成立？
+
+原先可以归入 “Where” 的很多问题，本质上也属于这一维度，因此不再单独设置 Where。
+
+这一层关注：
+
+> **Boundary conditions**
+
+#### 4.1.6 To what extent → Magnitude：效应有多大？
+
+最后问：
+
+> **这个效应到底有多强？范围有多宽？**
+
+例如：
+
+- success rate 提高多少？
+- improvement 是否只在少数 samples 中出现？
+- 能恢复多大幅度的 conformational change？
+- effect size 是否具有实际意义，而不只是统计显著？
+
+这一层关注：
+
+> **Magnitude / effect size / range**
+
+因此，“把问题打开”可以压缩为六个科学维度：
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+对应：
+
+> **Whether → What → Why → How → When → To what extent**
+
+这六维并不要求每个 project 都全部回答，而是用于系统检查：
+
+> **当前研究的问题空间中，还有哪些重要维度没有被打开？**
+
+
+#### 4.1.7 一个更大众化的例子：用 AlphaGo 把六维 question space 打开
+
+MSFold 的例子适合蛋白质结构研究，但对非本领域读者不够直观。下面用 AlphaGo 的经典 Nature 论文 *Mastering the game of Go with deep neural networks and tree search* 说明六个维度。
+
+AlphaGo 面对的核心困难很清楚：围棋的搜索空间极大，论文估计围棋平均 branching factor 约为 250、典型 game depth 约为 150，因此 exhaustive search 不可行。AlphaGo 的核心思想是同时压缩搜索树的**宽度**和**深度**：policy network 用来优先选择有希望的落子，value network 用来评估局面，再与 Monte Carlo tree search (MCTS) 结合。
+
+这里最重要的不是把六个疑问词硬套在 AlphaGo 上，而是看：
+
+> **同一个研究成果，可以沿六种不同的 scientific dimensions 被继续打开。**
+
+##### Whether → Existence：AlphaGo 真的能达到专业围棋水平吗？
+
+这是最直接的 existence question：
+
+> **深度神经网络 + tree search 的组合，是否真的能够解决此前计算机围棋长期无法突破的问题？**
+
+论文给出了非常直接的证据：
+
+- AlphaGo 对其他 Go programs 的胜率达到 **99.8%**；
+- 对欧洲围棋冠军 Fan Hui 的正式比赛结果为 **5:0**。
+
+因此这一层回答的是：
+
+> **The phenomenon exists：这种方法确实能够达到此前计算机围棋没有达到的水平。**
+
+注意，Whether 不是问“为什么成功”，只是先确认：
+
+> **它到底成功了没有？**
+
+##### What → Determinants：哪些因素决定 AlphaGo 的棋力？
+
+确认 AlphaGo 很强之后，下一步自然不是立刻问机制，而是先问：
+
+> **什么因素决定它有多强？**
+
+论文实际上分析了多个 determinants。
+
+例如：
+
+- supervised policy network 对 expert moves 的预测准确率达到 **57.0%**，高于当时其他研究的 **44.4%**；
+- policy prediction accuracy 的小幅提高会带来明显的 playing-strength 提高；
+- reinforcement learning 后的 policy network 在 head-to-head 中对 supervised policy network 的胜率超过 **80%**；
+- 不使用 search 时，RL policy network 对 Pachi 的胜率达到 **85%**；
+- value network、rollout policy、policy network 以及 search budget 都会影响最终棋力。
+
+因此 What 问的是：
+
+> **Which components or variables determine performance?**
+
+而不是：
+
+> **这些因素为什么有效？**
+
+##### Why → Cause：为什么传统方法难以解决围棋，而 AlphaGo 能突破？
+
+Why 关注 causal explanation。
+
+论文一开始就指出两个核心困难：
+
+- **search breadth 太大**：每个局面有大量可能落子；
+- **search depth 太深**：一盘棋需要搜索很长的未来序列。
+
+因此 exhaustive search 在围棋上不可行。
+
+AlphaGo 能够突破，一个核心 causal explanation 是：
+
+> **它不再平等地搜索所有可能性，而是利用学习到的 policy 和 value，把有效搜索空间大幅压缩。**
+
+更具体地说：
+
+- policy network 降低有效 **breadth**；
+- value network 降低有效 **depth**。
+
+所以：
+
+> **Why = Cause：成功的原因是什么？**
+
+这里得到的是一个比“用了 deep learning”更本质的解释：
+
+> **AlphaGo succeeds because learning makes an otherwise intractable search problem tractable enough to search.**
+
+##### How → Mechanism：policy/value network 如何真正改变 MCTS？
+
+知道“原因是缩小有效搜索空间”之后，How 才继续问：
+
+> **这个原因具体通过什么算法过程产生效果？**
+
+AlphaGo 的 mechanism 可以进一步拆开：
+
+（1）**Policy network guides selection and expansion**
+
+在搜索树中，不再平均探索所有合法动作，而是优先探索 policy network 认为更可能的 moves。
+
+（2）**Value network evaluates leaf positions**
+
+搜索到 leaf node 后，不必每次都完整模拟到终局；value network 可以直接估计该局面的 winning probability。
+
+（3）**Rollout provides another evaluation**
+
+fast rollout policy 继续模拟到游戏结束，得到另一种局面估值。
+
+（4）**MCTS backs the information up**
+
+value-network evaluation 和 rollout result 被组合，并沿搜索路径向上 backup，更新 action values 和 visit counts。
+
+因此：
+
+> **Cause：学习缩小了有效搜索空间。**  
+> **Mechanism：policy-guided search + value evaluation + rollout + MCTS backup 具体实现了这种压缩。**
+
+这正好体现：
+
+> **Why asks what causes the success; How asks through what computational mechanism that cause produces stronger play.**
+
+##### To what extent → Magnitude：AlphaGo 到底强了多少？
+
+Magnitude question 不满足于：
+
+> “AlphaGo 很强。”
+
+而要问：
+
+> **强多少？计算效率提高多少？各个组件带来多大提升？**
+
+AlphaGo 论文给出了多个量化尺度：
+
+- 对其他 Go programs：**99.8% win rate**；
+- 对 Fan Hui：**5–0**；
+- RL policy 对 SL policy：**>80% win rate**；
+- RL policy 在没有 search 的情况下对 Pachi：**85% win rate**；
+- 单次 value-network evaluation 的准确度接近使用 RL policy 的 Monte Carlo rollouts，但计算量约少 **15,000 倍**。
+
+这些数字回答的不是“有没有作用”，而是：
+
+> **How large is the effect?**
+
+因此，Whether 与 To what extent 的区别也非常清楚：
+
+> **Whether：有没有？**  
+> **To what extent：有多大？**
+
+##### When → Boundary Conditions：AlphaGo 在什么条件下成立、什么时候会失效？
+
+这是一个特别值得注意的例子。
+
+AlphaGo 论文已经证明：
+
+- 方法在 full-sized Go 上有效；
+- 对多种计算机程序有效；
+- 对一位职业级人类棋手有效。
+
+这些给出了部分 boundary evidence。
+
+但论文并没有系统画出完整的 boundary map。
+
+沿 WIT 继续追问，可以产生：
+
+- 当 search budget 大幅降低时，优势是否仍然存在？
+- policy network 较弱时，MCTS 还能否补偿？
+- value estimate 出现系统性偏差时，search 会在什么时候失效？
+- 对不同风格、不同水平的人类棋手，效果是否一致？
+- 这种 **learning + search** 的原则能否迁移到围棋之外的其他大规模决策问题？
+
+这些问题不是原论文都已经回答了，而是由 AlphaGo 的 finding 自然生成的：
+
+> **Under what conditions does the conclusion hold or fail?**
+
+这正是 Boundary Conditions 的意义。
+
+---
+
+用 AlphaGo 可以非常直观地看到六维之间的区别：
+
+| Dimension | AlphaGo 中的问题 |
+|---|---|
+| **Whether → Existence** | 深度网络 + search 是否真的能达到专业围棋水平？ |
+| **What → Determinants** | policy accuracy、RL、value network、search 等哪些因素决定棋力？ |
+| **Why → Cause** | 为什么这种方法能够突破传统计算机围棋？ |
+| **How → Mechanism** | policy/value network 如何嵌入 MCTS 并改变搜索过程？ |
+| **When → Boundary Conditions** | 在什么 search budget、opponent、模型质量和任务条件下仍成立或失效？ |
+| **To what extent → Magnitude** | 胜率、棋力和计算效率到底提高了多少？ |
+
+因此，一个 finding：
+
+> **AlphaGo defeated a professional Go player.**
+
+并不是研究的终点。  
+沿六维 scientific question space 展开后，它立刻变成：
+
+> **有没有 → 由什么决定 → 为什么 → 如何实现 → 在什么条件下成立 → 到底强多少**
+
+这就是 WIT 所说的：
 
 > **把问题打开。**
 
-一个最有效、也最可操作的办法，就是围绕同一个核心现象，从多个问题维度继续展开：
+**Reference:** Silver, D. et al. *Mastering the game of Go with deep neural networks and tree search*. Nature 529, 484–489 (2016), doi:10.1038/nature16961.
 
-> **When / What / Why / How / Whether / To what extent**
-
-这些问题词并不是简单的语言形式，而是不同的科研思维方向：
-
-- **When**：寻找成立条件与边界；
-- **What**：寻找关键因素、对象或决定变量；
-- **Why**：寻找原因、机制或解释；
-- **How**：寻找过程、路径与实现机制；
-- **Whether**：检验现象是否成立、是否必要、是否可泛化；
-- **To what extent**：确定效应强度、适用范围与定量边界。
-
-因此，“开题”的本质可以理解为：
-
-> **从一个初始问题或 finding 出发，用这些问题维度把单点问题展开成一个 question space。**
-
-这套方法既适用于研究刚开始时的选题与开题，也适用于得到一个重要 finding 之后继续生成新的 scientific questions。
-
-常见问题类型包括：
-
-#### 4.1.1 Whether：是否成立
-
-- X 是否真的提高 Y？
-- 这种优势是否稳定？
-- 控制其他因素后是否仍然存在？
-- 是否能够泛化到新数据、新任务或新体系？
-
-#### 4.1.2 What：什么因素决定
-
-- 哪个模块贡献最大？
-- 什么特征决定成功或失败？
-- 哪个变量真正驱动观察到的现象？
-
-#### 4.1.3 How：如何发生
-
-- X 如何改变 representation？
-- 一个算法如何跳出局部最优？
-- 结构信息如何改善预测？
-
-#### 4.1.4 Why：为什么发生
-
-- 为什么 X 会优于 Y？
-- 背后的机制或原理是什么？
-
-#### 4.1.5 When：何时成立
-
-- 在什么条件下优势出现？
-- 什么时候优势消失？
-- 边界条件是什么？
-
-#### 4.1.6 Where：在哪里成立
-
-- 在哪些数据域、任务、物种、体系或 regime 中成立？
-
-#### 4.1.7 To what extent：成立到什么程度
-
-- 效应有多强？
-- 定量边界在哪里？
-- 多大的扰动以后结论失效？
-
-研究起点应当形成：
-
-> **Scientific Question → Hypothesis → Experimental Design**
-
----
 
 ### 4.2 E — Examine the Literature：审视文献
 
@@ -491,6 +777,153 @@ Results subsection 的结尾应当回答：
 
 ---
 
+
+#### 4.5.1 Competing Hypotheses：不要过早接受单一解释
+
+当一个 finding 出现后，不要只问：
+
+> **“为什么会这样？”**
+
+还应强制提出多个可能解释：
+
+> **Finding → Hypothesis A / Hypothesis B / Hypothesis C**
+
+例如：
+
+> Finding：MSFold 在未见蛋白上仍然优于 baseline。
+
+可能解释包括：
+
+- **H1：** ESM3 的 token space 确实编码了可泛化的 alternative conformations；
+- **H2：** improvement 主要来自更大的 sampling budget；
+- **H3：** benchmark 中某些结构类型更容易被 parallel tempering 恢复。
+
+真正有价值的下一步不是选择“最顺眼”的解释，而是问：
+
+> **什么实验能够区分这些 competing hypotheses？**
+
+因此，机制研究应优先寻找 **discriminating experiment**，而不是仅仅继续积累支持性证据。
+
+---
+
+#### 4.5.2 Falsification / Counterexample Check：主动攻击自己的结论
+
+对每个重要 conclusion，再反过来问：
+
+> **什么结果会推翻这个 conclusion？**
+
+以及：
+
+> **最可能的 counterexample 是什么？**
+
+例如：
+
+> Claim：结构信息提高了模型的 OOD robustness。
+
+不要只继续找支持这个 claim 的数据，还应问：
+
+- 是否存在加入结构信息后性能下降的数据集？
+- 在 sequence diversity 已经很高时，这个优势是否消失？
+- improvement 是否其实来自额外参数量，而不是结构信息本身？
+
+这一检查的目的不是“证明自己错”，而是确定：
+
+> **这个 claim 的证据边界在哪里？**
+
+如果一个 conclusion 没有明确的潜在反证条件，它往往还没有被定义得足够科学。
+
+---
+
+
+##### 如果找到了 counterexample，怎么办？
+
+不要立刻宣布“结论错了”。先判断反例属于哪一类：
+
+- **技术或数据问题**：如 bug、measurement error、data leakage、sample contamination。  
+  → 修正后重新实验。
+- **偶然噪声**：结果不可重复。  
+  → 暂不推翻 conclusion，但应降低 confidence。
+- **稳定、可重复的 counterexample**：  
+  → 这通常意味着原 claim 需要被修正，而不是简单丢弃。
+
+稳定反例通常有三种价值：
+
+（1）**收缩 claim**
+
+例如：
+
+> “X always improves Y”
+
+收缩为：
+
+> “X improves Y under conditions A and B.”
+
+（2）**发现 boundary condition**
+
+反例可能告诉我们：
+
+> **这个结论什么时候不成立？**
+
+这往往比继续堆支持性结果更有科学价值。
+
+（3）**重写 hypothesis / principle**
+
+如果反例击中了核心机制，就需要重新检查 central claim，甚至重写 research storyline。
+
+因此：
+
+> **Counterexample → Boundary Condition → Better Claim**
+
+一个好的反例未必削弱论文，反而可能让结论更精确、更可信。
+
+##### 如果找不到 counterexample，怎么办？
+
+也不能因此说：
+
+> **“Conclusion 已被证明。”**
+
+应继续检查两个问题：
+
+（1）**我们是否真的进行了足够强的 falsification？**
+
+是否主动测试了：
+
+- 最不利条件；
+- extreme cases；
+- OOD data；
+- negative controls；
+- alternative explanations；
+- 可能失败的 subgroups。
+
+（2）**这个 claim 是否具有可证伪性？**
+
+如果无论出现什么结果，都可以通过改写措辞让 claim 保持成立，那么这个 claim 可能定义得过于含糊。
+
+应明确写出：
+
+> **什么结果出现时，我会承认这个 claim 不成立？**
+
+因此完整流程是：
+
+> **Claim → Potential Falsifier → Test → Counterexample?**
+
+如果找到稳定反例：
+
+> **Revise Claim / Identify Boundary / Rewrite Hypothesis**
+
+如果没有找到：
+
+> **Claim gains support, but is not “proven.”**
+
+如果当前无法检验潜在 falsifier：
+
+> **记录为 unresolved question → Limitation / Future Study**
+
+可以把这一原则压缩成：
+
+> **A failed falsification strengthens a claim; a successful falsification sharpens it.**
+
+
 ### 4.6 T — Test Answerability：检验可回答性
 
 这是 WIT 中 REWRITE loop 最关键的决策点。
@@ -519,6 +952,36 @@ Results subsection 的结尾应当回答：
 
 ---
 
+
+#### 4.6.3 Information Gain：下一实验不是“最容易做”，而是“最能改变判断”
+
+当多个问题都可以继续实验时，不应只按方便程度选择。
+
+更好的原则是：
+
+> **优先选择 information gain 最大、最能区分 competing hypotheses 的实验。**
+
+可以问：
+
+- 如果实验结果为 A，我的判断会改变多少？
+- 如果结果为 B，我是否会修改 central claim？
+- 这个实验能否区分两个目前都合理的解释？
+- 它只是增加更多 supporting data，还是会真正减少 uncertainty？
+
+例如：
+
+- 再增加一个相似 benchmark，可能只让 confidence 从 0.85 变成 0.88；
+- 一个针对 competing hypotheses 的 control experiment，可能直接决定机制解释 A 还是 B。
+
+通常后者更值得优先做。
+
+因此：
+
+> **Next experiment ≠ easiest experiment**  
+> **Next experiment = highest-value information test**
+
+---
+
 ### 4.7 E — Extend / Exit：拓展或收束
 
 如果新问题当前可回答：
@@ -529,254 +992,390 @@ Results subsection 的结尾应当回答：
 
 > **New Question → Discussion → Limitation → Future Study**
 
-## 5. Results：Question → Fact → 1-hop Opinion
+## 5. Results：呈现 scientific story 的逻辑推进
 
-### 5.1 按 Scientific Question 组织，而不是按技术组织
+Results 的强规则不是：
 
-不推荐：
+> **每个 subsection 必须按 scientific question 命名。**
 
-- Ablation Study
-- OOD Evaluation
-- t-SNE Visualization
-- Case Study
+更本质的要求是：
 
-这些标题描述的是：
+> **Results should expose the logical progression of the scientific story.**
 
-> **我们做了什么。**
+也就是说，读者应能够看出：
 
-更好的标题描述：
+> **为什么做这一部分 → 得到了什么 evidence → evidence 支持什么局部结论 → 为什么下一部分自然出现。**
 
-> **我们学到了什么。**
+### 5.1 两种都合理的 Results 组织方式
 
-例如：
+#### （1）Question / Finding-driven
+
+更适合 discovery、mechanism、hypothesis-testing 型研究。
+
+例如标题可以直接写主要 answer：
 
 - “模块 X 是性能提升的主要来源”
 - “性能优势在 distribution shift 下仍然保持”
 - “学到的 representation 更好地区分不同功能状态”
 
-核心原则：
+这种写法的优点是：
 
-> **科研过程从 Question 开始；论文 Results subsection 的标题通常写成 Answer。**
+> **标题直接告诉读者学到了什么。**
 
----
+#### （2）Component / Pipeline-driven
 
-可以用一句话区分 Results 与 Discussion：
+对于 method、system、engineering 型论文，按组件或 pipeline stage 组织完全可以成立。
 
-> **Results：一个 Fact → 一个 1-hop Opinion。**  
-> **Discussion opening：多个 1-hop Opinions → 一个 2-hop Interpretation。**
+AlphaGo 的 Nature 论文就是一个重要 counterexample。其主要研究段落依次是：
 
-### 5.2 Results subsection 的标准逻辑链
+- Supervised learning of policy networks
+- Reinforcement learning of policy networks
+- Reinforcement learning of value networks
+- Searching with policy and value networks
+- Evaluating the playing strength of AlphaGo
 
-一个 Results subsection 最好形成：
+这些标题明显是 **component / pipeline-driven**，而不是把每个标题写成一个 scientific answer。
 
-> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion → Next Question**
+但它们连起来形成了很清楚的 storyline：
 
-因此：
-
-> **Results = Fact + 1-hop Opinion**
-
-### 5.3 初学者模板：Results Subsection
-
-对于经验较少的研究者，可以使用 Guided Mode。
-
-#### （1）Scientific Question
-
-> 我们想知道：________________________。
-
-#### （2）Why this question matters
-
-> 这个问题重要，因为：________________________。
-
-#### （3）Experiment / Analysis
-
-> 为了回答这个问题，我们：________________________。
-
-#### （4）Data
-
-> 结果显示：________________________。
-
-#### （5）Finding
-
-> 这些数据直接表明：________________________。
-
-#### （6）1-hop Opinion
-
-> 这些结果提示：________________________。
-
-#### （7）New Question
-
-> 这一 finding 又引出了问题：________________________。
-
-#### （8）Answerability Check
-
-> 当前研究能否回答？
-
-- 能 → 设计下一项 experiment / analysis；
-- 不能 → 放入 Discussion / Limitation / Future Study。
-
----
-
-
-## 6. Discussion
-
-### 6.1 Opening：2-hop Interpretation (this study)
-
-Results 中每个 subsection 通常已经得到一个 1-hop opinion。
-
-Discussion 第一段的任务不是重复 Results，而是：
-
-> **把多个 1-hop opinions 综合成一个 2-hop interpretation。**
-
-问：
-
-> **Taken together，这些结果对本研究整体意味着什么？**
+> **learn a policy → improve the policy by self-play → learn a value function → integrate policy and value into search → evaluate the complete system**
 
 因此：
 
-> **Multiple 1-hop Opinions → Integrated 2-hop Interpretation**
+> **Pipeline-driven ≠ technique list。**
 
-这一段仍然 stay close to this study。
+真正的问题是：
 
----
+> **这些组件是否形成一个有逻辑因果关系的 progression？**
 
-### 6.2 General Principle：beyond this study
+而不是标题里有没有出现 question / finding。
 
-Discussion 中间部分继续向上抽象。
+### 5.2 Reasoning structure 与 surface prose 要分开
 
-问：
+一个 Results subsection 背后的 reasoning，通常可以还原为：
 
-> **这些现象背后是否存在一个 beyond this study 的一般原理？**
+> **Motivation / Question → Experiment / Analysis → Fact → 1-hop Opinion → Next Question / Next Step**
 
-结构：
+但这不意味着正文必须机械地逐项写出这些句子。
 
-> **2-hop Interpretation → Abstraction → General Principle**
+AlphaGo 的一些段落直接用类似：
 
-例如：
+> “The second stage of the training pipeline aims at ...”
 
-具体 finding：更好的搜索策略恢复了 alternative conformations。
+来推进，而没有显式写：
 
-2-hop interpretation：alternative conformation 的缺失，可能部分来自 decoding 不充分，而不是 representation 中完全不存在这些状态。
+> “We next asked whether ...”
 
-General principle：
+这种 surface prose 完全没有问题，只要背后的 reasoning chain 是清楚的。
 
-> **模型能力由 representation 与 search 共同决定。**
+因此：
 
----
+> **WIT 要求 reasoning 可恢复，不要求 prose 模板化。**
 
-### 6.3 Raise New Questions：重新打开 question space
+### 5.3 Fact + restrained 1-hop Opinion：这条仍然是强规则
 
-Discussion 不应止于 abstraction。
-
-进一步问：
-
-- 为什么这个 principle 成立？
-- 什么时候成立？
-- 什么时候失效？
-- 哪些因素决定其强弱？
-- 是否能推广到其他模型、任务、物种、体系？
-- 是否存在反例？
-- 如何区分 competing explanations？
-
-因此完整运动是：
-
-> **Fact → 1-hop Opinion → 2-hop Interpretation → General Principle → New Question Space**
-
-前半段是：
-
-> **向上抽象**
-
-后半段是：
-
-> **向外展开**
-
-很多 Discussion 显得“薄”，不是因为解释错了，而是只完成了向上抽象，没有打开新的问题空间。
-
----
-
-### 6.4 Limitations：哪些重要问题当前回答不了
-
-Limitation 不是：
-
-> **我们没有做什么。**
-
-世界上没做的事情无限多。
-
-真正的 limitation 是：
-
-> **一个限制，使当前研究无法回答由自身 findings 引出的重要问题。**
-
-判断标准：
-
-> **Because we did not / could not do X，是否导致一个重要 scientific question 仍然 unresolved？**
-
-如果是，X 才是有意义的 limitation。
-
-例如：
-
-New Question：这个 principle 是否适用于其他模型架构？
-
-Limitation：当前研究只系统测试了一个 model family。
-
-因此：当前证据无法判断这一规律是否 architecture-independent。
-
----
-
-### 6.5 Future Studies：如何回答 unresolved questions
-
-Future Work 不应该是一张愿望清单。
-
-每一项 future study 都应该回答一个明确的 unresolved question。
-
-结构：
-
-> **Finding → New Question → Limitation → Future Study**
+Results 可以解释，但解释要紧贴 evidence。
 
 原则：
 
-> **Future studies are experiments designed to answer questions that the current study cannot answer.**
+> **Results：Fact → restrained 1-hop Opinion**
+
+例如 AlphaGo 的 tournament results 给出非常强的 Fact：系统几乎击败了所有比较的 Go programs，并在正式比赛中击败职业棋手。
+
+作者由此做的是局部、直接的能力解释，而没有立刻跳到：
+
+> “This reveals a universal principle of intelligence.”
+
+又例如，在 position evaluation 的比较中，value network 与 rollout 的组合效果优于单独使用任一者，于是作者得到一个很近的解释：
+
+> **the two position-evaluation mechanisms are complementary.**
+
+这正是：
+
+> **Fact → 1-hop Opinion**
+
+一个判断标准是：
+
+> **如果删掉当前 subsection 的数据，这个 opinion 是否还站得住？**
+
+如果不能，通常说明它仍然是 Results 允许的局部解释；  
+如果需要整篇论文多个 findings 才能支持，就更可能属于 Discussion。
+
+### 5.4 Results titles 的真正检查方法：能否组成一篇“小 essay”？
+
+把 Results subsection titles 全部抽取出来，按顺序读一遍。
+
+问：
+
+> **它们能否独立讲出 scientific story 是怎样推进的？**
+
+这个 story 可以是：
+
+> **Question → Finding → Mechanism → Boundary**
+
+也可以像 AlphaGo：
+
+> **Component A → Component B → Integration → System Evaluation**
+
+因此，小 essay test 检查的是：
+
+> **logical progression**
+
+而不是：
+
+> **标题形式是否统一。**
+
+### 5.5 初学者模板：Results Subsection
+
+对于经验较少的研究者，可以先用 reasoning template 思考，再决定最终 prose 怎么写。
+
+#### （1）Motivation / Scientific Question
+
+> 为什么需要这一部分？我们想知道：________________________。
+
+#### （2）Experiment / Analysis
+
+> 为了回答或推进这个问题，我们：________________________。
+
+#### （3）Fact
+
+> 数据直接显示：________________________。
+
+#### （4）1-hop Opinion
+
+> 这些结果局部地提示：________________________。
+
+#### （5）Next Question / Next Step
+
+> 因此下一步自然需要：________________________。
+
+如果是 method / system paper，还可以问：
+
+> **这个 subsection 在整个 pipeline 中承担什么不可替代的逻辑功能？**
+
+模板是用于暴露 reasoning，不是要求最终文章照着五句话写。
 
 ---
 
-### 6.6 初学者模板：Discussion
+## 6. Discussion：Core Functions + Optional Extensions
 
-#### （1）Opening Paragraph：2-hop
+AlphaGo 对 WIT 的一个重要修正是：
 
-> 本研究的多个结果共同表明：________________________。
+> **好的 Discussion 不一定显式包含 New Questions、Limitations 和 Future Studies。**
 
-> 与单个实验结果相比，这意味着：________________________。
+因此，Discussion 应区分：
 
-这一段仍然围绕：
+> **Core Functions（强规则）**  
+> 与  
+> **Optional Extensions（按研究需要展开）**
 
-> **this study**
+### 6.1 Core Function 1：Integrated Interpretation
 
-#### （2）Middle Paragraphs：General Principle
+Discussion 首先不能只是逐条重复 Results。
 
-> 更进一步，这些发现提示一个更一般的可能性：________________________。
+它需要把多个局部 findings / 1-hop Opinions 综合起来，回答：
 
-> 这一原则可能不仅适用于当前体系，还可能适用于：________________________。
+> **Taken together，这些结果整体意味着什么？**
 
-#### （3）New Question Space
+可以写成：
 
-> 这些发现进一步提出了以下尚未解决的问题：
+> **Multiple local findings → Integrated Interpretation**
 
-- Why：________________________
-- How：________________________
-- What：________________________
-- When：________________________
-- Whether：________________________
+如果多个 findings 的综合需要比单个 subsection 多走一步，也可以理解为：
 
-#### （4）Limitations
+> **multiple 1-hop Opinions → 2-hop Interpretation**
 
-> 当前研究无法回答其中的 ________________________，因为 ________________________。
+但这里的“2-hop”是 reasoning depth 的描述，不是要求第一段必须机械使用某种句式。
 
-#### （5）Future Study
+### 6.2 Core Function 2：Broader Meaning / General Principle
 
-> 为回答这一问题，下一步可以通过 ________________________ 进行检验。
+在 integrated interpretation 之后，Discussion 通常还需要回答：
+
+> **为什么这些结果值得超越当前实验本身去理解？**
+
+可能的上升方式包括：
+
+- deeper causal interpretation；
+- 与已有 paradigm / baseline 的概念性比较；
+- transferable mechanism；
+- broader implication；
+- General Principle。
+
+例如 MSFold 中可以上升为：
+
+> **Model capability is jointly determined by representation and search.**
+
+但并非每篇论文都必须提出一个宏大的“general principle”。证据只支持到哪里，就上升到哪里。
+
+### 6.3 AlphaGo 的反向验证：Discussion 不需要固定六段式
+
+AlphaGo 的 Discussion 很短，但逻辑非常完整。
+
+它大致完成了三件事：
+
+#### （1）Integrated Interpretation
+
+把 policy network、value network、reinforcement learning 和 tree search 合起来解释为一个完整 system，而不是再逐条汇报胜率。
+
+#### （2）Deeper Meaning
+
+通过与传统高强度 search system 的比较，强调 AlphaGo 的关键不是“看更多 positions”，而是：
+
+> **learn where to search and how to evaluate.**
+
+这已经从组件结果上升到更深的 computational interpretation。
+
+#### （3）Beyond This Study
+
+最后把 Go 看成大规模 decision/search problem 的代表，并讨论这种 learning + search 思路对其他难解 AI problems 的启发。
+
+这已经完成：
+
+> **this study → broader meaning / abstraction**
+
+但 AlphaGo 并没有显式写：
+
+> New Questions → Limitations → Future Studies
+
+因此，AlphaGo 是一个很重要的 counterexample：
+
+> **Discussion 的 reasoning functions 可以完整，而 surface structure 不必包含固定的 limitations/future-work 段落。**
+
+### 6.4 Optional Extension 1：Raise New Questions
+
+当新的 scientific questions 对理解研究边界或开启下一研究阶段有价值时，可以继续：
+
+> **Integrated Interpretation / General Principle → New Question Space**
+
+此时优先使用六个 scientific dimensions：
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+也就是：
+
+> **Whether → What → Why → How → When → To what extent**
+
+但这一步是为了**继续研究**，不意味着这些问题都必须写进当前论文 Discussion。
+
+### 6.5 Optional Extension 2：Limitations
+
+当一个重要 unresolved question 的确受到当前 study design / data / scope 限制时，Limitation 很有价值。
+
+真正的 limitation 仍然是：
+
+> **一个限制，使当前研究无法回答由自身 findings 引出的重要问题。**
+
+不是：
+
+> **随便列出一些“我们没做的事情”。**
+
+但如果论文并不需要一个独立 limitation 段落才能诚实界定 claim，也不应为了模板完整而强行添加。
+
+### 6.6 Optional Extension 3：Future Studies
+
+Future Study 最有价值的情况是：
+
+> **它明确回答一个当前无法回答、但由本研究自然产生的 unresolved question。**
+
+因此：
+
+> **Finding → New Question → Limitation → Future Study**
+
+仍然是一条很好的科研推理链。
+
+但它是：
+
+> **research-planning logic**
+
+不一定必须变成：
+
+> **paper-surface paragraph**
+
+### 6.7 Discussion 的判断标准
+
+比“有没有写 limitations/future work”更重要的是：
+
+- 是否超越 Results repetition？
+- 是否形成 integrated interpretation？
+- 是否给出了与 evidence 强度匹配的 broader meaning？
+- abstraction 是否过度？
+- 如果提出 general principle，是否有多个 findings 共同支撑？
+- 如果存在重要 boundary / unresolved question，是否诚实处理？
+- Discussion 的结束是否留下清楚的 take-home message？
+
+因此：
+
+> **Discussion 的核心：Interpretation → Broader Meaning**
+
+必要时再扩展：
+
+> **→ New Questions → Boundary / Limitations → Future Studies**
+
+### 6.8 初学者模板：Discussion
+
+先完成 core，再决定是否需要 optional extension。
+
+#### Core A：Integrated Interpretation
+
+> 本研究多个 findings 共同表明：________________________。
+
+#### Core B：Broader Meaning
+
+> 更深一层，这些 findings 意味着：________________________。
+
+> 在 evidence 允许的范围内，更一般地可以理解为：________________________。
+
+#### Optional C：New Question Space
+
+> 如果继续打开问题，最重要的 unresolved question 是：________________________。
+
+#### Optional D：Limitation
+
+> 当前研究不能回答它，是因为：________________________。
+
+#### Optional E：Future Study
+
+> 若要回答它，需要：________________________。
+
+原则：
+
+> **不需要为了填满模板而写 Optional C–E。**
 
 ---
 
+## 7. Claim–Evidence Mapping：投稿前检查“每个结论凭什么成立”
 
-## 7. Reviewer Stress Test
+在进入 reviewer stress test 之前，先把论文中的 major claims 全部抽取出来，并为每个 claim 建立 evidence map：
+
+> **Claim → Figure / Table → Evidence → Strength → Remaining Uncertainty**
+
+例如：
+
+| Claim | Supporting evidence | 仍存在的问题 |
+|---|---|---|
+| MSFold improves alternative-conformation recovery | Fig. 2 benchmark | 是否受 sampling budget 影响？ |
+| Improvement is not due to memorization | unseen-protein test | 是否对所有 protein classes 都成立？ |
+| Parallel tempering enables broader exploration | sampling analysis / ablation | 是否真正对应物理 energy barrier？ |
+
+重点检查：
+
+- 有没有 **claim 没有直接 evidence**？
+- 有没有一个 figure 被用来支持过多不同结论？
+- Discussion 中有没有出现 Results 从未支持过的 claim？
+- claim 的强度是否超过 evidence 的强度？
+- 是否应该把 “demonstrates” 收缩成 “suggests”？
+
+这一步本质上是在建立：
+
+> **Claim–Evidence alignment**
+
+如果一个 claim 找不到明确 supporting evidence，应当：
+
+> **补证据、收缩 claim，或删除 claim。**
+
+---
+
+## 8. Reviewer Stress Test
 
 在准备投稿前，主动切换到 reviewer perspective。
 
@@ -790,19 +1389,19 @@ Future Work 不应该是一张愿望清单。
 
 然后逐一分类：
 
-### 7.1 当前可以补实验解决
+### 8.1 当前可以补实验解决
 
 → 回到 Results。
 
-### 7.2 可以通过已有数据分析或解释解决
+### 8.2 可以通过已有数据分析或解释解决
 
 → 补充 Results / Discussion。
 
-### 7.3 当前研究确实无法解决
+### 8.3 当前研究确实无法解决
 
 → 写入 Limitation，并设计对应 Future Study。
 
-### 7.4 Fatal Flaw
+### 8.4 Fatal Flaw
 
 例如 central comparison 不公平、claim 与实验设计不匹配、关键变量严重混杂、核心结论无法由现有证据支持。
 
@@ -820,7 +1419,7 @@ Reviewer perspective 是一个 **stress test**，而 limitation 只是其可能�
 
 ---
 
-## 8. Deadline Mode：有限时间下如何收束研究
+## 9. Deadline Mode：有限时间下如何收束研究
 
 WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题，因此研究可以无限延伸。
 
@@ -830,7 +1429,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > **Stop Rule / Minimum Sufficient Story**
 
-### 8.1 Deadline 临近时，优先回答三类问题
+### 9.1 Deadline 临近时，优先回答三类问题
 
 #### （1）会改变 central claim 的问题
 
@@ -848,7 +1447,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 如果成本低、收益高，应优先补。
 
-### 8.2 可以暂时停止的问题
+### 9.2 可以暂时停止的问题
 
 如果一个问题：
 
@@ -861,7 +1460,38 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > Discussion → Limitation → Future Study
 
-### 8.3 Stop Rule
+
+### 9.3 Research Storyline Freeze：防止 project 越做越散
+
+研究进行到一定阶段后，先暂时“冻结”一次主线，写下：
+
+> **Central Question**  
+> **Central Claim**  
+> **3–5 Key Findings**  
+> **General Principle**
+
+然后对每一个新实验问：
+
+> **它会改变或显著加强这条主线吗？**
+
+如果答案是：
+
+- **会改变 central claim** → 值得优先做；
+- **能排除重要 competing hypothesis** → 值得做；
+- **能明确重要 boundary condition** → 可能值得做；
+- **只是再增加一个相似结果** → 谨慎继续。
+
+Storyline Freeze 不是不允许研究变化。  
+如果出现强的 unexpected finding，当然可以重新打开并重写 storyline。
+
+它的作用是防止：
+
+> **项目因为不断追加“也可以做”的实验而失去中心。**
+
+---
+
+### 9.4 Stop Rule
+
 
 当满足以下条件时，可以停止继续扩展 Results：
 
@@ -877,7 +1507,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 9. 句子应该放在哪里：决策图
+## 10. 句子应该放在哪里：决策图
 
 ```text
 这句话在说什么？
@@ -894,21 +1524,21 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 ├─ 提出超越本研究的一般机制或原则？
 │      └─ Discussion middle：general principle
 │
-├─ 由 findings / principle 引出新的未解问题？
-│      └─ Late Discussion：new question
+├─ 由 findings / principle 引出新的未解问题，而且对界定当前工作或开启下一阶段很重要？
+│      └─ 可放入 Discussion；也可以只作为后续 research question
 │
-├─ 说明为什么当前研究无法回答这个问题？
-│      └─ Limitations
+├─ 说明一个重要 unresolved question 为什么当前无法回答？
+│      └─ 如有必要，可写成 Limitation
 │
-└─ 说明下一步用什么实验或分析回答？
-       └─ Future Studies
+└─ 说明下一步用什么实验或分析回答该 unresolved question？
+       └─ 如有必要，可写成 Future Study
 ```
 
 ---
 
-## 10. REWRITE loop 的两个循环
+## 11. REWRITE loop 的两个循环
 
-### 10.1 Inner Loop：研究推进循环
+### 11.1 Inner Loop：研究推进循环
 
 > **Finding → Question → Answerability → Experiment → Finding**
 
@@ -916,7 +1546,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 > 推动当前 project 继续生长。
 
-### 10.2 Outer Loop：理解与抽象循环
+### 11.2 Outer Loop：理解与抽象循环
 
 > **Finding → Literature → Interpretation → Principle → New Question**
 
@@ -930,33 +1560,33 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 11. Research Depth Diagnostic：科研深度诊断
+## 12. Research Depth Diagnostic：科研深度诊断
 
-### 11.1 Level 0 — Observation
+### 12.1 Level 0 — Observation
 
 > A > B。
 
 只报告现象。
 
-### 11.2 Level 1 — Implication
+### 12.2 Level 1 — Implication
 
 > X improves Y。
 
 知道结果意味着什么。
 
-### 11.3 Level 2 — Interpretation
+### 12.3 Level 2 — Interpretation
 
 > X improves Y because it changes Z。
 
 开始解释机制。
 
-### 11.4 Level 3 — General Principle
+### 12.4 Level 3 — General Principle
 
 > 更一般地，Z 可能决定这一类问题。
 
 形成可迁移的抽象。
 
-### 11.5 Level 4 — Boundary / Mechanism Questions
+### 12.5 Level 4 — Boundary / Mechanism Questions
 
 开始追问：
 
@@ -965,7 +1595,7 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 - 为什么有些情况失效？
 - 是否存在反例？
 
-### 11.6 Level 5 — New Research Program
+### 12.6 Level 5 — New Research Program
 
 进一步形成：
 
@@ -983,11 +1613,28 @@ WIT / REWRITE 容易产生一个问题：每个 finding 都能继续生成问题
 
 ---
 
-## 12. WIT 的核心原则
+## 13. WIT 的核心原则
 
-> **Results are answers to questions.**
+> **WIT 用来生成问题，而不是用来完成清单。**
 
-Results 是对 scientific questions 的回答。
+> **WIT specifies reasoning functions, not rigid prose forms.**
+
+
+> **Do not settle on one explanation too early; compare competing hypotheses.**
+
+> **Every important claim should survive a falsification / counterexample check.**
+
+> **Every major claim should map to explicit evidence.**
+
+> **Choose the next experiment by information gain, not convenience alone.**
+
+> **Freeze the storyline periodically to prevent uncontrolled project expansion.**
+
+
+
+> **Results should expose how evidence advances the scientific story; question-driven and pipeline-driven forms can both work.**
+
+Results 的本质是让 evidence 推动 scientific story 前进；它可以显式回答 scientific questions，也可以通过 coherent pipeline 逐步构建答案。
 
 > **Good findings generate better questions.**
 
@@ -997,9 +1644,9 @@ Results 是对 scientific questions 的回答。
 
 当前能够回答的问题，不应过早留给 Discussion。
 
-> **Questions not answerable now define Discussion, Limitations, and Future Studies.**
+> **Questions not answerable now may motivate Discussion, Limitations, or Future Studies when they are important to the story.**
 
-当前无法回答的重要问题，定义 Discussion、Limitations 和 Future Studies。
+当前无法回答的重要问题，在对 story 重要时，可以推动 Discussion、Limitations 或 Future Studies。
 
 > **Unexpected findings may rewrite the original question.**
 
@@ -1037,149 +1684,123 @@ Results 是对 scientific questions 的回答。
 
 这就是 **WIT：Writing Is Thinking**。
 
-## 13. 如何检验一篇文章的逻辑链？
+## 14. 如何检验一篇文章的逻辑链？
 
-WIT 还可以反过来用于**审计一篇论文的逻辑结构**，重点检查四层：Introduction、Results titles、Results subsection 和 Discussion。
+WIT 可以反过来用于审计论文，但审计的是 **reasoning functions**，不是检查论文是否套用了某个固定模板。
 
+### 14.1 Introduction：段首句能否组成完整的问题链？
 
-### 13.1 Introduction 层面：段首句能否组成完整的“问题链”？
+抽取 Introduction 每一段的第一句，问：
 
-先把 Introduction 每一段的**第一句**单独抽取出来，按顺序排列，然后暂时不看段内细节，只问：
+> **只看这些段首句，能否理解这个领域走到哪里、还缺什么、以及本研究为什么必要？**
 
-> **这些段首句连在一起，能否清楚讲出“为什么这个研究必须做”？**
+一个常见的强逻辑是：
 
-理想的逻辑链是：
+> **Final Goal → Necessary Components → Established Components → Missing Component → Why It Matters → This Study**
 
-> **Final Goal → Necessary Components → What Previous Studies Have Established → Missing Component → Why the Missing Component Matters → This Study Provides It**
+这仍然是逻辑审计，不要求每篇 Introduction 都机械地写成六段。
 
-也就是说，Introduction 应依次回答：
+### 14.2 Results titles：能否组成一篇“小 essay”？
 
-（1）**Final Goal**：最终想解决的 scientific goal 是什么？
-（2）**Necessary Components**：实现这个目标需要哪些关键组成部分？
-（3）**Previous Studies**：前人已经建立了哪些必要组件？
-（4）**Missing Component**：还缺哪一块关键拼图？
-（5）**Why It Matters**：为什么缺少这一块，最终目标就无法真正闭环？
-（6）**This Study**：本研究如何补上这块 missing component？
+把所有 Results subsection titles 连起来，问：
 
-一个强的 Introduction，不是简单地写：
+> **它们能否说明 scientific story 是怎样推进的？**
 
-> X is important.  
-> Many studies have investigated X.  
-> However, some gaps remain.  
-> Here, we propose a new method.
+可能是：
 
-而应该形成更明确的“完成度逻辑”：
+> **Question → Finding → Mechanism → Boundary**
 
-> **为了达到最终目标，需要 A、B、C、X。**  
-> **Previous studies 已经建立了 A、B、C。**  
-> **但 X 仍未解决。**  
-> **缺少 X，因此最终目标仍无法完成。**  
-> **This study provides X by ...**
+也可能像 AlphaGo：
 
-检查时重点问：
+> **Component A → Component B → Integration → System Evaluation**
 
-- 第一段是否真正提出了 final goal，而不只是介绍研究对象？
-- 中间各段是否在说明“已经完成了哪些必要组件”，而不是简单罗列文献？
-- missing component 是否明确、关键，而且与 final goal 存在必要关系？
-- “missing component” 是否只是“没人做过”，还是“没有它就无法完成最终目标”？
-- Introduction 最后一段是否与 missing component 严丝合缝地对应？
-- 本研究声称补上的东西，是否正是前面铺垫中缺失的那一块？
+因此检查的是：
 
-一个非常实用的检验标准是：
+> **logical progression**
 
-> **只读 Introduction 每一段的段首句，也能理解这个领域已经走到哪里、还缺什么、以及本研究为什么必要。**
+而不是：
 
-如果段首句之间无法形成这条逻辑链，往往说明 Introduction 仍然是“文献堆砌型”，而不是“问题驱动型”。
+> **是否全部用 finding-style 标题。**
 
----
+### 14.3 Results subsection：reasoning chain 是否可恢复？
 
+逐个 subsection 检查：
 
-### 13.2 全文层面：Results subsection titles 能否组成一篇“小 essay”？
+> **Motivation / Question → Experiment / Analysis → Fact → restrained 1-hop Opinion → Next Question / Next Step**
 
-先把 Results 中所有 subsection titles 单独抽取出来，按顺序排列，然后暂时不看正文，只问：
+注意：
 
-> **这些标题连在一起，能否独立讲出一个完整、递进的 scientific story？**
+> **这条 chain 不必在 prose 中逐项显式出现。**
 
-理想情况下，标题之间应形成类似：
+真正要问的是：
 
-> **核心问题 → 主要发现 → 进一步验证 → 机制 / 原因 → 泛化 / 边界 → 综合认识**
+- 为什么这一 subsection 必须存在？
+- Fact 是否支持 subsection 的局部 claim？
+- Opinion 是否紧贴 Fact，而没有过早 generalize？
+- 下一 subsection 为什么自然出现？
 
-一个很强的检验标准是：
+### 14.4 Discussion：是否完成 core functions？
 
-> **只读 subsection titles，也能大致理解这篇文章解决了什么问题、得到了哪些主要答案。**
+首先检查强规则：
 
-### 13.3 Subsection 层面：是否形成 Motivation → Fact → 1-hop Opinion？
+> **Integrated Interpretation → Broader Meaning / justified abstraction**
 
-逐个进入 Results subsection，检查内部是否形成：
+具体问：
 
-> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion**
+- 是否只是重复 Results？
+- 是否把多个局部 findings 综合起来？
+- 是否解释了这些 findings 为什么重要？
+- abstraction 是否与 evidence 强度匹配？
 
-其中：
+然后再按需要检查 optional extensions：
 
-- **Motivation**：前一个 finding 引出了什么新问题，因此为什么需要这一 subsection？
-- **Fact**：实验、比较和统计结果直接观察到了什么？
-- **1-hop Opinion**：这些 Fact 意味着什么？只能向前解释一步，仍然紧贴当前结果。
+> **New Questions → Boundary / Limitations → Future Studies**
 
-进一步检查：
+这些内容如果对诚实界定 claim 或开启下一研究阶段有价值，就应该写；如果没有必要，不应为了模板完整而强行出现。
 
-（1）Motivation 是否来自前面的 scientific question？
-（2）Fact 是否真正支持 subsection title？
-（3）Opinion 是否由 Fact 直接推出？
-（4）Opinion 是否只走了 1-hop，而没有提前跳到 general principle？
-（5）subsection 最后是否自然产生下一步 question？
+AlphaGo 就说明：
 
-### 13.4 Discussion 层面：是否形成完整的上升—展开—收束链条？
+> **一个 Discussion 可以不显式写 Limitations / Future Studies，但仍然完成完整而有力的 scientific interpretation。**
 
-Discussion 应检查是否大致形成：
-
-> **2-hop Interpretation (this study)**  
-> → **General Principle / beyond this study**  
-> → **Raise New Questions**  
-> → **Limitations**  
-> → **Future Studies**  
-> → **Conclusion Sentence**
-
-具体来说：
-
-- **2-hop Interpretation (this study)**：把多个 Results subsection 的 1-hop Opinions 综合起来，回答“Taken together，本研究整体说明了什么？”
-- **General Principle (beyond this study)**：进一步抽象出超越当前方法、数据集或任务的一般规律。
-- **Raise New Questions**：从 Why / How / What / When / Whether / To what extent 等角度重新打开 question space。
-- **Limitations**：哪些重要问题是当前研究无法回答的？为什么？
-- **Future Studies**：下一步什么实验或分析能够回答这些 unresolved questions？
-- **Conclusion Sentence**：用一句话收束全文，留下最终 take-home message，而不是重复性能数字。
-
-### 13.5 简化检查图
+### 14.5 简化检查图
 
 ```text
 Paper-level storyline
 │
-├─ Results subsection titles
-│      └─ 能否连起来形成一篇小 essay？
+├─ Introduction
+│      └─ Why is this study necessary?
+│
+├─ Results titles
+│      └─ Do they reveal a coherent logical progression?
 │
 ├─ Each Results subsection
-│      └─ Motivation
+│      └─ Motivation / Question
 │          → Fact
-│          → 1-hop Opinion
-│          → Next Question
+│          → restrained 1-hop Opinion
+│          → Next Question / Next Step
+│          (reasoning recoverable; prose need not be formulaic)
 │
 └─ Discussion
-       └─ 2-hop Interpretation (this study)
-           → General Principle (beyond this study)
-           → Raise New Questions
-           → Limitations
-           → Future Studies
-           → Conclusion Sentence
+       ├─ Core:
+       │    Integrated Interpretation
+       │       → Broader Meaning / justified abstraction
+       │
+       └─ Optional when useful:
+            New Questions
+              → Boundary / Limitations
+              → Future Studies
 ```
 
-整个检查可以压缩成三个问题：
+整个检查可以压缩成四个问题：
 
-> **1. 只看 Introduction 各段段首句，能否形成 Final Goal → Previous Studies → Missing Component → This Study 的问题链？**
+> **（1）Introduction 是否清楚说明“为什么必须做这项研究”？**
 
-> **2. 只看 Results titles，story 是否成立？**
+> **（2）Results titles 是否形成 coherent progression，而不论它是 question-driven 还是 pipeline-driven？**
 
-> **3. 进入每个 Results subsection，是否形成 Motivation → Fact → 1-hop Opinion？**
+> **（3）每个 Results subsection 背后的 Motivation → Evidence → 1-hop Interpretation → Next Step 是否可恢复？**
 
-> **4. 进入 Discussion，是否完成 this study → beyond this study → new questions → limitations → future studies → conclusion？**
+> **（4）Discussion 是否完成 integrated interpretation 和 broader meaning；若存在重要 unresolved questions，是否诚实处理其 boundary / limitation？**
 
-如果这四层都成立，一篇论文的主要逻辑链通常就是清楚的。
+核心原则：
 
+> **Audit the reasoning, not the template.**

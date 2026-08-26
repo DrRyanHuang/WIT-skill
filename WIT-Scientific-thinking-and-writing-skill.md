@@ -6,6 +6,8 @@ Chinese Academy of Sciences
 Email: dbu@ict.ac.cn  
 2026/08/20
 
+> **Running examples:** This document mainly uses **MSFold** and **AlphaGo** as recurring examples. MSFold represents protein-structure / bioinformatics research, whereas AlphaGo represents a classic AI method/system study. The two examples are used to explain, stress-test, and refine WIT across different research styles, not to imply that all papers should follow the same surface form.
+
 ## 1. What WIT Means
 
 **WIT = Writing Is Thinking.**
@@ -24,12 +26,22 @@ WIT is the overarching framework; REWRITE is its operational mechanism.
 
 > **Usage principle:** WIT is not merely a checklist. For important rules, it should explain *why*, provide a representative example, and give an actionable decision criterion.
 
+> **Meta-principle: WIT specifies the logical functions of scientific reasoning, not a rigid surface template for scientific prose.**
+>
+> The same reasoning function can be expressed through different prose forms. WIT should require the author to know why a section exists, what its evidence supports, and how it advances the story, but it should not require every paper to use the same subsection titles, paragraph order, or ritualized Limitations / Future Studies structure.
+>
+> **Reasoning structure ≠ Surface prose structure.**
+
+> **WIT is a question generator, not a checklist completer.**
+
+Its role is to expose overlooked scientific dimensions, competing explanations, and unresolved questions. It does not require every project to answer every generated question, nor every paper to explicitly contain every WIT module.
+
 ## 2. What Problems Does WIT Address?
 
 WIT is designed to address several common difficulties in scientific research and paper writing:
 
 1. **At the beginning of a project, there is only a vague idea, and it is unclear how to truly “open up” the problem.**  
-   How can a single initial question be expanded into a researchable **question space** through **When / What / Why / How / Whether / To what extent**?
+   How can a single initial question be expanded into a researchable **question space** through **Whether / What / Why / How / When / To what extent**?
 
 2. **Results and Discussion are often mixed together.**  
    How far should a Results subsection go? When should it remain a Fact, and when can it include a 1-hop Opinion? Why should Discussion not simply repeat the Results?
@@ -116,7 +128,7 @@ Input:
 
 Expand it mainly from:
 
-> **When / What / Why / How / Whether / To what extent**
+> **Whether / What / Why / How / When / To what extent**
 
 The goal is to turn a vague question into a researchable **question space**.
 
@@ -139,8 +151,8 @@ Expected output:
 7. Which questions are not answerable now;
 8. 2-hop Interpretation;
 9. General Principle;
-10. Limitation;
-11. Future Study.
+(10) Potential Limitation, if relevant to the current story;
+(11) Potential Future Study, if worth making explicit.
 
 This is the most important day-to-day use of WIT:
 
@@ -156,11 +168,17 @@ Input:
 
 Check whether:
 
-- each subsection is driven by a scientific question;
-- it forms a clear **Fact → 1-hop Opinion** structure;
-- it is organized around “what question was answered” rather than “what technique was used”;
-- questions that could be answered now have been prematurely pushed into Discussion;
-- key controls, alternative explanations, or unexpected results have been overlooked.
+- the subsection titles form a clear and progressive scientific story;
+- each subsection has a logical function rather than merely adding another experiment;
+- the evidence supports a clear **Fact → restrained 1-hop Opinion**;
+- a **Question / Finding-driven** organization is appropriate, or whether a **Component / Pipeline-driven** organization is more natural for a method or system paper;
+- even when the surface structure follows a pipeline, the underlying **Question → Test → Finding → Next Step** reasoning remains recoverable;
+- questions answerable now have been prematurely pushed into Discussion;
+- key controls, competing explanations, counterexamples, or unexpected results have been overlooked.
+
+Principle:
+
+> **Results should expose the logical progression of the scientific story, not obey a single title format.**
 
 ---
 
@@ -170,14 +188,21 @@ Input:
 
 > Use WIT to review the Discussion.
 
-Check whether:
+First check the **core functions**:
 
-- the opening completes **multiple 1-hop Opinions → 2-hop Interpretation**;
-- it merely repeats the Results;
-- the middle completes **2-hop → General Principle**;
-- existing findings open up a new question space;
-- Limitations correspond to genuinely unresolved questions;
-- Future Studies naturally follow from those limitations.
+- does it integrate local findings / 1-hop Opinions into an overall interpretation?
+- does it go beyond repeating the Results?
+- does it explain the broader meaning and, when justified, abstract toward a General Principle?
+
+Then check the **optional extensions**, when scientifically useful:
+
+- should the findings reopen a new question space?
+- is there a meaningful boundary or limitation that should be stated?
+- do Future Studies address genuine unresolved questions rather than appear as ritual prose?
+
+Principle:
+
+> **The core function of Discussion is interpretation and abstraction. New Questions, Limitations, and Future Studies are valuable extensions when needed, not mandatory surface sections in every paper.**
 
 ---
 
@@ -214,7 +239,7 @@ Output:
 
 WIT can be summarized as:
 
-> **Load WIT first; start from a question; every important finding should generate new questions; answerable questions become new Results, while unanswerable ones move into Discussion, Limitations, and Future Studies.**
+> **Load WIT first; start from a question; every important finding should generate new questions; answerable questions can extend the current Results, while unanswerable ones should first be judged for importance before being developed into Discussion, Limitations, or Future Studies.**
 
 ## 4. REWRITE: The Core Research Loop
 
@@ -226,82 +251,336 @@ These are not seven independent modules, but one continuous cycle.
 
 ### 4.1 R — Research Question
 
-Do not begin with “What method should I use?” Do not organize the research around an algorithm, model, dataset, benchmark, or visualization technique.
+Problem formulation is not merely choosing a topic. It means:
+
+> **expanding a single question into a scientific question space.**
+
+The goal is not to mechanically list interrogative words, but to map the problem into six relatively orthogonal scientific dimensions.
+
+#### 4.1.1 Whether → Existence
 
 First ask:
 
-> **What scientific question are we actually trying to answer?**
+> **Does the phenomenon really exist?**
 
-Academic research often begins with a process of **opening up the problem**. This is more than merely choosing a topic.
+This is the basic existence question.
 
-> **To formulate a research problem is to open it up.**
+For example:
 
-A practical way to do this is to examine the same core phenomenon from multiple dimensions:
+> Does MSFold truly recover alternative conformations more effectively than standard decoding?
 
-> **When / What / Why / How / Whether / To what extent**
+This dimension asks whether the phenomenon is stable, statistically supported, reproducible, and more than an accidental observation.
 
-These question words are not merely linguistic forms. They correspond to different modes of scientific thinking:
+#### 4.1.2 What → Determinants
 
-- **When**: identify conditions and boundaries;
-- **What**: identify key factors, objects, or determining variables;
-- **Why**: identify causes, mechanisms, or explanations;
-- **How**: identify processes, pathways, or mechanisms of action;
-- **Whether**: test whether a phenomenon exists, is necessary, or generalizes;
-- **To what extent**: determine effect size, scope, and quantitative boundaries.
+Once the phenomenon is established, ask:
 
-Therefore, opening up a research problem can be understood as:
+> **What variables or factors determine whether it occurs and how strongly?**
 
-> **Starting from an initial question or finding, use these dimensions to expand a single-point problem into a question space.**
+For example:
 
-This approach applies both at the beginning of a project and after an important finding has been obtained.
+> What protein properties determine whether MSFold successfully recovers alternative conformations?
 
-Typical question types include:
+Possible determinants may include protein size, conformational-change type, sequence identity, token-space diversity, and sampling budget.
 
-#### 4.1.1 Whether
+This dimension asks:
 
-- Does X really improve Y?
-- Is the advantage stable?
-- Does it remain after controlling for other factors?
-- Does it generalize to new data, tasks, or systems?
+> **What determines the outcome?**
 
-#### 4.1.2 What
+#### 4.1.3 Why → Cause
 
-- Which component contributes the most?
-- What feature determines success or failure?
-- Which variable actually drives the observed phenomenon?
+Why does not ask for the detailed process. It asks:
 
-#### 4.1.3 How
+> **What causes the phenomenon?**
 
-- How does X change the representation?
-- How does an algorithm escape a local optimum?
-- How does structural information improve prediction?
+That is, identify the causal driver.
 
-#### 4.1.4 Why
+For example:
 
-- Why does X outperform Y?
-- What mechanism or principle explains the effect?
+> Why does standard decoding fail to recover alternative conformations?
 
-#### 4.1.5 When
+Possible causes include:
 
-- Under what conditions does the advantage appear?
-- When does it disappear?
-- What are the boundary conditions?
+- the states are not encoded in the representation;
+- search is trapped in a local mode;
+- the decoding objective favors the dominant state.
 
-#### 4.1.6 Where
+Thus:
 
-- In which data domains, tasks, organisms, systems, or regimes does it hold?
+> **Why asks what causes the phenomenon.**
 
-#### 4.1.7 To what extent
+#### 4.1.4 How → Mechanism
 
-- How strong is the effect?
-- Where is the quantitative boundary?
-- How much perturbation causes the conclusion to fail?
+How is different from Why.
 
-The starting point of a study should therefore be:
+Why asks:
 
-> **Scientific Question → Hypothesis → Experimental Design**
+> **What causes the phenomenon?**
+
+How asks:
+
+> **Through what process or mechanism does that cause produce the outcome?**
+
+For example:
+
+> If standard decoding fails because it becomes trapped in local modes, how does parallel tempering help cross token-space barriers and reach alternative states?
+
+Thus:
+
+> **Cause → Mechanism → Outcome**
+
+and:
+
+> **Why asks what causes it; How asks through what mechanism the cause produces the effect.**
+
+#### 4.1.5 When → Boundary Conditions
+
+When should not be interpreted only as time.
+
+It represents the more general question:
+
+> **Under what conditions does the conclusion hold or fail?**
+
+For example:
+
+- For which protein classes does it hold?
+- For which conformational-change types does it fail?
+- Is the effect stronger in low-data or high-data regimes?
+- Over what sequence-identity range does it generalize?
+- In which tissues, cell types, or spatial regions does it hold?
+
+Many questions that might previously have been phrased as “Where” are actually boundary-condition questions, so Where does not need to be a separate dimension.
+
+This dimension asks:
+
+> **What are the boundary conditions?**
+
+#### 4.1.6 To what extent → Magnitude
+
+Finally ask:
+
+> **How large is the effect, and over what range does it hold?**
+
+For example:
+
+- How much does the success rate improve?
+- Is the gain concentrated in only a few samples?
+- How large a conformational change can be recovered?
+- Is the effect practically meaningful, not merely statistically significant?
+
+This dimension concerns:
+
+> **Magnitude / effect size / range**
+
+Thus, opening up a research question can be represented as six scientific dimensions:
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+corresponding to:
+
+> **Whether → What → Why → How → When → To what extent**
+
+Not every project must answer all six. Their purpose is to systematically ask:
+
+> **Which important dimensions of the question space have not yet been opened?**
+
+
+#### 4.1.7 A More Familiar Example: Opening the Six-Dimensional Question Space with AlphaGo
+
+The MSFold example is useful for protein-structure research, but it may be unfamiliar to readers outside the field. AlphaGo provides a more widely understood example.
+
+The classic Nature paper *Mastering the game of Go with deep neural networks and tree search* begins from a clear difficulty: Go has an enormous search space. The paper describes an approximate branching factor of 250 and a typical game depth of 150, making exhaustive search infeasible. AlphaGo addresses this by reducing both the effective **breadth** and **depth** of search: a policy network prioritizes promising moves, a value network evaluates positions, and both are integrated with Monte Carlo tree search (MCTS).
+
+The purpose of this example is not to mechanically attach six interrogative words to AlphaGo. It is to show that:
+
+> **the same scientific result can be opened along six distinct scientific dimensions.**
+
+##### Whether → Existence: Can AlphaGo Actually Reach Professional-Level Go?
+
+The first question is simply:
+
+> **Can deep neural networks combined with tree search actually solve the long-standing computer-Go problem at professional level?**
+
+The paper provides direct evidence:
+
+- AlphaGo achieved a **99.8% win rate** against other Go programs;
+- it defeated European Go champion Fan Hui **5–0** in the formal match.
+
+This establishes:
+
+> **The phenomenon exists: the approach reaches a level previously unattained by computer Go.**
+
+Whether does not ask *why* the system succeeds. It first asks:
+
+> **Does it succeed at all?**
+
+##### What → Determinants: What Determines AlphaGo's Playing Strength?
+
+Once the phenomenon is established, the next question is:
+
+> **What variables or components determine how strong AlphaGo becomes?**
+
+The paper analyzes several determinants.
+
+For example:
+
+- the supervised policy network predicted expert moves with **57.0% accuracy**, compared with **44.4%** for the previous state of the art reported by the authors;
+- small improvements in policy prediction accuracy produced substantial improvements in playing strength;
+- after reinforcement learning, the RL policy network won **more than 80%** of games against the supervised policy network;
+- without search, the RL policy network won **85%** of games against Pachi;
+- policy quality, value estimation, rollout policy, and search all affect final playing strength.
+
+Thus What asks:
+
+> **Which components or variables determine performance?**
+
+It does not yet ask why those components work.
+
+##### Why → Cause: Why Could AlphaGo Break Through Where Traditional Go Programs Struggled?
+
+Why asks for the causal explanation.
+
+The paper identifies two central obstacles:
+
+- enormous **search breadth**;
+- enormous **search depth**.
+
+Exhaustive search is therefore infeasible.
+
+A central causal explanation for AlphaGo's success is:
+
+> **it does not search all possibilities equally; learned policy and value functions drastically reduce the effective search space.**
+
+More specifically:
+
+- the policy network reduces effective **breadth**;
+- the value network reduces effective **depth**.
+
+Thus:
+
+> **Why = What caused the breakthrough?**
+
+This is deeper than simply saying “because it used deep learning.”
+
+A more informative statement is:
+
+> **AlphaGo succeeds because learning makes an otherwise intractable search problem tractable enough to search.**
+
+##### How → Mechanism: How Do the Policy and Value Networks Actually Change MCTS?
+
+Once the cause has been identified, How asks:
+
+> **Through what computational process does that cause produce stronger play?**
+
+The mechanism can be decomposed as follows.
+
+1. **Policy network guides selection and expansion**
+
+The search does not explore all legal moves equally. The policy network gives higher priority to promising moves.
+
+2. **Value network evaluates leaf positions**
+
+At a leaf node, the value network can directly estimate the probability of winning rather than always playing the game to completion.
+
+3. **Rollout provides an additional evaluation**
+
+A fast rollout policy simulates the game to the end and provides another estimate.
+
+4. **MCTS backs the information up**
+
+The value-network estimate and rollout outcome are combined and propagated back through the search path to update action values and visit counts.
+
+Thus:
+
+> **Cause:** learning reduces the effective search space.  
+> **Mechanism:** policy-guided search + value evaluation + rollout + MCTS backup implement that reduction.
+
+This illustrates the distinction:
+
+> **Why asks what causes the success; How asks through what computational mechanism that cause produces stronger play.**
+
+##### To What Extent → Magnitude: How Much Stronger Is AlphaGo?
+
+A magnitude question is not satisfied with:
+
+> “AlphaGo is strong.”
+
+It asks:
+
+> **How large is the improvement, and how large are the component effects?**
+
+The paper provides several quantitative scales:
+
+- **99.8% win rate** against other Go programs;
+- **5–0** against Fan Hui;
+- RL policy versus SL policy: **>80% win rate**;
+- RL policy without search versus Pachi: **85% win rate**;
+- a single value-network evaluation approached the accuracy of Monte Carlo rollouts using the RL policy while using about **15,000 times less computation**.
+
+These answer:
+
+> **How large is the effect?**
+
+The difference between Whether and To what extent is therefore clear:
+
+> **Whether: Is there an effect?**  
+> **To what extent: How large is it?**
+
+##### When → Boundary Conditions: Under What Conditions Does AlphaGo's Advantage Hold or Fail?
+
+This dimension is especially instructive.
+
+The AlphaGo paper already shows that the approach works:
+
+- on full-sized Go;
+- against multiple computer Go programs;
+- against a professional-level human opponent.
+
+These provide partial evidence about the boundary.
+
+However, the paper does not systematically map all boundary conditions.
+
+WIT would therefore continue by asking:
+
+- Does the advantage persist when the search budget is greatly reduced?
+- Can MCTS compensate when the policy network is weak?
+- When does systematic error in the value estimate cause search to fail?
+- Does the advantage hold across opponents with very different styles and strengths?
+- Can the broader **learning + search** principle transfer beyond Go to other large decision problems?
+
+These are not all claims already answered by the original paper. They are new questions naturally generated from its findings:
+
+> **Under what conditions does the conclusion hold or fail?**
+
+That is the essence of Boundary Conditions.
 
 ---
+
+AlphaGo makes the six dimensions easy to distinguish:
+
+| Dimension | Question in the AlphaGo example |
+|---|---|
+| **Whether → Existence** | Can deep networks + search really achieve professional-level Go? |
+| **What → Determinants** | Which factors—policy accuracy, RL, value estimation, search—determine playing strength? |
+| **Why → Cause** | Why can this approach break through the traditional computer-Go bottleneck? |
+| **How → Mechanism** | How do policy/value networks interact with MCTS to change the search process? |
+| **When → Boundary Conditions** | Under what search budgets, opponent types, model qualities, and task conditions does the advantage hold or fail? |
+| **To what extent → Magnitude** | How large are the gains in win rate, playing strength, and computational efficiency? |
+
+Thus a finding such as:
+
+> **AlphaGo defeated a professional Go player.**
+
+is not the end of the research process. Once opened along the six dimensions, it becomes:
+
+> **Does it exist? → What determines it? → Why does it happen? → How does it happen? → Under what conditions? → How large is the effect?**
+
+That is what WIT means by:
+
+> **opening up the problem.**
+
+**Reference:** Silver, D. et al. *Mastering the game of Go with deep neural networks and tree search*. Nature 529, 484–489 (2016), doi:10.1038/nature16961.
+
 
 ### 4.2 E — Examine the Literature
 
@@ -497,6 +776,151 @@ A good finding should open up a new question space.
 
 ---
 
+
+#### 4.5.1 Competing Hypotheses: Do Not Settle on a Single Explanation Too Early
+
+After a finding appears, do not ask only:
+
+> **Why did this happen?**
+
+Force yourself to construct multiple plausible explanations:
+
+> **Finding → Hypothesis A / Hypothesis B / Hypothesis C**
+
+For example:
+
+> Finding: MSFold still outperforms baselines on unseen proteins.
+
+Possible explanations include:
+
+- **H1:** the ESM3 token space contains generalizable alternative conformations;
+- **H2:** the gain mainly comes from a larger sampling budget;
+- **H3:** some structural-transition classes in the benchmark are intrinsically easier for parallel tempering.
+
+The next step should not be to choose the most appealing explanation, but to ask:
+
+> **What experiment can distinguish these competing hypotheses?**
+
+Mechanistic research should prioritize **discriminating experiments**, not merely accumulate supportive evidence.
+
+---
+
+#### 4.5.2 Falsification / Counterexample Check: Attack Your Own Conclusion
+
+For every important conclusion, ask:
+
+> **What result would falsify this conclusion?**
+
+and:
+
+> **What is the most plausible counterexample?**
+
+For example:
+
+> Claim: structural information improves OOD robustness.
+
+Do not only search for more supporting datasets. Also ask:
+
+- Is there a dataset where adding structural information hurts performance?
+- Does the advantage disappear when sequence diversity is already high?
+- Is the gain actually caused by additional model capacity rather than structural information itself?
+
+The purpose is to determine:
+
+> **Where is the evidence boundary of the claim?**
+
+If a conclusion has no clear potential falsifier, it is often not yet scientifically defined tightly enough.
+
+---
+
+
+##### What if a counterexample is found?
+
+Do not immediately conclude that the original conclusion is simply “wrong.” First classify the counterexample.
+
+- **Technical or data problem**: bug, measurement error, data leakage, sample contamination.  
+  → Fix the issue and rerun the experiment.
+- **Random noise**: the result is not reproducible.  
+  → Do not overturn the conclusion yet, but reduce confidence.
+- **Stable, reproducible counterexample**:  
+  → The claim should usually be revised rather than discarded outright.
+
+A stable counterexample can have three major scientific consequences:
+
+1. **Narrow the claim**
+
+For example:
+
+> “X always improves Y”
+
+may become:
+
+> “X improves Y under conditions A and B.”
+
+2. **Reveal a boundary condition**
+
+The counterexample may answer:
+
+> **When does this conclusion fail?**
+
+This can be more informative than accumulating additional supportive examples.
+
+3. **Rewrite the hypothesis or principle**
+
+If the counterexample strikes at the proposed mechanism, revisit the central claim and possibly the entire research storyline.
+
+Thus:
+
+> **Counterexample → Boundary Condition → Better Claim**
+
+A good counterexample does not necessarily weaken a paper; it can make the conclusion more precise and credible.
+
+##### What if no counterexample is found?
+
+Do not conclude that the claim has been “proven.”
+
+Instead, ask two further questions.
+
+1. **Was the falsification attempt strong enough?**
+
+Did we actively test:
+
+- adverse conditions;
+- extreme cases;
+- OOD data;
+- negative controls;
+- alternative explanations;
+- subgroups where failure is plausible?
+
+2. **Is the claim genuinely falsifiable?**
+
+If every possible result can be accommodated by rephrasing the claim, the claim may be too vague.
+
+State explicitly:
+
+> **What observation would make me accept that this claim is false?**
+
+The full logic is:
+
+> **Claim → Potential Falsifier → Test → Counterexample?**
+
+If a stable counterexample is found:
+
+> **Revise Claim / Identify Boundary / Rewrite Hypothesis**
+
+If none is found:
+
+> **The claim gains support, but is not “proven.”**
+
+If the potential falsifier cannot yet be tested:
+
+> **Record it as an unresolved question → Limitation / Future Study**
+
+A useful summary is:
+
+> **A failed falsification strengthens a claim; a successful falsification sharpens it.**
+
+
 ### 4.6 T — Test Answerability
 
 This is the key decision point in the REWRITE loop.
@@ -525,6 +949,34 @@ Only then should the question move into Discussion:
 
 ---
 
+
+#### 4.6.3 Information Gain: Choose the Experiment That Most Changes Your Belief
+
+When several questions are answerable, do not choose only by convenience.
+
+A better rule is:
+
+> **Prioritize experiments with the highest information gain and discrimination power.**
+
+Ask:
+
+- If the result is A, how much would my interpretation change?
+- If the result is B, would I revise the central claim?
+- Can the experiment distinguish two currently plausible explanations?
+- Does it merely add another supporting example, or substantially reduce uncertainty?
+
+For example:
+
+- one more similar benchmark may increase confidence only slightly;
+- a control experiment that separates two competing mechanisms may change the interpretation entirely.
+
+Thus:
+
+> **Next experiment ≠ easiest experiment**  
+> **Next experiment = highest-value information test**
+
+---
+
 ### 4.7 E — Extend / Exit
 
 If a new question is answerable now:
@@ -535,252 +987,364 @@ If it is not answerable now or lies beyond scope:
 
 > **New Question → Discussion → Limitation → Future Study**
 
-## 5. Results: Question → Fact → 1-hop Opinion
+## 5. Results: Expose the Logical Progression of the Scientific Story
 
-### 5.1 Organize by Scientific Questions, Not Techniques
+The strong rule is not:
 
-Avoid titles such as:
+> **Every Results subsection must be titled as a scientific question or answer.**
 
-- Ablation Study
-- OOD Evaluation
-- t-SNE Visualization
-- Case Study
+The deeper requirement is:
 
-These describe:
+> **Results should expose the logical progression of the scientific story.**
 
-> **What we did.**
+The reader should be able to recover:
 
-Better titles describe:
+> **why this part is needed → what evidence was obtained → what local conclusion the evidence supports → why the next part follows.**
 
-> **What we learned.**
+### 5.1 Two Valid Modes of Results Organization
 
-For example:
+#### (1) Question / Finding-driven
+
+This is often natural for discovery, mechanism, and hypothesis-testing studies.
+
+Subsection titles may state the answer directly, for example:
 
 - “Module X is the primary contributor to the performance gain”
 - “The performance advantage persists under distribution shift”
 - “The learned representation better separates functional states”
 
-Core principle:
+The advantage is:
 
-> **The research process begins with a Question; the Results subsection title usually states the Answer.**
+> **the title directly tells the reader what was learned.**
 
-A concise distinction between Results and Discussion is:
+#### (2) Component / Pipeline-driven
 
-> **Results: one Fact → one 1-hop Opinion.**  
-> **Discussion opening: multiple 1-hop Opinions → one 2-hop Interpretation.**
+For method, system, and engineering papers, component- or pipeline-driven organization can be equally effective.
 
-### 5.2 Standard Logic of a Results Subsection
+The AlphaGo Nature paper is an important counterexample to an overly rigid WIT rule. Its major research sections proceed through:
 
-A strong Results subsection usually follows:
+- Supervised learning of policy networks
+- Reinforcement learning of policy networks
+- Reinforcement learning of value networks
+- Searching with policy and value networks
+- Evaluating the playing strength of AlphaGo
 
-> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion → Next Question**
+These headings are clearly **component / pipeline-driven**.
+
+Yet together they form a coherent storyline:
+
+> **learn a policy → improve it by self-play → learn a value function → integrate policy and value into search → evaluate the complete system**
 
 Thus:
 
-> **Results = Fact + 1-hop Opinion**
+> **Pipeline-driven ≠ a mere list of techniques.**
 
-### 5.3 Guided Template: Results Subsection
+The key question is whether the components form a meaningful logical progression.
 
-For less experienced researchers, use a fill-in-the-blank structure.
+### 5.2 Separate Reasoning Structure from Surface Prose
 
-#### (1) Scientific Question
+The reasoning behind a Results subsection can often be reconstructed as:
 
-> We want to know: ________________________.
+> **Motivation / Question → Experiment / Analysis → Fact → 1-hop Opinion → Next Question / Next Step**
 
-#### (2) Why This Question Matters
+But the prose does not need to mechanically state each element.
 
-> This question matters because: ________________________.
+AlphaGo sometimes advances with pipeline language such as “the second stage of the training pipeline ...” rather than repeatedly writing “we next asked whether ...”.
 
-#### (3) Experiment / Analysis
-
-> To answer this question, we: ________________________.
-
-#### (4) Data
-
-> The results show: ________________________.
-
-#### (5) Finding
-
-> These data directly show that: ________________________.
-
-#### (6) 1-hop Opinion
-
-> These results suggest that: ________________________.
-
-#### (7) New Question
-
-> This finding raises the question of: ________________________.
-
-#### (8) Answerability Check
-
-> Can the current study answer it?
-
-- Yes → design the next experiment / analysis;
-- No → move it to Discussion / Limitation / Future Study.
-
----
-
-
-## 6. Discussion
-
-### 6.1 Opening: 2-hop Interpretation (this study)
-
-Each Results subsection usually ends with a 1-hop Opinion.
-
-The purpose of the opening paragraph of Discussion is not to repeat Results, but to:
-
-> **Integrate multiple 1-hop Opinions into a 2-hop Interpretation.**
-
-Ask:
-
-> **Taken together, what do these results mean for this study as a whole?**
+That is perfectly acceptable when the underlying reasoning remains clear.
 
 Therefore:
 
-> **Multiple 1-hop Opinions → Integrated 2-hop Interpretation**
+> **WIT requires recoverable reasoning, not formulaic prose.**
 
-This paragraph should still stay close to the present study.
+### 5.3 Fact + Restrained 1-hop Opinion Remains a Strong Rule
 
----
-
-### 6.2 General Principle: beyond this study
-
-The middle of the Discussion moves upward through abstraction.
-
-Ask:
-
-> **Is there a broader principle behind these observations that goes beyond this study?**
-
-Structure:
-
-> **2-hop Interpretation → Abstraction → General Principle**
-
-Example:
-
-Specific finding: a better search strategy recovers alternative conformations.
-
-2-hop interpretation: failure to recover alternative conformations may partly result from insufficient decoding rather than the complete absence of those states from the representation.
-
-General principle:
-
-> **Model capability is jointly determined by representation and search.**
-
----
-
-### 6.3 Raise New Questions: reopen the question space
-
-Discussion should not stop at abstraction.
-
-Ask further:
-
-- Why does this principle hold?
-- When does it hold?
-- When does it fail?
-- What determines its strength?
-- Does it generalize to other models, tasks, organisms, or systems?
-- Are there counterexamples?
-- How can competing explanations be distinguished?
-
-The full progression becomes:
-
-> **Fact → 1-hop Opinion → 2-hop Interpretation → General Principle → New Question Space**
-
-The first half moves:
-
-> **upward through abstraction**
-
-The second half moves:
-
-> **outward into new questions**
-
-Many Discussions feel “thin” not because their interpretations are wrong, but because they stop after abstraction and fail to open up new scientific questions.
-
----
-
-### 6.4 Limitations: what important questions remain unanswered?
-
-A limitation is not:
-
-> **Something we did not do.**
-
-There are infinitely many things a study did not do.
-
-A meaningful limitation is:
-
-> **A constraint that prevents the current study from answering an important question raised by its own findings.**
-
-Use this test:
-
-> **Because we did not / could not do X, does an important scientific question remain unresolved?**
-
-If yes, X is a meaningful limitation.
-
-Example:
-
-New Question: Does this principle apply to other model architectures?
-
-Limitation: The current study systematically evaluated only one model family.
-
-Therefore: the present evidence cannot establish whether the principle is architecture-independent.
-
----
-
-### 6.5 Future Studies: how to answer unresolved questions
-
-Future Work should not be a wish list.
-
-Every future study should answer a specific unresolved question.
-
-Structure:
-
-> **Finding → New Question → Limitation → Future Study**
+Results may interpret evidence, but the interpretation should stay close to that evidence.
 
 Principle:
 
-> **Future studies are experiments designed to answer questions that the current study cannot answer.**
+> **Results: Fact → restrained 1-hop Opinion**
+
+For example, AlphaGo's tournament results provide strong facts about playing strength. The paper draws local conclusions about system strength rather than immediately jumping to a universal theory of intelligence.
+
+Likewise, when combined value-network and rollout evaluation outperformed either mechanism alone, the authors inferred that the two position-evaluation mechanisms were complementary.
+
+That is a clean example of:
+
+> **Fact → 1-hop Opinion**
+
+A useful test is:
+
+> **If the data in this subsection were removed, would the opinion still stand?**
+
+If not, it is probably a local Results-level interpretation.  
+If the claim requires multiple findings across the paper, it more likely belongs in Discussion.
+
+### 5.4 The Real Test for Results Titles: Can They Form a Small Essay?
+
+Extract all Results subsection titles and read them in order.
+
+Ask:
+
+> **Do they independently reveal how the scientific story progresses?**
+
+The story may be:
+
+> **Question → Finding → Mechanism → Boundary**
+
+or, as in AlphaGo:
+
+> **Component A → Component B → Integration → System Evaluation**
+
+The small-essay test therefore evaluates:
+
+> **logical progression**
+
+not a single required title style.
+
+### 5.5 Guided Template: Results Subsection
+
+For less experienced researchers, use the reasoning template first, then choose the final prose form.
+
+#### (1) Motivation / Scientific Question
+
+> Why is this part needed? We want to know: ________________________.
+
+#### (2) Experiment / Analysis
+
+> To answer or advance this question, we: ________________________.
+
+#### (3) Fact
+
+> The data directly show: ________________________.
+
+#### (4) 1-hop Opinion
+
+> These results locally suggest: ________________________.
+
+#### (5) Next Question / Next Step
+
+> Therefore, the next logical step is: ________________________.
+
+For a method or system paper, also ask:
+
+> **What indispensable logical function does this subsection serve in the overall pipeline?**
+
+The template is meant to expose reasoning, not force the final paper into five formulaic sentences.
 
 ---
 
-### 6.6 Guided Template: Discussion
+## 6. Discussion: Core Functions + Optional Extensions
 
-#### (1) Opening Paragraph: 2-hop
+AlphaGo provides an important correction to WIT:
 
-> Taken together, the results of this study show that: ________________________.
+> **A strong Discussion does not have to explicitly contain New Questions, Limitations, and Future Studies.**
 
-> Beyond the individual findings, this means that: ________________________.
+Discussion should therefore distinguish between:
 
-This paragraph should still focus on:
+> **Core Functions (strong rules)**  
+> and  
+> **Optional Extensions (used when scientifically helpful)**
 
-> **this study**
+### 6.1 Core Function 1: Integrated Interpretation
 
-#### (2) Middle Paragraphs: General Principle
+Discussion should first move beyond line-by-line repetition of Results.
 
-> More broadly, these findings suggest that: ________________________.
+It should integrate local findings / 1-hop Opinions and ask:
 
-> This principle may apply not only to the current system but also to: ________________________.
+> **Taken together, what do these results mean?**
 
-#### (3) New Question Space
+This can be represented as:
 
-> These findings further raise the following unresolved questions:
+> **Multiple local findings → Integrated Interpretation**
 
-- Why: ________________________
-- How: ________________________
-- What: ________________________
-- When: ________________________
-- Whether: ________________________
+When the synthesis moves one level beyond individual Results subsections, it can also be described as:
 
-#### (4) Limitations
+> **multiple 1-hop Opinions → 2-hop Interpretation**
 
-> The current study cannot answer ________________________, because ________________________.
+But “2-hop” describes reasoning depth; it is not a required sentence pattern.
 
-#### (5) Future Study
+### 6.2 Core Function 2: Broader Meaning / General Principle
 
-> To address this question, future work could test ________________________.
+After integration, Discussion often asks:
+
+> **Why do these results matter beyond the immediate experiments?**
+
+Possible forms include:
+
+- deeper causal interpretation;
+- conceptual comparison with an existing paradigm or baseline;
+- transferable mechanism;
+- broader implication;
+- a General Principle.
+
+For MSFold, one possible abstraction is:
+
+> **Model capability is jointly determined by representation and search.**
+
+But not every paper needs a grand General Principle. Abstraction should stop where the evidence stops.
+
+### 6.3 AlphaGo as a Reverse Validation: No Fixed Six-Part Discussion Is Required
+
+AlphaGo's Discussion is short, yet logically strong.
+
+It performs roughly three functions:
+
+#### (1) Integrated Interpretation
+
+It brings policy networks, value networks, reinforcement learning, and tree search together as one system rather than repeating individual performance numbers.
+
+#### (2) Deeper Meaning
+
+Through comparison with conventional high-intensity search systems, it highlights a deeper computational idea: the system does not merely examine more positions; it learns **where to search and how to evaluate**.
+
+This moves beyond component-level Results toward a deeper interpretation.
+
+#### (3) Beyond This Study
+
+The final part treats Go as an instance of a broader class of difficult decision/search problems and points toward implications of the learning + search idea beyond Go.
+
+Thus AlphaGo completes:
+
+> **this study → broader meaning / abstraction**
+
+without explicitly writing:
+
+> New Questions → Limitations → Future Studies
+
+AlphaGo is therefore an important counterexample:
+
+> **The reasoning functions of Discussion can be complete even when the surface structure does not contain ritualized limitations or future-work paragraphs.**
+
+### 6.4 Optional Extension 1: Raise New Questions
+
+When new questions are important for defining boundaries or opening the next research stage, continue with:
+
+> **Integrated Interpretation / General Principle → New Question Space**
+
+Use the six scientific dimensions:
+
+> **Existence → Determinants → Cause → Mechanism → Boundary Conditions → Magnitude**
+
+corresponding to:
+
+> **Whether → What → Why → How → When → To what extent**
+
+These questions are tools for continuing research. They do not all have to appear in the current paper.
+
+### 6.5 Optional Extension 2: Limitations
+
+A Limitation is valuable when an important unresolved question is genuinely constrained by the current study design, data, or scope.
+
+A meaningful limitation remains:
+
+> **A constraint that prevents the current study from answering an important question raised by its own findings.**
+
+It is not:
+
+> **a generic list of things the authors did not do.**
+
+But if the claim boundaries are already clear and an explicit limitation paragraph adds little, WIT should not require one merely for template completeness.
+
+### 6.6 Optional Extension 3: Future Studies
+
+Future Study is most useful when it directly addresses an unresolved question generated by the current work:
+
+> **Finding → New Question → Limitation → Future Study**
+
+This remains a powerful:
+
+> **research-planning logic**
+
+but it does not always need to become a:
+
+> **paper-surface paragraph**
+
+### 6.7 How to Judge a Discussion
+
+More important than asking whether it contains a Limitations or Future Work section is asking:
+
+- does it move beyond repeating Results?
+- does it provide an integrated interpretation?
+- does it explain broader meaning at a level justified by the evidence?
+- is the abstraction too strong?
+- if it proposes a General Principle, do multiple findings support it?
+- if important boundaries or unresolved questions exist, are they handled honestly?
+- does the ending leave a clear take-home message?
+
+Thus:
+
+> **Core Discussion: Interpretation → Broader Meaning**
+
+When useful, extend to:
+
+> **→ New Questions → Boundary / Limitations → Future Studies**
+
+### 6.8 Guided Template: Discussion
+
+Complete the core first, then decide whether optional extensions are needed.
+
+#### Core A: Integrated Interpretation
+
+> Taken together, the findings show: ________________________.
+
+#### Core B: Broader Meaning
+
+> At a deeper level, these findings mean: ________________________.
+
+> Within the evidence boundary, a broader interpretation is: ________________________.
+
+#### Optional C: New Question Space
+
+> The most important unresolved question is: ________________________.
+
+#### Optional D: Limitation
+
+> The current study cannot answer it because: ________________________.
+
+#### Optional E: Future Study
+
+> Answering it would require: ________________________.
+
+Principle:
+
+> **Do not write Optional C–E merely to complete a template.**
 
 ---
 
+## 7. Claim–Evidence Mapping: What Exactly Supports Each Major Claim?
 
-## 7. Reviewer Stress Test
+Before the reviewer stress test, extract all major claims and map each one to its evidence:
+
+> **Claim → Figure / Table → Evidence → Strength → Remaining Uncertainty**
+
+Example:
+
+| Claim | Supporting evidence | Remaining uncertainty |
+|---|---|---|
+| MSFold improves alternative-conformation recovery | Fig. 2 benchmark | Could sampling budget explain part of the gain? |
+| The improvement is not due to memorization | unseen-protein test | Does this hold across all protein classes? |
+| Parallel tempering enables broader exploration | sampling analysis / ablation | Does it correspond to physical energy barriers? |
+
+Check:
+
+- Is there any major claim without direct evidence?
+- Is one figure being asked to support too many conclusions?
+- Does Discussion contain claims never supported in Results?
+- Is the strength of the claim greater than the strength of the evidence?
+- Should “demonstrates” be narrowed to “suggests”?
+
+This step establishes:
+
+> **Claim–Evidence alignment**
+
+If a claim cannot be mapped to explicit evidence:
+
+> **add evidence, narrow the claim, or remove it.**
+
+---
+
+## 8. Reviewer Stress Test
 
 Before submission, actively switch to a reviewer’s perspective.
 
@@ -794,19 +1358,19 @@ Generate:
 
 Then classify them.
 
-### 7.1 Can be resolved with additional experiments now
+### 8.1 Can be resolved with additional experiments now
 
 → Return to Results.
 
-### 7.2 Can be resolved through existing data analysis or interpretation
+### 8.2 Can be resolved through existing data analysis or interpretation
 
 → Strengthen Results / Discussion.
 
-### 7.3 Cannot genuinely be resolved within the current study
+### 8.3 Cannot genuinely be resolved within the current study
 
 → Write as a Limitation and design a corresponding Future Study.
 
-### 7.4 Fatal Flaw
+### 8.4 Fatal Flaw
 
 Examples include an unfair central comparison, mismatch between claim and experimental design, severe confounding, or a central conclusion unsupported by the available evidence.
 
@@ -824,7 +1388,7 @@ The reviewer perspective is a **stress test**; a limitation is only one possible
 
 ---
 
-## 8. Deadline Mode: How to Close a Study Under Limited Time
+## 9. Deadline Mode: How to Close a Study Under Limited Time
 
 WIT / REWRITE can create a problem: every finding can generate more questions, so research can continue indefinitely.
 
@@ -834,7 +1398,7 @@ Therefore, WIT includes a:
 
 > **Stop Rule / Minimum Sufficient Story**
 
-### 8.1 Near a Deadline: prioritize three types of questions
+### 9.1 Near a Deadline: prioritize three types of questions
 
 #### (1) Questions that could change the central claim
 
@@ -863,7 +1427,7 @@ Examples:
 
 If the cost is low and the information gain is high, prioritize them.
 
-### 8.2 Questions that can be deferred
+### 9.2 Questions that can be deferred
 
 If a question:
 
@@ -876,7 +1440,37 @@ then move it to:
 
 > **Discussion → Limitation → Future Study**
 
-### 8.3 Stop Rule
+
+### 9.3 Research Storyline Freeze: Prevent the Project from Expanding Without Focus
+
+At a mature stage of the project, temporarily freeze the storyline by writing down:
+
+> **Central Question**  
+> **Central Claim**  
+> **3–5 Key Findings**  
+> **General Principle**
+
+Then ask for every proposed new experiment:
+
+> **Will it change or substantially strengthen this storyline?**
+
+If it:
+
+- changes the central claim → high priority;
+- rules out an important competing hypothesis → high priority;
+- establishes an important boundary condition → potentially valuable;
+- merely adds another similar result → proceed cautiously.
+
+Storyline Freeze does not mean the story can never change. A strong unexpected finding may justify rewriting it.
+
+Its purpose is to prevent:
+
+> **the project from losing its center because too many “also possible” experiments are added.**
+
+---
+
+### 9.4 Stop Rule
+
 
 Stop expanding Results when:
 
@@ -892,7 +1486,7 @@ Principle:
 
 ---
 
-## 9. Where Should This Sentence Go? A Decision Tree
+## 10. Where Should This Sentence Go? A Decision Tree
 
 ```text
 What is this sentence doing?
@@ -909,21 +1503,21 @@ What is this sentence doing?
 ├─ Proposing a broader mechanism or principle beyond this study?
 │      └─ Discussion middle: General Principle
 │
-├─ Raising a new unresolved question from the findings / principle?
-│      └─ Late Discussion: New Question
+├─ Raising a new unresolved question that is important for defining the current work or opening the next stage?
+│      └─ It may appear in Discussion, or remain a research-planning question
 │
-├─ Explaining why the current study cannot answer that question?
-│      └─ Limitations
+├─ Explaining why an important unresolved question cannot be answered now?
+│      └─ When useful, state it as a Limitation
 │
-└─ Explaining what experiment or analysis could answer it next?
-       └─ Future Studies
+└─ Explaining what experiment or analysis could answer that unresolved question next?
+       └─ When useful, state it as a Future Study
 ```
 
 ---
 
-## 10. The Two Loops Inside REWRITE
+## 11. The Two Loops Inside REWRITE
 
-### 10.1 Inner Loop: Research Progression
+### 11.1 Inner Loop: Research Progression
 
 > **Finding → Question → Answerability → Experiment → Finding**
 
@@ -931,7 +1525,7 @@ Purpose:
 
 > Drive the current project forward.
 
-### 10.2 Outer Loop: Interpretation and Abstraction
+### 11.2 Outer Loop: Interpretation and Abstraction
 
 > **Finding → Literature → Interpretation → Principle → New Question**
 
@@ -945,33 +1539,33 @@ Together, the two loops determine:
 
 ---
 
-## 11. Research Depth Diagnostic
+## 12. Research Depth Diagnostic
 
-### 11.1 Level 0 — Observation
+### 12.1 Level 0 — Observation
 
 > A > B.
 
 Only reports a phenomenon.
 
-### 11.2 Level 1 — Implication
+### 12.2 Level 1 — Implication
 
 > X improves Y.
 
 Identifies what the result means.
 
-### 11.3 Level 2 — Interpretation
+### 12.3 Level 2 — Interpretation
 
 > X improves Y because it changes Z.
 
 Begins to explain mechanism.
 
-### 11.4 Level 3 — General Principle
+### 12.4 Level 3 — General Principle
 
 > More generally, Z may govern this class of problems.
 
 Forms a transferable abstraction.
 
-### 11.5 Level 4 — Boundary / Mechanism Questions
+### 12.5 Level 4 — Boundary / Mechanism Questions
 
 Ask:
 
@@ -980,7 +1574,7 @@ Ask:
 - Why does it fail in some cases?
 - Are there counterexamples?
 
-### 11.6 Level 5 — New Research Program
+### 12.6 Level 5 — New Research Program
 
 Develop:
 
@@ -998,15 +1592,32 @@ or:
 
 ---
 
-## 12. Core Principles of WIT
+## 13. Core Principles of WIT
 
-> **Results are answers to questions.**
+> **WIT is a question generator, not a checklist completer.**
+
+> **WIT specifies reasoning functions, not rigid prose forms.**
+
+
+> **Do not settle on one explanation too early; compare competing hypotheses.**
+
+> **Every important claim should survive a falsification / counterexample check.**
+
+> **Every major claim should map to explicit evidence.**
+
+> **Choose the next experiment by information gain, not convenience alone.**
+
+> **Freeze the storyline periodically to prevent uncontrolled project expansion.**
+
+
+
+> **Results should expose how evidence advances the scientific story; both question-driven and pipeline-driven forms can work.**
 
 > **Good findings generate better questions.**
 
 > **Questions answerable now should become new Results.**
 
-> **Questions not answerable now define Discussion, Limitations, and Future Studies.**
+> **Questions not answerable now may motivate Discussion, Limitations, or Future Studies when they are important to the story.**
 
 > **Unexpected findings may rewrite the original question.**
 
@@ -1034,158 +1645,121 @@ Research keeps rewriting the question through new findings, while paper writing 
 
 That is **WIT: Writing Is Thinking**.
 
-## 13. How to Audit the Logical Chain of a Paper
-
-WIT can also be used in reverse to **audit the logical structure of a paper** at four levels: the Introduction, Results subsection titles, individual Results subsections, and the Discussion.
-
-### 13.1 Introduction: Do the Opening Sentences Form a Complete Problem Chain?
-
-Extract the **first sentence of each Introduction paragraph**, place them in order, and temporarily ignore the paragraph-level details. Then ask:
-
-> **Taken together, do these opening sentences clearly explain why this study must be done?**
-
-The ideal logical chain is:
-
-> **Final Goal → Necessary Components → What Previous Studies Have Established → Missing Component → Why the Missing Component Matters → This Study Provides It**
-
-In other words, the Introduction should answer:
-
-1. **Final Goal**: What scientific goal does the field ultimately seek to achieve?
-2. **Necessary Components**: What key components are required to achieve that goal?
-3. **Previous Studies**: Which necessary components have previous studies already established?
-4. **Missing Component**: Which critical piece is still missing?
-5. **Why It Matters**: Why does the final goal remain incomplete without that piece?
-6. **This Study**: How does the present study provide the missing component?
-
-A strong Introduction does not merely say:
-
-> X is important.
->
-> Many studies have investigated X.
->
-> However, some gaps remain.
->
-> Here, we propose a new method.
-
-Instead, it should establish a clearer logic of completion:
-
-> **Achieving the final goal requires A, B, C, and X.**
->
-> **Previous studies have established A, B, and C.**
->
-> **But X remains unresolved.**
->
-> **Without X, the final goal cannot be completed.**
->
-> **This study provides X by ...**
-
-Check:
-
-- Does the first paragraph state the final goal rather than merely introduce the research object?
-- Do the middle paragraphs explain which necessary components have already been established, rather than simply list prior work?
-- Is the missing component explicit, important, and necessary for the final goal?
-- Is the missing component more than something that “has not been done before”?
-- Does the final Introduction paragraph map precisely onto the missing component?
-- Is what the study claims to provide exactly the piece identified as missing?
-
-A practical criterion is:
-
-> **By reading only the first sentence of each Introduction paragraph, a reader should understand how far the field has progressed, what is still missing, and why the present study is necessary.**
-
-If those opening sentences do not form this chain, the Introduction is likely still literature-driven rather than question-driven.
-
 ---
 
-### 13.2 Paper Level: Can the Results Subsection Titles Form a “Small Essay”?
+## 14. How to Audit the Logical Chain of a Paper
 
-Extract all Results subsection titles, place them in order, and temporarily ignore the body text. Then ask:
+WIT can also be used to audit a manuscript, but the audit should evaluate **reasoning functions**, not whether the paper follows a fixed template.
 
-> **Can these titles independently tell a complete and progressively developing scientific story?**
+### 14.1 Introduction: Do the Paragraph Openings Form a Coherent Problem Chain?
 
-Ideally, they form a sequence such as:
+Extract the first sentence of each Introduction paragraph and ask:
 
-> **Core Question → Main Finding → Further Validation → Mechanism / Cause → Generalization / Boundary → Integrated Understanding**
+> **Can the reader understand where the field stands, what is missing, and why this study is necessary?**
 
-A strong criterion is:
+A common strong logic is:
 
-> **By reading only the subsection titles, a reader should roughly understand what problem the paper solved and what major answers it obtained.**
+> **Final Goal → Necessary Components → Established Components → Missing Component → Why It Matters → This Study**
 
-### 13.3 Subsection Level: Does Each Results Subsection Follow Motivation → Fact → 1-hop Opinion?
+This is a logic audit, not a requirement that every Introduction contain exactly six paragraphs.
 
-Inspect each Results subsection for the following internal chain:
+### 14.2 Results Titles: Can They Form a Small Essay?
 
-> **Motivation → Experiment / Analysis → Fact → 1-hop Opinion**
+Read all Results subsection titles in order and ask:
 
-Here:
+> **Do they reveal how the scientific story progresses?**
 
-- **Motivation**: What question follows from the previous finding, and why is this subsection needed?
-- **Fact**: What was directly observed in the experiments, comparisons, or statistical analyses?
-- **1-hop Opinion**: What do those Facts mean, staying only one inferential step away from the evidence?
+The progression may be:
 
-Check:
+> **Question → Finding → Mechanism → Boundary**
 
-1. Does the Motivation arise from a scientific question established earlier?
-2. Do the Facts genuinely support the subsection title?
-3. Does the Opinion follow directly from the Facts?
-4. Does the Opinion remain one hop away rather than jumping prematurely to a General Principle?
-5. Does the subsection naturally produce the next question?
+or, as in AlphaGo:
 
-### 13.4 Discussion Level: Does It Complete the Full Rise–Expand–Close Chain?
+> **Component A → Component B → Integration → System Evaluation**
 
-The Discussion should approximately follow:
+The audit therefore tests:
 
-> **2-hop Interpretation (this study)**
->
-> → **General Principle (beyond this study)**
->
-> → **Raise New Questions**
->
-> → **Limitations**
->
-> → **Future Studies**
->
-> → **Conclusion Sentence**
+> **logical progression**
 
-Specifically:
+not whether every title is finding-driven.
 
-- **2-hop Interpretation (this study)**: Integrate the 1-hop Opinions from multiple Results subsections and answer, “Taken together, what does this study show?”
-- **General Principle (beyond this study)**: Abstract a broader principle beyond the current method, dataset, or task.
-- **Raise New Questions**: Reopen the question space through Why / How / What / When / Whether / To what extent.
-- **Limitations**: Identify important questions the current study cannot answer and explain why.
-- **Future Studies**: Specify experiments or analyses that could answer those unresolved questions.
-- **Conclusion Sentence**: Close with the final take-home message rather than repeat performance numbers.
+### 14.3 Results Subsections: Is the Reasoning Chain Recoverable?
 
-### 13.5 Simplified Audit Map
+For each subsection, ask whether the underlying logic can be reconstructed as:
 
-~~~text
+> **Motivation / Question → Experiment / Analysis → Fact → restrained 1-hop Opinion → Next Question / Next Step**
+
+The prose does not need to state every element explicitly.
+
+Ask:
+
+- Why does this subsection need to exist?
+- Does the Fact support the local claim?
+- Does the Opinion stay close to the Fact rather than over-generalize?
+- Why does the next subsection follow?
+
+### 14.4 Discussion: Does It Complete the Core Functions?
+
+First audit the strong requirements:
+
+> **Integrated Interpretation → Broader Meaning / justified abstraction**
+
+Ask:
+
+- Does it move beyond repeating Results?
+- Does it integrate multiple local findings?
+- Does it explain why the findings matter?
+- Is the abstraction proportional to the evidence?
+
+Then, when useful, audit optional extensions:
+
+> **New Questions → Boundary / Limitations → Future Studies**
+
+These should appear when they help define the claim honestly or open the next research stage. They should not be added merely to satisfy a template.
+
+AlphaGo demonstrates that:
+
+> **A Discussion can omit explicit Limitations / Future Studies and still provide a complete and powerful scientific interpretation.**
+
+### 14.5 Simplified Audit Diagram
+
+```text
 Paper-level storyline
 │
-├─ Results subsection titles
-│      └─ Can they form a small essay?
+├─ Introduction
+│      └─ Why is this study necessary?
+│
+├─ Results titles
+│      └─ Do they reveal a coherent logical progression?
 │
 ├─ Each Results subsection
-│      └─ Motivation
+│      └─ Motivation / Question
 │          → Fact
-│          → 1-hop Opinion
-│          → Next Question
+│          → restrained 1-hop Opinion
+│          → Next Question / Next Step
+│          (reasoning recoverable; prose need not be formulaic)
 │
 └─ Discussion
-       └─ 2-hop Interpretation (this study)
-           → General Principle (beyond this study)
-           → Raise New Questions
-           → Limitations
-           → Future Studies
-           → Conclusion Sentence
-~~~
+       ├─ Core:
+       │    Integrated Interpretation
+       │       → Broader Meaning / justified abstraction
+       │
+       └─ Optional when useful:
+            New Questions
+              → Boundary / Limitations
+              → Future Studies
+```
 
 The audit can be compressed into four questions:
 
-> **1. By reading only the first sentence of each Introduction paragraph, can we recover the chain Final Goal → Previous Studies → Missing Component → This Study?**
+> **(1) Does the Introduction explain why the study is necessary?**
 
-> **2. By reading only the Results subsection titles, does the scientific story hold together?**
+> **(2) Do the Results titles form a coherent progression, whether question-driven or pipeline-driven?**
 
-> **3. Within each Results subsection, is there a clear Motivation → Fact → 1-hop Opinion chain?**
+> **(3) Is the underlying Motivation → Evidence → 1-hop Interpretation → Next Step chain recoverable in each Results subsection?**
 
-> **4. Does the Discussion complete this study → beyond this study → new questions → limitations → future studies → conclusion?**
+> **(4) Does Discussion complete integrated interpretation and broader meaning, and handle important boundaries or unresolved questions honestly when needed?**
 
-If all four levels hold, the paper's main logical chain is usually clear.
+Core principle:
+
+> **Audit the reasoning, not the template.**

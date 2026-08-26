@@ -29,3 +29,11 @@ WIT helps researchers:
 ## Core Loop
 
 **Finding → Question → Test → Finding**
+
+## Assess WIT on Classic Papers
+
+- AlphaGo
+👉 [Assess WIT using AlphaGo](Assess-WIT-using-AlphaGo.md)
+👉 [中文版本](检验WIT-using-AlphaGo.md)
+
+
