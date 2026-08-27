@@ -4,7 +4,7 @@ By Dongbo Bu
 Institute of Computing Technology,  
 Chinese Academy of Sciences  
 Email: dbu@ict.ac.cn  
-2026/08/27
+2026/08/28
 
 
 > **贯穿示例：** 本文主要以 **MSFold** 和 **AlphaGo** 两篇研究作为贯穿示例。MSFold 代表蛋白质结构 / 生物信息学研究，AlphaGo 代表经典 AI / method-system research。两者用于从不同研究范式解释、检验和修正 WIT，而不是要求所有论文都采用相同的表面写法。
@@ -79,15 +79,87 @@ WIT 主要解决科学研究与论文写作中以下常见困惑：
 
 ## 3. 如何使用 WIT
 
-### 3.1 先加载这个 `.md` 文件
+WIT 有两种主要使用方式：
 
-WIT 的使用方式很简单：**先让 AI 读取 `WIT-科学思考及写作skill.md`，再要求它按照 WIT 分析当前研究问题或论文。**
+（1）**Agent Skill 模式**：如果所使用的 agent / IDE 支持 Agent Skills 或能够读取项目中的 skill 文件，推荐让 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 作为入口，由 agent 按其中的规则自动选择 WIT 的工作模式、加载完整 workflow，并在人与 LLM 之间安排合适的 control transfer。
+
+（2）**直接加载 WIT workflow**：如果当前环境不支持 skill discovery，或者只是想在一次对话中使用 WIT，可以直接把完整的 WIT workflow 文件提供给 AI，再明确要求它按照 WIT 工作。
+
+二者的关系是：
+
+> **完整 WIT 文件定义方法；`SKILL.md` 定义 agent 如何调用和执行这个方法。**
+
+也就是说，完整 WIT 文件更像 **reference / specification**；[`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 更像 **agent-facing executable collaboration protocol**：它规定什么时候调用 WIT、调用哪个 mode、需要加载哪些材料、哪些步骤可以由 AI 自动完成、哪些关键 judgment 应让研究者参与，以及什么时候停止。
+
+### 3.1 文件入口与下载
+
+WIT 的 GitHub 仓库：
+
+> [https://github.com/deltadbu/WIT-skill](https://github.com/deltadbu/WIT-skill)
+
+主要文件：
+
+- [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) — agent 的执行入口与人机协同协议；[直接下载](https://github.com/deltadbu/WIT-skill/raw/refs/heads/main/SKILL.md)
+- [`WIT-科学思考及写作skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md) — 中文完整 workflow；[直接下载](https://github.com/deltadbu/WIT-skill/raw/refs/heads/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md)
+- [`WIT-Scientific-thinking-and-writing-skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-Scientific-thinking-and-writing-skill.md) — English full workflow；[直接下载](https://github.com/deltadbu/WIT-skill/raw/refs/heads/main/WIT-Scientific-thinking-and-writing-skill.md)
+
+如果希望长期使用 WIT，推荐直接 clone 整个仓库，而不是只下载一个文件：
+
+```bash
+git clone https://github.com/deltadbu/WIT-skill.git
+```
+
+这样 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 中引用的完整 workflow、tests 和 case studies 都能保持正确的相对路径。
+
+---
+
+### 3.2 使用 `SKILL.md`：让 Agent 按 WIT 自动协同
+
+如果 agent 支持 Agent Skills，推荐把整个 WIT repo 安装或放入该 agent 能够发现的 skill 目录。不同平台的 skill 安装位置可能不同，应按照相应平台的规则配置；WIT 本身不假定某一个固定目录。
+
+Agent 发现 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 后，首先读取其中的 metadata 和执行规则。它会把 `SKILL.md` 作为一个 **dispatcher + workflow controller + collaboration protocol**，主要负责：
+
+（1）判断当前任务是否应该使用 WIT；
+
+（2）识别当前需要的 mode，例如 **Open a question、Advance from a finding、Choose the next experiment、Review Results、Review Discussion、Stress-test a study、Deadline Mode**；
+
+（3）根据语言与任务，加载完整的 [`WIT-科学思考及写作skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md) 或 [`WIT-Scientific-thinking-and-writing-skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-Scientific-thinking-and-writing-skill.md)；
+
+（4）需要时再加载 `tests/` 或 `case-studies/` 中的 supporting materials，而不是默认把所有材料一次性塞进 context；
+
+（5）执行 WIT 的 REWRITE decision loop、reasoning invariants 和 stop rule；
+
+（6）在人机协同中安排 **control transfer**：低 learning-value 的劳动可以由 AI 自动完成；高 learning-value 的 judgment nodes，应让研究者保持实质参与。
+
+因此，使用 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 时，用户不需要每一步都手工指定 WIT 的全部流程。可以直接说：
+
+> Use WIT to analyze this finding and decide the next experiment.
+
+或者：
+
+> 按 WIT 检查这篇论文的 Results 和 Discussion。
+
+如果 agent 已经正确发现并加载 WIT，它应根据 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 自动选择相应的 mode，而不是要求用户重新描述整套 WIT 流程。
+
+如果当前工具**不能自动发现 skill**，但能够读取 repo 中的文件，也可以显式要求：
+
+> 请先读取 [SKILL.md](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md)，再按照其中的 routing、human–LLM collaboration rules 和 stop rule 使用 WIT。需要中文完整 workflow 时，读取 [WIT-科学思考及写作skill.md](https://github.com/deltadbu/WIT-skill/blob/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md)。
+
+核心原则是：
+
+> **`SKILL.md` 不是 WIT 理论正文的替代品，而是 agent 执行 WIT 的入口和控制程序。**
+
+---
+
+### 3.3 不支持 Skill Discovery 时：直接加载完整 WIT workflow
+
+如果只是使用普通 ChatGPT 对话，或者当前 agent 不支持自动发现 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md)，最简单的方法是直接加载完整的 WIT workflow。
 
 #### 在 ChatGPT 中
 
-把 `WIT-科学思考及写作skill.md` 上传到当前对话，然后说：
+下载并上传中文 [`WIT-科学思考及写作skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md)，或英文 [`WIT-Scientific-thinking-and-writing-skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-Scientific-thinking-and-writing-skill.md)，然后说：
 
-> 请读取这个 WIT skill，并在本次对话中按它工作。
+> 请读取这个 WIT workflow，并在本次对话中按它工作。
 
 之后可以直接说：
 
@@ -97,44 +169,32 @@ WIT 的使用方式很简单：**先让 AI 读取 `WIT-科学思考及写作skil
 
 > 按 WIT 检查这篇论文的 Results 和 Discussion。
 
-如果开启了新的对话，而该文件没有自动带入，就重新上传或重新提供该 `.md` 文件。
+如果希望同时采用 agent-level 的 routing、human–LLM control transfer 和 stop rule，也可以把 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 一并提供给 AI。
+
+如果开启新的对话，而这些文件没有自动带入，就需要重新提供文件或 GitHub 链接。
 
 #### 在 ChatGPT Work / 项目空间中
 
-把 `WIT-科学思考及写作skill.md` 放进对应项目或 Work 的资料中，然后在开始任务时说：
+可以把 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 与中文 [`WIT-科学思考及写作skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-%E7%A7%91%E5%AD%A6%E6%80%9D%E8%80%83%E5%8F%8A%E5%86%99%E4%BD%9Cskill.md) 或英文 [`WIT-Scientific-thinking-and-writing-skill.md`](https://github.com/deltadbu/WIT-skill/blob/main/WIT-Scientific-thinking-and-writing-skill.md) 放进对应项目资料中，然后在项目开始时说：
 
-> 请先读取 WIT-科学思考及写作skill.md，并把它作为本项目的研究与写作规则。
+> 请读取 WIT 的 `SKILL.md` 和完整 workflow，并把它们作为本项目的人机协同科学思考与写作规则。
 
 这样可以让 WIT 与论文草稿、实验结果、项目文档一起长期使用。
 
 #### 在 VSCode / Codex / Copilot 中
 
-把文件放在项目 repo 中，例如：
+推荐直接 clone [WIT GitHub repo](https://github.com/deltadbu/WIT-skill)，或把整个 WIT repo 作为项目可以访问的资料。若工具支持 Agent Skills，则让其从 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) 自动发现和执行 WIT；若不支持，则在对话或项目 instruction 中明确要求：
 
-```text
-project/
-├── WIT-科学思考及写作skill.md
-├── README.md
-├── results/
-├── manuscript/
-└── src/
-```
-
-然后在对话中明确要求：
-
-> Read `WIT-科学思考及写作skill.md` first, and use it as the research-thinking and scientific-writing workflow for this project.
-
-如果工具支持项目级 instruction，也可以在项目说明中加入：
-
-> Before analyzing research questions, results, or manuscript text, read and follow `WIT-科学思考及写作skill.md`.
+> Read [SKILL.md](https://github.com/deltadbu/WIT-skill/blob/main/SKILL.md) first, then load the appropriate full WIT workflow and follow its routing, reasoning, human–LLM collaboration, and stop rules.
 
 核心原则是：
 
-> **不要只把 WIT 文件放在那里；要明确告诉 AI 先读取并遵循它。**
+> **支持 Skill Discovery：以 `SKILL.md` 为入口。**  
+> **不支持 Skill Discovery：直接加载完整 WIT workflow；需要更稳定的 routing 与协同控制时，再同时加载 `SKILL.md`。**
 
 ---
 
-### 3.2 加载后如何调用
+### 3.4 加载后如何调用
 
 #### 模式 A：开题——把问题打开
 
@@ -255,7 +315,7 @@ project/
 
 WIT 的日常使用可以压缩成一句话：
 
-> **先加载 WIT；从问题开始；每得到一个 finding 再产生问题；能回答的继续做，不能回答的先判断是否重要，再决定是否进入 Discussion、Limitations 或 Future Studies。**
+> **支持 Skill Discovery 时，让 agent 从 `SKILL.md` 进入 WIT；不支持时，直接加载完整 workflow。然后从问题开始，每得到一个 finding 再产生问题；能回答的继续做，不能回答的先判断是否重要，再决定是否进入 Discussion、Limitations 或 Future Studies。**
 
 ## 4. REWRITE：核心研究循环
 
