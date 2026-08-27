@@ -38,4 +38,4 @@ WIT helps researchers:
 
 ## Applying WIT to Research and Writing
 
-- TBA
+- MSFold
