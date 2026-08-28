@@ -61,6 +61,6 @@ Three ideas summarize WIT:
 > **WIT is a question generator, not a checklist completer.**  
 > **Advance the research. Grow the researcher.**
 
-For details, see `WIT-Scientific-thinking-and-writing-skill.md`.
+For details, see [WIT-Scientific-thinking-and-writing-skill.md](wit/references/WIT-Scientific-thinking-and-writing-skill.md).
 
-中文说明见 `README-cn.md`。
+中文说明见 [README-cn.md](README-cn.md).

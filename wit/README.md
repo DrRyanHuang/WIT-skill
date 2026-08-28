@@ -1,0 +1,1 @@
+This directory contains the installable WIT Agent Skill. See SKILL.md for agent instructions and references/ for the full framework.

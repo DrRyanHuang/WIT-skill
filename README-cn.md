@@ -63,6 +63,6 @@ WIT 可以压缩成三句话：
 > **WIT 用来生成问题，而不是用来完成清单。**  
 > **推进研究，成长研究者。**
 
-详细说明见 `WIT-科学思考及写作skill.md`。
+详细说明见 [WIT-科学思考及写作skill.md](wit/references/WIT-科学思考及写作skill.md)。
 
-English version: `README.md`。
+English version: [README.md](README.md)。

@@ -27,8 +27,8 @@ Do not optimize only for producing a paper or completing the task. Use the colla
 
 Read one complete authoritative workflow before applying WIT:
 
-- Chinese output: [WIT-科学思考及写作skill.md](WIT-科学思考及写作skill.md)
-- English output: [WIT-Scientific-thinking-and-writing-skill.md](WIT-Scientific-thinking-and-writing-skill.md)
+- Chinese output: [WIT-科学思考及写作skill.md](references/WIT-科学思考及写作skill.md)
+- English output: [WIT-Scientific-thinking-and-writing-skill.md](references/WIT-Scientific-thinking-and-writing-skill.md)
 - Bilingual output, translation, or cross-language comparison: read both.
 
 Load supporting material only when it is relevant to the current task.
@@ -43,7 +43,8 @@ Use materials in `tests/` when evaluating, stress-testing, or refining WIT itsel
 
 Use materials in `case-studies/` when an example of applying WIT to a real scientific project would improve the current reasoning or explanation.
 
-- Read [Applying-WIT-to-MSFold.md](case-studies/MSFold/Applying-WIT-to-MSFold.md), or its [Chinese version](case-studies/MSFold/Applying-WIT-to-MSFold-cn.md), for a real-world example of applying WIT to scientific research and writing, including representation, search, sampling, ranking, manuscript logic, and next-step decisions.
+- Read [Applying-WIT-to-MSFold.md](case-studies/
+Applying-WIT-to-MSFold.md), or its [Chinese version](case-studies/Applying-WIT-to-MSFold-cn.md), for a real-world example of applying WIT to scientific research and writing, including representation, search, sampling, ranking, manuscript logic, and next-step decisions.
 
 Treat these resource types differently:
 - **Tests assess WIT itself.**

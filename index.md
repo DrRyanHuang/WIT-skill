@@ -22,9 +22,9 @@ WIT helps researchers:
 
 ## Get Started
 
-👉 [Read the WIT workflow](WIT-Scientific-thinking-and-writing-skill.md)
+👉 [Read the WIT workflow](wit/references/WIT-Scientific-thinking-and-writing-skill.md)
 
-👉 [中文版本](WIT-科学思考及写作skill.md)
+👉 [中文版本](wit/references/WIT-科学思考及写作skill.md)
 
 ## Core Loop
 
@@ -33,8 +33,8 @@ WIT helps researchers:
 ## Assess WIT using Classic Papers
 
 - AlphaGo
-👉 [Assess WIT using AlphaGo](tests/AlphaGo/Assess-WIT-using-AlphaGo.md)
-👉 [中文版本](tests/AlphaGo/Assess-WIT-using-AlphaGo-cn.md)
+👉 [Assess WIT using AlphaGo](wit/tests/Assess-WIT-using-AlphaGo.md)
+👉 [中文版本](wit/tests/Assess-WIT-using-AlphaGo-cn.md)
 
 ## Applying WIT to Research and Writing
 
