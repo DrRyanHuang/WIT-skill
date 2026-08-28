@@ -1,0 +1,87 @@
+WIT (Writing Is Thinking) — Licensing
+=====================================
+
+Copyright (c) 2026 Dongbo Bu and WIT contributors.
+
+This repository uses split licensing because it contains both an
+executable Agent Skill and human-readable scientific framework content.
+
+1. Apache License 2.0 (SPDX: Apache-2.0)
+-----------------------------------------
+
+The following are licensed under the Apache License, Version 2.0:
+
+- wit/SKILL.md
+- executable source code and scripts, including files under wit/scripts/
+  if that directory is present
+- repository infrastructure/configuration files, unless explicitly
+  marked otherwise
+- any file that explicitly states SPDX-License-Identifier: Apache-2.0
+
+The full license text is in:
+
+    LICENSE-APACHE-2.0
+
+Canonical license URL:
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+
+2. Creative Commons Attribution 4.0 International
+   (SPDX: CC-BY-4.0)
+---------------------------------------------------
+
+The following original WIT content is licensed under the Creative
+Commons Attribution 4.0 International Public License:
+
+- README.md
+- README-cn.md
+- index.md, if present
+- wit/references/**
+- wit/tests/**
+- wit/case-studies/**
+- other human-readable WIT documentation, unless explicitly marked
+  otherwise
+- any file that explicitly states SPDX-License-Identifier: CC-BY-4.0
+
+The full license text is in:
+
+    LICENSE-CC-BY-4.0
+
+Canonical license URL:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+
+Suggested attribution for CC-BY-4.0 material
+--------------------------------------------
+
+    WIT (Writing Is Thinking), by Dongbo Bu and WIT contributors,
+    https://github.com/deltadbu/WIT-skill,
+    licensed under CC BY 4.0.
+
+When distributing an adapted version, indicate that changes were made,
+as required by CC BY 4.0.
+
+
+3. Contributions
+----------------
+
+Unless explicitly stated otherwise:
+
+- contributions to Apache-2.0-covered files are submitted under
+  Apache-2.0;
+- contributions to CC-BY-4.0-covered files are submitted under
+  CC-BY-4.0.
+
+A file-specific license notice overrides the directory-level mapping
+above.
+
+
+4. Third-party material
+-----------------------
+
+Third-party material is not relicensed by this file. Any third-party
+content included in the repository remains subject to its own license,
+copyright, or applicable exception/limitation. Where such material is
+present, its specific notice should be retained.

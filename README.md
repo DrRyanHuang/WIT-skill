@@ -9,13 +9,11 @@ WIT is designed not only to improve scientific work, but also to strengthen the 
 > **Automate labor; augment judgment.**
 
 WIT uses the LLM to extend, challenge, scaffold, and audit the researcher's thinking—not simply to replace it.
-
 Core principle:
 
 > **WIT specifies scientific reasoning functions, not a rigid surface template for papers.**
 
 It helps researchers:
-
 - open vague ideas into a testable scientific question space;
 - organize Results around evidence and restrained interpretation;
 - distinguish local Results-level interpretation from integrated Discussion-level interpretation;
@@ -27,11 +25,11 @@ It helps researchers:
 
 ## Use
 
-If your agent supports `SKILL.md`, install or expose this repository as a skill and let the agent load `SKILL.md`.
+If your agent supports Agent Skills / `SKILL.md`, install or expose the [`wit/`](wit/) directory as the skill package and let the agent load [`wit/SKILL.md`](wit/SKILL.md).
 
 Otherwise, ask the AI to read:
 
-`WIT-Scientific-thinking-and-writing-skill.md`
+[`wit/references/WIT-Scientific-thinking-and-writing-skill.md`](wit/references/WIT-Scientific-thinking-and-writing-skill.md)
 
 Then invoke it directly:
 
@@ -46,7 +44,6 @@ Then invoke it directly:
 > Use WIT in human–LLM collaboration mode: help me think, not just finish the task for me.
 
 ## Paper Logic Audit
-
 - **Introduction:** does it explain why the study is necessary?
 - **Results titles:** do they form a coherent progression? Question-driven and pipeline-driven forms can both work.
 - **Results subsection:** is the underlying Motivation / Question → Fact → restrained 1-hop Opinion → Next Step chain recoverable?
@@ -64,3 +61,12 @@ Three ideas summarize WIT:
 For details, see [WIT-Scientific-thinking-and-writing-skill.md](wit/references/WIT-Scientific-thinking-and-writing-skill.md).
 
 中文说明见 [README-cn.md](README-cn.md).
+
+## License
+
+WIT uses **split licensing**:
+
+- The executable Agent Skill and software components — especially [`wit/SKILL.md`](wit/SKILL.md) and executable code/scripts — are licensed under the **Apache License 2.0** (`Apache-2.0`).
+- The WIT framework and human-readable content — including the README files, [`wit/references/`](wit/references/), [`wit/tests/`](wit/tests/), and [`wit/case-studies/`](wit/case-studies/) — are licensed under the **Creative Commons Attribution 4.0 International License** (`CC-BY-4.0`).
+
+See [LICENSE](LICENSE) for the exact scope and attribution guidance. Full license texts are provided in [LICENSE-APACHE-2.0](LICENSE-APACHE-2.0) and [LICENSE-CC-BY-4.0](LICENSE-CC-BY-4.0).
