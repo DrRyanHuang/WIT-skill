@@ -247,7 +247,14 @@ Check whether:
 - a **Question / Finding-driven** organization is appropriate, or whether a **Component / Pipeline-driven** organization is more natural for a method or system paper;
 - even when the surface structure follows a pipeline, the underlying **Question → Test → Finding → Next Step** reasoning remains recoverable;
 - questions answerable now have been prematurely pushed into Discussion;
-- key controls, competing explanations, counterexamples, or unexpected results have been overlooked.
+- key controls, competing explanations, counterexamples, or unexpected results have been overlooked;
+- **Figure 1 and its caption:** if Figure 1 serves as the overview or conceptual figure, can a reader understand the paper's central idea, major components, and high-level logic from the figure and caption before reading the detailed Results? For a method paper, Figure 1 should usually provide a compact visual answer to: **What is the core idea, and how does the method work at a high level?**
+- **Worked case study for a method paper:** does the Results section contain a compact, representative case that lets the reader trace the method from input through the key intermediate steps to output? The case should explain **how the proposed method operates, why it succeeds, why existing methods fail or become unreliable on the same case, and what mechanism or design choice creates the difference.** Prefer the **simplest case that isolates the essential difference** between methods. The purpose is to explain mechanism, not to replace benchmark-level evidence.
+- **Difference-focused benchmark analysis:** aggregate metrics such as accuracy, precision, recall, AUC, correlation, or success rate establish whether and by how much a method performs better overall, but they rarely explain why. Check whether the authors identify the cases or subsets on which the proposed and existing methods exhibit the largest or most systematic differences, then analyze **where the performance gap comes from, why existing methods fail there, and why the proposed method succeeds.** Prefer a systematic pattern of differential performance over isolated cherry-picked examples.
+
+For method papers, these checks serve complementary functions:
+
+> **Figure 1 explains the idea globally; benchmark statistics establish whether and by how much the method works; a worked case explains how and why it works; difference-focused analysis explains where the gain comes from and whether the mechanism is systematic.**
 
 Principle:
 
