@@ -252,12 +252,13 @@ Agent 发现 [`SKILL.md`](https://github.com/deltadbu/WIT-skill/blob/main/wit/SK
 - 是否有本来可以回答的问题被过早扔进 Discussion；
 - 是否遗漏关键 control、competing explanation、counterexample 或异常结果；
 - **Figure 1 及其 caption：** 如果 Figure 1 承担 overview / conceptual figure 的功能，reader 是否能在尚未阅读详细 Results 之前，仅通过 Figure 1 及其 caption 就掌握全文的 central idea、主要 components 和 high-level logic？对于 method paper，Figure 1 通常应能用一个紧凑的 visual answer 回答：**核心 idea 是什么？方法在高层次上如何运行？**
+- **数学公式 / 计算机算法方法的自然语言解释与 concrete walkthrough：** 如果论文的核心方法主要由数学公式或计算机算法描述，不应只依赖 formal notation 或 pseudocode。应首先用**自然语言解释其 basic idea**：该公式或算法试图解决什么问题，关键项或关键步骤分别意味着什么，以及为什么要这样设计。然后再提供一个尽可能简单的 concrete example：给出公式中关键变量或关键项的具体数值，逐步展示计算过程；或者在一个很小的输入上，逐步展示算法中的重要步骤。优先选择**能够暴露核心 mechanism 的最小例子**。其目标是让 reader 先在概念上理解方法，再能够在头脑中**“执行”一次这个方法**。AlphaDev 是一个很典型的例子：用三个数的排序，就能够非常直观地展示算法的运行过程。
 - **方法类 paper 的 worked case study：** Results 中是否提供了一个简洁、representative 的 case，使 reader 可以从 input 出发，沿着关键 intermediate steps 一直看到 output？这个 case 应说明：**本文方法如何运行、为什么能够 succeed、为什么 existing methods 在同一个 case 上 failed 或变得 unreliable，以及究竟是哪一个 mechanism / design choice 造成了这种差异。** 优先选择**能够隔离方法本质差异的最简单 case**。Case study 的作用是解释 mechanism，而不是替代 benchmark-level evidence。
 - **Difference-focused benchmark analysis：** accuracy、precision、recall、AUC、correlation、success rate 等 aggregate metrics 可以说明方法总体上是否更好、好多少，却通常不能解释 why。应检查作者是否从 benchmark 中找出 proposed method 与 existing methods 表现差异最大或具有系统性差异的 cases / subsets，并进一步分析：**performance gap 来自哪里？existing methods 为什么在这些 cases 上失败？本文方法为什么能够成功？** 应优先寻找 systematic pattern of differential performance，而不是只挑选少数漂亮的 cherry-picked examples。
 
 对于 method paper，这几类 evidence / explanation 的功能彼此互补：
 
-> **Figure 1 在全局上解释 idea；benchmark statistics 说明方法是否有效、提高多少；worked case 解释方法 how and why it works；difference-focused analysis 解释 improvement 从哪里来，以及这个 mechanism 是否具有系统性。**
+> **Figure 1 在全局上解释 idea；自然语言解释加 minimal concrete walkthrough 让数学或算法方法真正变得 operationally understandable；benchmark statistics 说明方法是否有效、提高多少；worked case 解释为什么本文方法 succeed、为什么 existing methods fail；difference-focused analysis 解释 improvement 从哪里来，以及这个 mechanism 是否具有系统性。**
 
 原则：
 
