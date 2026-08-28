@@ -27,6 +27,7 @@ The purpose of this case is therefore not to show that MSFold “checks every WI
 
 Even when the story is already strong, WIT keeps asking where claims outrun evidence, which explanations remain viable, and which boundary conditions are still unknown.
 
+
 ---
 
 # 2. Introduction: Final Goal → Missing Component → This Study
@@ -1064,7 +1065,7 @@ In this case, WIT helps with four connected tasks:
 > → **keep claims aligned with evidence**
 > → **convert the reasoning chain into a coherent scientific story**
 
-The most valuable next work is therefore not simply “more experiments.” It is the work that most reduces uncertainty about the central scientific interpretation.
+The most valuable next work is therefore not simply “more experiments.” It is the work that most reduces uncertainty about the central scientific interpretation. 
 
 > **Advance the research. Grow the researcher.**
 
