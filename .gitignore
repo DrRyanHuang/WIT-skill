@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# C/C++
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+a.out
+
+# Build directories
+build/
+dist/
+cmake-build-*/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.swp
+*~
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Secrets / local config
+.env
+*.key
+*.pem
+
