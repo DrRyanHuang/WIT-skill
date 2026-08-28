@@ -1351,7 +1351,7 @@ More important than asking whether it contains a Limitations or Future Work sect
 - is the abstraction too strong?
 - if it proposes a General Principle, do multiple findings support it?
 - if important boundaries or unresolved questions exist, are they handled honestly?
-- does the ending leave a clear take-home message?
+- does the ending leave a clear take-home message? This take-home message is what we will remember this paper after many years. 
 
 Thus:
 
